@@ -72,6 +72,7 @@ def check_hosts():
     if (leader == host_name):
         print("Leader.....!"+host_name)
         try:
+            # Another try block for handling Api exceptions
             host_dict = list_hosts()
             allhosts = host_dict['all_list']
             dishosts = host_dict['disabled_list']
