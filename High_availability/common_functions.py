@@ -441,9 +441,10 @@ def instance_migration(dhosts,task):
 
 def message_queue(dhost=None,task=None):
     instance_list=zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
+    pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
+
     if(len(instance_list)!=0):
         #while(len(instance_list)!=0)
-        pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
         #instance_list = zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
         print("Instances yet to be handled: ",instance_list," Instances on Queue: ", pending_instances_list )
         if(pending_instances_list<10):
@@ -452,8 +453,8 @@ def message_queue(dhost=None,task=None):
                 try:
                     zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
                     zk.delete("/openstack_ha/instances/down_instances/" + dhost + "/" + instance_list[i],recursive=True)
-                except:
-                    pass
+                except Exception as e:
+                    print(e)
             afteradd_pending_instances_list = zk.get_children("/openstack_ha/instances/pending/" + dhost)
             for j in afteradd_pending_instances_list:
                 task.apply_async((afteradd_pending_instances_list[j],), queue='mars', countdown=wait_time)
