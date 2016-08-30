@@ -87,9 +87,10 @@ def check_hosts(zk,host_name):
                                             down_host_failuretime = float(down_host_failuretime)
                                             print(type(down_host_failuretime))
                                             time_interval = curent_time - down_host_failuretime
-                                            migrate_time=1800 # 30  mints
-                                            if time_interval>migrate:
+                                            if time_interval>migrate_time:
                                                 instance_migration(dhosts,test)
+                                            else:
+                                                print("Will Wait for another %d"%(migrate_time-time_interval))
                                         else:
                                             print("%s Node Does'nt have TimeOut Value. Hence will not migrate forever"%host)
                                 else:
