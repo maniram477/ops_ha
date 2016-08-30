@@ -24,6 +24,7 @@ def ensureBasicStructure():
     zk.ensure_path("/openstack_ha/instances/pending")
     zk.ensure_path("/openstack_ha/instances/migrated")
     zk.ensure_path("/openstack_ha/instances/failure")
+    zk.ensure_path("/openstack_ha/hosts/time_out")
 
 
 def createNodeinAll():
@@ -38,6 +39,7 @@ def createNodeinAll():
 
     try:
         zk.delete("/openstack_ha/hosts/down/" + host_name, recursive=True)
+        zk.delete("/openstack_ha/hosts/time_out/" + host_name, recursive=True)
         zk.delete("/openstack_ha/instances/down_host/" + host_name, recursive=True)
     except kazoo.exceptions.NoNodeException:
         print("Node not present in Down path")

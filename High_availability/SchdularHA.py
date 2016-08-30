@@ -57,17 +57,34 @@ def check_hosts():
                     for host in dhosts:
                         #checks whether down host from api is un handled(not present in zoo keeper down node)
                         if host in zk_down_Node:
+                            #adding host down time
+                            host_down_time = time.time()
+                            host_down_time = str.encode(str(host_down_time))
+                            if(zk.exists("/openstack_ha/hosts/time_out/"+host)==False):
+                                zk.create("/openstack_ha/hosts/time_out/"+host, host_down_time)
                             # add ping test
-                            #skip if maintance
-                            if (zk.exists("/openstack_ha/hosts/start_migration/"+ host)): # it check the permission from the dashborad
-                                print(" api down host :"+host+"present in zookeeper down_node:"+zk_down_Node)
-                                print("Strart migration....!!!!!")
-                                print("migratie instance from the "+host)
-                                instance_migration(dhosts)
+                            ping_status=ping_check(host)
+                            if(ping_status==False):
+                                #skip if maintance
+                                if (zk.exists("/openstack_ha/hosts/start_migration/"+ host)): # it check the permission from the dashborad
+                                    print(" api down host :"+host+"present in zookeeper down_node:"+zk_down_Node)
+                                    print("Strart migration....!!!!!")
+                                    print("migratie instance from the "+host)
+                                    instance_migration(dhosts)
+                                else:
+                                    #check for time out
+                                    curent_time = time.time()
+                                    down_host_failuretime = zk.get("/openstack_ha/hosts/time_out/"+host)[0]
+                                    down_host_failuretime = down_host_failuretime.decode(encoding='UTF-8')
+                                    print("down_host_failuretime",down_host_failuretime)
+                                    down_host_failuretime = float(down_host_failuretime)
+                                    print(type(down_host_failuretime))
+                                    time_interval = curent_time - down_host_failuretime
+                                    migrate_time=1800 # 30  mints
+                                    if time_interval>migrate:
+                                        instance_migration(dhosts)
                             else:
-                                #check for time out
-                                pass
-
+                                print("ping test success....!!! Node is alive")
                         elif host in zk_down:
                             print("Already handled...!!!!!")
                         else:
