@@ -419,7 +419,7 @@ def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
 #HA-Agent Migration Functions
 def instance_migration(dhosts,task):
     for dhost in dhosts:
-        if(zk.exists("/openstack_ha/instances/down_host" + dhost)==False):
+        if(zk.exists("/openstack_ha/instances/down_host" + dhost)==None):
             zk.create("/openstack_ha/instances/down_host" + dhost, b"a value", None, True)
             for instance_obj in list_instances(dhost):
                 # Addon-Feature
@@ -437,6 +437,7 @@ def message_queue(dhost=None,task=None):
         #while(len(instance_list)!=0)
         pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
         instance_list = zk.get_children("/openstack_ha/instances/down_host/" + dhost)
+        print("Instances yet to be handled: ",instance_list," Instances on Queue: ", pending_instances_list )
         if(pending_instances_list<10):
             add_pending_instance_list=10-len(pending_instances_list)
             for i in range(add_pending_instance_list):
@@ -449,5 +450,6 @@ def message_queue(dhost=None,task=None):
             for j in afteradd_pending_instances_list:
                 task.apply_async((afteradd_pending_instances_list[j],), queue='mars', countdown=wait_time)
     else:
-        if (zk.exists("/openstack_ha/hosts/down/" + dhost) == False):
+        if (zk.exists("/openstack_ha/hosts/down/" + dhost) == None):
             zk.create("/openstack_ha/hosts/down/" + dhost, b"a value", None, True)
+            
