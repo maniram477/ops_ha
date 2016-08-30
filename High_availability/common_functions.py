@@ -450,14 +450,17 @@ def message_queue(dhost=None,task=None):
         if(pending_instances_list<10):
             add_pending_instance_list=10-len(pending_instances_list)
             for i in range(add_pending_instance_list):
+                print("Adding %d more instances to Queue"%add_pending_instance_list)
                 try:
                     zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
                     zk.delete("/openstack_ha/instances/down_instances/" + dhost + "/" + instance_list[i],recursive=True)
+                    task.apply_async((instances_list[i],), queue='mars', countdown=wait_time)
                 except Exception as e:
                     print(e)
-            afteradd_pending_instances_list = zk.get_children("/openstack_ha/instances/pending/" + dhost)
-            for j in afteradd_pending_instances_list:
-                task.apply_async((afteradd_pending_instances_list[j],), queue='mars', countdown=wait_time)
+
+            #afteradd_pending_instances_list = zk.get_children("/openstack_ha/instances/pending/" + dhost)
+            #for j in afteradd_pending_instances_list:
+            #    task.apply_async((afteradd_pending_instances_list[j],), queue='mars', countdown=wait_time)
     else:
         if (zk.exists("/openstack_ha/hosts/down/" + dhost) == None):
             zk.create("/openstack_ha/hosts/down/" + dhost, b"a value", None, True)
