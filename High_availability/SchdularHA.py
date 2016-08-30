@@ -106,7 +106,7 @@ def check_hosts(zk,host_name):
     except Exception as e:
         if issubclass(e.__class__,kexception.NoNodeError):
             print("No Node Error")
-        elif any(issubclass(e.__class__, lv) for lv in exception_types):
+        elif any(issubclass(e.__class__, lv) for lv in kazoo_exceptions):
             print("Kazoo Exception.....: ")
             time.sleep(2)
             zk = KazooClient(hosts='127.0.0.1:2181')
