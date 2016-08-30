@@ -75,7 +75,7 @@ def check_hosts(zk,host_name):
                                         print(" api down host :"+host+"present in zookeeper down_node:"+zk_down_Node)
                                         print("Strart migration....!!!!!")
                                         print("migratie instance from the "+host)
-                                        instance_migration(dhosts,test)
+                                        instance_migration(dhosts)
                                     else:
                                         #check for time out
                                         print("Checking Timeout for Down Node",host)
@@ -88,7 +88,7 @@ def check_hosts(zk,host_name):
                                             print(type(down_host_failuretime))
                                             time_interval = curent_time - down_host_failuretime
                                             if time_interval>migrate_time:
-                                                instance_migration(dhosts,test)
+                                                instance_migration(dhosts)
                                             else:
                                                 print("Will Wait for another %d"%(migrate_time-time_interval))
                                         else:
