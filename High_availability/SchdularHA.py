@@ -103,18 +103,18 @@ def check_hosts(zk,host_name):
                 else:
                     print("Un-Manageble Disaster Too many Nodes are down")
 
-    except kexception.NoNodeError:
-        print("No Node Error")
-    except tuple(kazoo_exceptions):
-        print("Kazoo Exception.....: ")
-        time.sleep(2)
-        zk = KazooClient(hosts='127.0.0.1:2181')
-        zk.start()
-        Node_creation = createNodeinAll(zk=zk, host_name=host_name)
-        election_Node = election_node(zk=zk, host_name=host_name)
-    except:
-        pass
-
+    except Exception as e:
+        if issubclass(e.__class__,kexception.NoNodeError):
+            print("No Node Error")
+        elif any(issubclass(e.__class__, lv) for lv in exception_types):
+            print("Kazoo Exception.....: ")
+            time.sleep(2)
+            zk = KazooClient(hosts='127.0.0.1:2181')
+            zk.start()
+            Node_creation = createNodeinAll(zk=zk, host_name=host_name)
+            election_Node = election_node(zk=zk, host_name=host_name)
+        else:
+            print("Unhandled Error ",e)
 
 
 #"""Import ensureBasicStructure()--It ensure the DataStructure in Zookeeper and createNode()--It ensure the node is alive. Functions are from new_basicstrut """
