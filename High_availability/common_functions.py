@@ -420,12 +420,12 @@ def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
 def instance_migration(dhosts,task):
     for dhost in dhosts:
         if(zk.exists("/openstack_ha/instances/down_instances/" + dhost)==None):
-            zk.create("/openstack_ha/instances/down_instances/" + dhost, b"a value", None, True)
+            zk.create("/openstack_ha/instances/down_instances/" + dhost)
             for instance_obj in list_instances(dhost):
                 # Addon-Feature
                 # Can Add another check to only select instances which have HA option enabled
-                # print(instance_obj.id)
-                zk.create("/openstack_ha/instances/down_instances/" + dhost+"/"+instance_obj.id, b"a value", None, True)
+                print(instance_obj.id)
+                zk.create("/openstack_ha/instances/down_instances/" + dhost+"/"+instance_obj.id)
                 #create instance detatils under the down hosts in zookeepr
                 #migrate.apply_async((instance_obj.id,), queue='mars', countdown=wait_time)
         message_queue(dhost,task)
@@ -436,7 +436,7 @@ def message_queue(dhost=None,task=None):
     if(len(instance_list)!=0):
         #while(len(instance_list)!=0)
         pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
-        instance_list = zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
+        #instance_list = zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
         print("Instances yet to be handled: ",instance_list," Instances on Queue: ", pending_instances_list )
         if(pending_instances_list<10):
             add_pending_instance_list=10-len(pending_instances_list)
