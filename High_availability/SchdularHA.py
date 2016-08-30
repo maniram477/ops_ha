@@ -42,11 +42,15 @@ def check_hosts(zk,host_name,task):
                 else:
                     for node in zk_down_Node:
                         print("Zookeeper node Failure..! ",node)
+                        if (zk.exists("/openstack_ha/hosts/down/" + node) == None):
+                            zk.create("/openstack_ha/hosts/down/" + node)
             else:
                 print("Cluster in Disaster")
                 if(len(zk_down_Node))!=0:
                     for node in zk_down_Node:
                         print("Zookeeper node Failure..! ",node)
+                        if (zk.exists("/openstack_ha/hosts/down/" + node) == None):
+                            zk.create("/openstack_ha/hosts/down/" + node)
                 # Here check the host in dhosts(api) are present in zk_down_Node
                 #if present start the instance migrations
                 # Checking whether Cluster is Still under HA Policy

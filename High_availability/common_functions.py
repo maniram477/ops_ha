@@ -465,4 +465,4 @@ def message_queue(dhost=None,task=None):
             #    task.apply_async((afteradd_pending_instances_list[j],), queue='mars', countdown=wait_time)
     else:
         if (zk.exists("/openstack_ha/hosts/down/" + dhost) == None):
-            zk.create("/openstack_ha/hosts/down/" + dhost, b"a value", None, True)
+            zk.create("/openstack_ha/hosts/down/" + dhost)
