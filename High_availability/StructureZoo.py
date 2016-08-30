@@ -29,15 +29,23 @@ def createNodeinAll(zk=zk,host_name=host_name):
     try:
         zk.create("/openstack_ha/hosts/all/" + host_name)
     except kazoo.exceptions.NodeExistsError:
-        print("Node all ready created in all")
+        #print("Node all ready created in all")
+        pass
     try:
         zk.create("/openstack_ha/hosts/alive/" + host_name, b"a value", None, True)
     except kazoo.exceptions.NodeExistsError:
-        print("Node all ready created in alive")
+        #print("Node all ready created in alive")    
+        pass
 
     try:
         zk.delete("/openstack_ha/hosts/down/" + host_name, recursive=True)
+    except kazoo.exceptions.NoNodeException:
+        print("Node not present in Down path")
+    try:
         zk.delete("/openstack_ha/hosts/time_out/" + host_name, recursive=True)
+    except kazoo.exceptions.NoNodeException:
+        print("Node not present in Down path")
+    try:
         zk.delete("/openstack_ha/instances/down_host/" + host_name, recursive=True)
     except kazoo.exceptions.NoNodeException:
         print("Node not present in Down path")

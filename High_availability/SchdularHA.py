@@ -6,7 +6,7 @@ from ha_agent import test
 import time
 #import nova Exceptions
 
-def check_hosts():
+def check_hosts(zk,host_name):
     """Checks Host status of all hosts using nova clients nova.services.list(binary="nova-compute")
     If a host is down disables the host and puts instances on the migration queue
     """
@@ -15,7 +15,7 @@ def check_hosts():
     print("Before Start")
     #log.info("Before Start")
     leader = leaderCheck(zk=zk)
-    create = createNodeinAll(zk=zk,host_name=host_name)
+    #create = createNodeinAll(zk=zk,host_name=host_name)
     if (leader == host_name):
         print("Leader.....!"+host_name)
         try:
@@ -108,11 +108,13 @@ def check_hosts():
 
 
 #"""Import ensureBasicStructure()--It ensure the DataStructure in Zookeeper and createNode()--It ensure the node is alive. Functions are from new_basicstrut """
+#zk = KazooClient(hosts='127.0.0.1:2181')
+zk.start()
 BasicStruct=ensureBasicStructure(zk=zk)
 Node_creation=createNodeinAll(zk=zk,host_name=host_name)
 election_Node=election_node(zk=zk,host_name=host_name)
 
 
 while True:
-    check_hosts()
+    check_hosts(zk,host_name)
     time.sleep(scheduler_interval)

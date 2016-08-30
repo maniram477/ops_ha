@@ -8,7 +8,8 @@ import struct
 from retrying import retry
 import inspect
 import kazoo.exceptions as kexception
-
+import kazoo
+from kazoo.client import KazooClient
 
 controller_ip="30.20.0.2"
 user ="admin"
@@ -20,9 +21,9 @@ host_name=socket.gethostname()
 
 
 # Use Variables inside retry Functions
-scheduler_interval = 60 #In Seconds
+scheduler_interval = 5 #In Seconds
 api_retry_count = 3 
-api_retry_interval * 1000 #In MilliSeconds
+api_retry_interval = 1000 #In MilliSeconds
 
 poll_status_count = 100
 poll_status_interval = 2000 #In MilliSeconds
@@ -31,6 +32,7 @@ poll_status_interval = 2000 #In MilliSeconds
 maintenance_state = ['maintenance','skip','pause_migration']
 kazoo_exceptions = [obj for name, obj in inspect.getmembers(kexception) if inspect.isclass(obj) and issubclass(obj, Exception)]
 
+zk = KazooClient(hosts='127.0.0.1:2181')
 
 nova = nova_client.Client(2,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip,connection_pool=True)
 #conn = MySQLdb.connect(controller_ip,mysql_user,mysql_pass)
@@ -123,7 +125,7 @@ def host_disable():
 
 
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
-def client_init()
+def client_init():
     try:
         neutron = neutron_client.Client(username=user,
                                             password=passwd,
@@ -164,7 +166,7 @@ def delete_instance(instance_object):
     except Exception as e:
         print('Exception in step5',e)
 
- @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)      
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
 def delete_instance_status(instance_object):
     try:
         allow_retry_task = ['deleting',None]
@@ -414,19 +416,19 @@ def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
 #HA-Agent Migration Functions
 def instance_migration(dhosts,task):
     for dhost in dhosts:
-
-            if(zk.exists("/openstack_ha/instances/down_host" + dhost)==False):
-                zk.create("/openstack_ha/instances/down_host" + dhost, b"a value", None, True)
-                for instance_obj in list_instances(dhost):
-                    # Addon-Feature
-                    # Can Add another check to only select instances which have HA option enabled
-                    # print(instance_obj.id)
-                    zk.create("/openstack_ha/instances/down_host/" + dhost+"/"+instance_obj.id, b"a value", None, True)
-                    #create instance detatils under the down hosts in zookeepr
-                    #migrate.apply_async((instance_obj.id,), queue='mars', countdown=wait_time)
+        if(zk.exists("/openstack_ha/instances/down_host" + dhost)==False):
+            zk.create("/openstack_ha/instances/down_host" + dhost, b"a value", None, True)
+            for instance_obj in list_instances(dhost):
+                # Addon-Feature
+                # Can Add another check to only select instances which have HA option enabled
+                # print(instance_obj.id)
+                zk.create("/openstack_ha/instances/down_host/" + dhost+"/"+instance_obj.id, b"a value", None, True)
+                #create instance detatils under the down hosts in zookeepr
+                #migrate.apply_async((instance_obj.id,), queue='mars', countdown=wait_time)
         message_queue(dhost,task)
 
-def message_queue(dhost=dhost,task):
+
+def message_queue(dhost=None,task=None):
     instance_list=zk.get_children("/openstack_ha/instances/down_host/" + dhost)
     if(len(instance_list)!=0):
         #while(len(instance_list)!=0)
