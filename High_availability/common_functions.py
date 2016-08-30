@@ -455,7 +455,7 @@ def message_queue(dhost=None,task=None):
                 try:
                     zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
                     zk.delete("/openstack_ha/instances/down_instances/" + dhost + "/" + instance_list[i],recursive=True)
-                    instance_string = str(instances_list[i])
+                    instance_string = str(instance_list[i])
                     task.apply_async((instance_string,), queue='mars', countdown=5)
                 except Exception as e:
                     print(e)
