@@ -96,14 +96,14 @@ def check_hosts(zk,host_name):
     except kexception.NoNodeError:
         print("No Node Error")
     except tuple(kazoo_exceptions):
-        print("Kazoo Exception.....: ",e)
+        print("Kazoo Exception.....: ")
         time.sleep(2)
         zk = KazooClient(hosts='127.0.0.1:2181')
         zk.start()
         Node_creation = createNodeinAll(zk=zk, host_name=host_name)
         election_Node = election_node(zk=zk, host_name=host_name)
     except:
-        print(e)
+        pass
 
 
 
