@@ -45,7 +45,7 @@ def check_hosts(zk,host_name):
                 #if present start the instance migrations
                 # Checking whether Cluster is Still under HA Policy
                 #  high availabity contiditions
-                if dhosts <= allhosts - 1:
+                if len(dhosts) <= len(allhosts) - 1:
                     print("Manageble Disaster")
                     for host in dhosts:
                         #checks whether down host from api is un handled(not present in zoo keeper down node)
