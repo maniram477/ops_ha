@@ -17,6 +17,7 @@ def check_hosts(zk,host_name):
     try:
         leader = leaderCheck(zk=zk)
         #create = createNodeinAll(zk=zk,host_name=host_name)
+        imalive(zk=zk)
         if (leader == host_name):
             print("Leader.....!"+host_name)
             host_dict = list_hosts()

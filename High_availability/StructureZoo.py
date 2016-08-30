@@ -50,6 +50,13 @@ def createNodeinAll(zk=zk,host_name=host_name):
     except kazoo.exceptions.NoNodeException:
         print("Node not present in Down path")
 
+def imalive(zk=zk,host_name=host_name):
+    try:
+        zk.create("/openstack_ha/hosts/alive/" + host_name, b"a value", None, True)
+    except kazoo.exceptions.NodeExistsError:
+        #print("Node all ready created in alive")    
+        pass
+
 def election_node(zk=zk,host_name=host_name):
     try:
         zk.create("/openstack_ha/hosts/election/" + host_name, b"a value", None, True, True)
