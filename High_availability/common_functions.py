@@ -419,6 +419,14 @@ def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
 #HA-Agent Migration Functions
 def instance_migration(dhosts,task):
     for dhost in dhosts:
+
+        if(zk.exists("/openstack_ha/instances/pending/" + dhost)==None):
+            zk.create("/openstack_ha/instances/pending/" + dhost)
+        if(zk.exists("/openstack_ha/instances/migrated/" + dhost)==None):
+            zk.create("/openstack_ha/instances/migrated/" + dhost)
+        if(zk.exists("/openstack_ha/instances/failure/" + dhost)==None):
+            zk.create("/openstack_ha/instances/failure/" + dhost)
+        
         if(zk.exists("/openstack_ha/instances/down_instances/" + dhost)==None):
             zk.create("/openstack_ha/instances/down_instances/" + dhost)
             for instance_obj in list_instances(dhost):
