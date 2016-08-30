@@ -14,11 +14,11 @@ def check_hosts(zk,host_name):
     # exceptions can be handled properly
     print("Before Start")
     #log.info("Before Start")
-    leader = leaderCheck(zk=zk)
-    #create = createNodeinAll(zk=zk,host_name=host_name)
-    if (leader == host_name):
-        print("Leader.....!"+host_name)
-        try:
+    try:
+        leader = leaderCheck(zk=zk)
+        #create = createNodeinAll(zk=zk,host_name=host_name)
+        if (leader == host_name):
+            print("Leader.....!"+host_name)
             host_dict = list_hosts()
             allhosts = host_dict['all_list']
             dhosts = host_dict['down_list']
@@ -93,17 +93,17 @@ def check_hosts(zk,host_name):
                 else:
                     print("Un-Manageble Disaster")
 
-        except kexception.NoNodeError:
-            print("No Node Error")
-        except tuple(kexception):
-            print("Kazoo Exception.....: ",e)
-            time.sleep(2)
-            zk = KazooClient(hosts='127.0.0.1:2181')
-            zk.start()
-            Node_creation = createNodeinAll(zk=zk, host_name=host_name)
-            election_Node = election_node(zk=zk, host_name=host_name)
-        except:
-            print(e)
+    except kexception.NoNodeError:
+        print("No Node Error")
+    except tuple(kexception):
+        print("Kazoo Exception.....: ",e)
+        time.sleep(2)
+        zk = KazooClient(hosts='127.0.0.1:2181')
+        zk.start()
+        Node_creation = createNodeinAll(zk=zk, host_name=host_name)
+        election_Node = election_node(zk=zk, host_name=host_name)
+    except:
+        print(e)
 
 
 
