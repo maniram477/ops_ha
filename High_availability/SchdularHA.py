@@ -59,10 +59,13 @@ def check_hosts(zk,host_name):
                             #skip if maintance
                             if host not in dishosts:
                                 print(host," is not disabled")
-                                #adding host down time
-                                host_down_time = time.time()
-                                host_down_time = str.encode(str(host_down_time))
-                                if(zk.exists("/openstack_ha/hosts/time_out/"+host)==False):
+
+                                if(zk.exists("/openstack_ha/hosts/time_out/"+host)==None):
+                                    print("Inside Time out Node Creation")
+                                    #adding host down time
+                                    host_down_time = time.time()
+                                    host_down_time = str.encode(str(host_down_time))
+                                    print(host_down_time)
                                     zk.create("/openstack_ha/hosts/time_out/"+host, host_down_time)
                                 # add ping test
                                 ping_status=ping_check(host)
@@ -75,6 +78,7 @@ def check_hosts(zk,host_name):
                                         instance_migration(dhosts,test)
                                     else:
                                         #check for time out
+                                        print("Checking Timeout for Down Node",host)
                                         curent_time = time.time()
                                         if (zk.exists("/openstack_ha/hosts/time_out/"+host)):
                                             down_host_failuretime = zk.get("/openstack_ha/hosts/time_out/"+host)[0]

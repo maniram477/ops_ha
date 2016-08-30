@@ -66,6 +66,7 @@ def get_ip_address(ifname):
 
 # Health Check Functions
 def ping_check(hostname):
+    print("Pinging ",hostname)
     response = os.system("ping -c 1 " + hostname)
 
     #and then check the response...
