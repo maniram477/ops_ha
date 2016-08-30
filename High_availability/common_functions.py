@@ -11,7 +11,6 @@ import kazoo.exceptions as kexception
 import kazoo
 from kazoo.client import KazooClient
 import os
-from ha_agent import test,migrate
 
 
 controller_ip="30.20.0.2"
@@ -419,7 +418,7 @@ def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
     return instance_object
  
 #HA-Agent Migration Functions
-def instance_migration(dhosts):
+def instance_migration(dhosts,task):
     for dhost in dhosts:
 
         if(zk.exists("/openstack_ha/instances/pending/" + dhost)==None):
@@ -438,10 +437,10 @@ def instance_migration(dhosts):
                 zk.create("/openstack_ha/instances/down_instances/" + dhost+"/"+instance_obj.id)
                 #create instance detatils under the down hosts in zookeepr
                 #migrate.apply_async((instance_obj.id,), queue='mars', countdown=wait_time)
-        message_queue(dhost)
+        message_queue(dhost,task)
 
 
-def message_queue(dhost=None):
+def message_queue(dhost=None,task=None):
     instance_list=zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
     pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
 
@@ -456,7 +455,7 @@ def message_queue(dhost=None):
                 try:
                     zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
                     zk.delete("/openstack_ha/instances/down_instances/" + dhost + "/" + instance_list[i],recursive=True)
-                    test.apply_async((instances_list[i],), queue='mars', countdown=5)
+                    task.apply_async((instances_list[i],), queue='mars', countdown=5)
                 except Exception as e:
                     print(e)
 

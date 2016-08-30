@@ -2,11 +2,12 @@
 #scheduler
 from StructureZoo import  *
 from common_functions import *
-from ha_agent import test
+from ha_agent import test,migrate
 import time
 #import nova Exceptions
 
-def check_hosts(zk,host_name):
+
+def check_hosts(zk,host_name,task):
     """Checks Host status of all hosts using nova clients nova.services.list(binary="nova-compute")
     If a host is down disables the host and puts instances on the migration queue
     """
@@ -75,7 +76,7 @@ def check_hosts(zk,host_name):
                                         print(" api down host :"+host+"present in zookeeper down_node:"+zk_down_Node)
                                         print("Strart migration....!!!!!")
                                         print("migratie instance from the "+host)
-                                        instance_migration(dhosts)
+                                        instance_migration(dhosts,task)
                                     else:
                                         #check for time out
                                         print("Checking Timeout for Down Node",host)
@@ -88,7 +89,7 @@ def check_hosts(zk,host_name):
                                             print(type(down_host_failuretime))
                                             time_interval = curent_time - down_host_failuretime
                                             if time_interval>migrate_time:
-                                                instance_migration(dhosts)
+                                                instance_migration(dhosts,task)
                                             else:
                                                 print("Will Wait for another %d"%(migrate_time-time_interval))
                                         else:
@@ -127,5 +128,5 @@ election_Node=election_node(zk=zk,host_name=host_name)
 
 
 while True:
-    check_hosts(zk,host_name)
+    check_hosts(zk,host_name,test)
     time.sleep(scheduler_interval)
