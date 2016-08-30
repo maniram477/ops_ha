@@ -38,9 +38,13 @@ def check_hosts(zk,host_name):
                 if(len(zk_down_Node))==0:
                     print("Hosts working Normally....!!!")
                 else:
-                    print("Zookeeper node Failure..!")
+                    for node in zk_down_Node:
+                        print("Zookeeper node Failure..! ",node)
             else:
                 print("Cluster in Disaster")
+                if(len(zk_down_Node))!=0:
+                    for node in zk_down_Node:
+                        print("Zookeeper node Failure..! ",node)
                 # Here check the host in dhosts(api) are present in zk_down_Node
                 #if present start the instance migrations
                 # Checking whether Cluster is Still under HA Policy
@@ -87,11 +91,11 @@ def check_hosts(zk,host_name):
                             else:
                                 print("Host %s Under Maintenance"%host)
                         elif host in zk_down:
-                            print("Already handled...!!!!!")
+                            print("Host %s Already handled...!!!!!"%host)
                         else:
-                            print("api failure....!!!!!")
+                            print("api failure....!!!!!",host)
                 else:
-                    print("Un-Manageble Disaster")
+                    print("Un-Manageble Disaster Too many Nodes are down")
 
     except kexception.NoNodeError:
         print("No Node Error")
