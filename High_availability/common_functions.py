@@ -2,6 +2,12 @@
 from novaclient import client as nova_client
 from neutronclient.v2_0 import client as neutron_client
 from cinderclient import client as cinder_client
+import socket
+import fcntl
+import struct
+from retrying import retry
+import inspect
+import kazoo.exceptions as kexception
 
 
 controller_ip="30.20.0.2"
@@ -9,6 +15,21 @@ user ="admin"
 passwd = "admin"
 tenant = "admin"
 wait_time = 5 #In Seconds - Based on SLA
+
+host_name=socket.gethostname()
+
+
+# Use Variables inside retry Functions
+scheduler_interval = 60 #In Seconds
+api_retry_count = 3 
+api_retry_interval * 1000 #In MilliSeconds
+
+poll_status_count = 100
+poll_status_interval = 2000 #In MilliSeconds
+
+
+maintenance_state = ['maintenance','skip','pause_migration']
+kazoo_exceptions = [obj for name, obj in inspect.getmembers(kexception) if inspect.isclass(obj) and issubclass(obj, Exception)]
 
 
 nova = nova_client.Client(2,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip,connection_pool=True)
@@ -75,6 +96,31 @@ def dbwrap(func):
     return new_func
 
 
+# Host Functions
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
+def list_hosts():
+    try:
+        return {'all_list': [host.host for host in nova.services.list(binary="nova-compute")],\
+                'down_list': [host.host for host in nova.services.list(binary="nova-compute") if host.state.lower() == 'down'],\
+                'disabled_list': [host.host for host in nova.services.list(binary="nova-compute") if host.status.lower() == 'disabled' if host.disabled_reason in maintenance_state]\
+               }
+    except Exception as ee:
+        print(ee)
+        raise Exception('step0')
+
+def down_hosts():
+    return [host.host for host in nova.services.list(binary="nova-compute") if host.state.lower() == 'down']
+
+
+def active_hosts():
+    return [host.host for host in nova.services.list(binary="nova-compute") if host.state.lower() == 'up']
+
+
+def host_disable():
+    pass
+
+
+
 
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
 def client_init()
@@ -92,23 +138,6 @@ def client_init()
 
 
 
-# Host Functions
-def list_hosts():
-    return {'all_list': [host.host for host in nova.services.list(binary="nova-compute")],\
-            'down_list': [host.host for host in nova.services.list(binary="nova-compute") if host.state.lower() == 'down'],\
-            'disabled_list': [{host.host:host.disabled_reason} for host in nova.services.list(binary="nova-compute") if host.status.lower() == 'disabled']\
-           }
-
-def down_hosts():
-    return [host.host for host in nova.services.list(binary="nova-compute") if host.state.lower() == 'down']
-
-
-def active_hosts():
-    return [host.host for host in nova.services.list(binary="nova-compute") if host.state.lower() == 'up']
-
-
-def host_disable():
-    pass
 
 # Instacne Functions
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
@@ -121,7 +150,7 @@ def info_collection(instance_id):
         return instance,info,ip_list,bdm,extra
     except Exception as ee:
         print(ee)
-        raise Exception('stpe2')
+        raise Exception('step2')
 
         
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
@@ -382,3 +411,38 @@ def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
     create_instance_status(instance_object)
     return instance_object
  
+#HA-Agent Migration Functions
+def instance_migration(dhosts,task):
+    for dhost in dhosts:
+
+            if(zk.exists("/openstack_ha/instances/down_host" + dhost)==False):
+                zk.create("/openstack_ha/instances/down_host" + dhost, b"a value", None, True)
+                for instance_obj in list_instances(dhost):
+                    # Addon-Feature
+                    # Can Add another check to only select instances which have HA option enabled
+                    # print(instance_obj.id)
+                    zk.create("/openstack_ha/instances/down_host/" + dhost+"/"+instance_obj.id, b"a value", None, True)
+                    #create instance detatils under the down hosts in zookeepr
+                    #migrate.apply_async((instance_obj.id,), queue='mars', countdown=wait_time)
+        message_queue(dhost,task)
+
+def message_queue(dhost=dhost,task):
+    instance_list=zk.get_children("/openstack_ha/instances/down_host/" + dhost)
+    if(len(instance_list)!=0):
+        #while(len(instance_list)!=0)
+        pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
+        instance_list = zk.get_children("/openstack_ha/instances/down_host/" + dhost)
+        if(pending_instances_list<10):
+            add_pending_instance_list=10-len(pending_instances_list)
+            for i in range(add_pending_instance_list):
+                try:
+                    zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
+                    zk.delete("/openstack_ha/instances/down_host/" + dhost + "/" + instance_list[i],recursive=True)
+                except:
+                    pass
+            afteradd_pending_instances_list = zk.get_children("/openstack_ha/instances/pending/" + dhost)
+            for j in afteradd_pending_instances_list:
+                task.apply_async((afteradd_pending_instances_list[j],), queue='mars', countdown=wait_time)
+    else:
+        if (zk.exists("/openstack_ha/hosts/down/" + dhost) == False):
+            zk.create("/openstack_ha/hosts/down/" + dhost, b"a value", None, True)

@@ -5,11 +5,15 @@
 from celery import Celery
 from common_functions import *
 import time
-from retrying import retry
 
 
 celery = Celery('migrate')
 celery.config_from_object('config')
+
+@celery.task(name='migrate.test')
+def test(instance_id):
+    print(instance_id)
+
 
 @celery.task(name='migrate.migrate')
 def migrate(instance_id):
