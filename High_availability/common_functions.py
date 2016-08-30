@@ -419,31 +419,31 @@ def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
 #HA-Agent Migration Functions
 def instance_migration(dhosts,task):
     for dhost in dhosts:
-        if(zk.exists("/openstack_ha/instances/down_host" + dhost)==None):
-            zk.create("/openstack_ha/instances/down_host" + dhost, b"a value", None, True)
+        if(zk.exists("/openstack_ha/instances/down_instances/" + dhost)==None):
+            zk.create("/openstack_ha/instances/down_instances/" + dhost, b"a value", None, True)
             for instance_obj in list_instances(dhost):
                 # Addon-Feature
                 # Can Add another check to only select instances which have HA option enabled
                 # print(instance_obj.id)
-                zk.create("/openstack_ha/instances/down_host/" + dhost+"/"+instance_obj.id, b"a value", None, True)
+                zk.create("/openstack_ha/instances/down_instances/" + dhost+"/"+instance_obj.id, b"a value", None, True)
                 #create instance detatils under the down hosts in zookeepr
                 #migrate.apply_async((instance_obj.id,), queue='mars', countdown=wait_time)
         message_queue(dhost,task)
 
 
 def message_queue(dhost=None,task=None):
-    instance_list=zk.get_children("/openstack_ha/instances/down_host/" + dhost)
+    instance_list=zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
     if(len(instance_list)!=0):
         #while(len(instance_list)!=0)
         pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
-        instance_list = zk.get_children("/openstack_ha/instances/down_host/" + dhost)
+        instance_list = zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
         print("Instances yet to be handled: ",instance_list," Instances on Queue: ", pending_instances_list )
         if(pending_instances_list<10):
             add_pending_instance_list=10-len(pending_instances_list)
             for i in range(add_pending_instance_list):
                 try:
                     zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
-                    zk.delete("/openstack_ha/instances/down_host/" + dhost + "/" + instance_list[i],recursive=True)
+                    zk.delete("/openstack_ha/instances/down_instances/" + dhost + "/" + instance_list[i],recursive=True)
                 except:
                     pass
             afteradd_pending_instances_list = zk.get_children("/openstack_ha/instances/pending/" + dhost)
@@ -452,4 +452,3 @@ def message_queue(dhost=None,task=None):
     else:
         if (zk.exists("/openstack_ha/hosts/down/" + dhost) == None):
             zk.create("/openstack_ha/hosts/down/" + dhost, b"a value", None, True)
-            
