@@ -55,9 +55,10 @@ def check_hosts(zk,host_name):
                     for host in dhosts:
                         #checks whether down host from api is un handled(not present in zoo keeper down node)
                         if host in zk_down_Node:
+                            print("Both host and zookeeper on ",host,' are down')
                             #skip if maintance
                             if host not in dishosts:
-
+                                print(host," is not disabled")
                                 #adding host down time
                                 host_down_time = time.time()
                                 host_down_time = str.encode(str(host_down_time))
@@ -66,7 +67,7 @@ def check_hosts(zk,host_name):
                                 # add ping test
                                 ping_status=ping_check(host)
                                 if(ping_status==False):
-                                    
+                                    print("Ping test also Failed on ",host," proceed with migration")
                                     if (zk.exists("/openstack_ha/hosts/start_migration/"+ host)): # it check the permission from the dashborad
                                         print(" api down host :"+host+"present in zookeeper down_node:"+zk_down_Node)
                                         print("Strart migration....!!!!!")
