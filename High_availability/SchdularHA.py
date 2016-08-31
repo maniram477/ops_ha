@@ -32,9 +32,7 @@ def check_hosts(zk,host_name,task):
             zk_down = zk.get_children("/openstack_ha/hosts/down")
 
             # Finds nodes that are down and not handled from zookeeper
-            calculated_down_nodes = []
-            if(len(zk_all)!=(len(zk_alive)+len(zk_down))):
-                calculated_down_nodes =  list(set(zk_all) - set(zk_alive))
+            calculated_down_nodes =  list(set(zk_all) - set(zk_alive))
 
             # Scheduler Only failure
             scheduler_down = list(set(calculated_down_nodes).difference(set(api_down_nodes)))
