@@ -54,7 +54,7 @@ def check_hosts(zk,host_name,task):
                     print("Hosts working Normally....!!!")
             else:
                 print("More likely Disaster")
-                print("Both Api and HA scheduler on ",host,' are down')
+                
                 #skip if maintance
                 # Here check the host in api_down_nodes(api) are present in calculated_down_nodes
                 #if present start the instance migrations
@@ -63,6 +63,7 @@ def check_hosts(zk,host_name,task):
                 if len(api_scheduler_down) <= len(allhosts) - 1:
                     print("Seems like Manageble Disaster")
                     for host in api_scheduler_down:
+                        print("Both Api and HA scheduler on ",host,' are down')
                         #checks whether down host from api is un handled(not present in down node calculate from zookeeper )
                         #(host in zk_all and host not in zk_alive) == calculated_down_nodes
                         if host in zk_down:
