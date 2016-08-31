@@ -23,7 +23,7 @@ def check_hosts(zk,host_name,task):
             print("Leader.....!"+host_name)
             host_dict = list_hosts()
             allhosts = host_dict['all_list']
-            dhosts = host_dict['down_list']
+            api_down_nodes = host_dict['down_list']
             dishosts = host_dict['disabled_list']
 
             zk_all = zk.get_children("/openstack_ha/hosts/all")
@@ -32,80 +32,85 @@ def check_hosts(zk,host_name,task):
             zk_down = zk.get_children("/openstack_ha/hosts/down")
 
             # Finds nodes that are down and not handled from zookeeper
-            zk_down_Node = []
+            calculated_down_nodes = []
             if(len(zk_all)!=(len(zk_alive)+len(zk_down))):
-                zk_down_Node =  list(set(zk_all) - set(zk_alive))
+                calculated_down_nodes =  list(set(zk_all) - set(zk_alive))
 
-            if(len(dhosts))==0:
-                if(len(zk_down_Node))==0:
+            # Scheduler Only failure
+            scheduler_down = list(set(api_down_nodes).union(set(calculated_down_nodes)).difference(set(api_down_nodes)))
+            for node in scheduler_down:
+                print("Scheduler Failed on Node : %s "%node)
+
+            # Api only failure | Complete Host Failure ( Not yet Handled | Handling | Handled  )
+            if(len(api_down_nodes))==0:
+                if(len(calculated_down_nodes))==0:
                     print("Hosts working Normally....!!!")
-                else:
-                    for node in zk_down_Node:
-                        print("Zookeeper node Failure..! ",node)
-                        if (zk.exists("/openstack_ha/hosts/down/" + node) == None):
-                            zk.create("/openstack_ha/hosts/down/" + node)
             else:
                 print("Cluster in Disaster")
-                if(len(zk_down_Node))!=0:
-                    for node in zk_down_Node:
-                        print("Zookeeper node Failure..! ",node)
-                        if (zk.exists("/openstack_ha/hosts/down/" + node) == None):
-                            zk.create("/openstack_ha/hosts/down/" + node)
-                # Here check the host in dhosts(api) are present in zk_down_Node
+                
+                # Here check the host in api_down_nodes(api) are present in calculated_down_nodes
                 #if present start the instance migrations
                 # Checking whether Cluster is Still under HA Policy
                 #  high availabity contiditions
-                if len(dhosts) <= len(allhosts) - 1:
+                if len(api_down_nodes) <= len(allhosts) - 1:
                     print("Manageble Disaster")
-                    for host in dhosts:
-                        #checks whether down host from api is un handled(not present in zoo keeper down node)
-                        if host in zk_down_Node:
-                            print("Both host and zookeeper on ",host,' are down')
+                    for host in api_down_nodes:
+                        #checks whether down host from api is un handled(not present in down node calculate from zookeeper )
+                        #(host in zk_all and host not in zk_alive) == calculated_down_nodes
+                        if host in calculated_down_nodes:
+                            print("Both Api and scheduler on ",host,' are down')
                             #skip if maintance
-                            if host not in dishosts:
-                                print(host," is not disabled")
-
-                                if(zk.exists("/openstack_ha/hosts/time_out/"+host)==None):
-                                    print("Inside Time out Node Creation")
-                                    #adding host down time
-                                    host_down_time = time.time()
-                                    host_down_time = str.encode(str(host_down_time))
-                                    print(host_down_time)
-                                    zk.create("/openstack_ha/hosts/time_out/"+host, host_down_time)
-                                # add ping test
-                                ping_status=ping_check(host)
-                                if(ping_status==False):
-                                    print("Ping test also Failed on ",host," proceed with migration")
-                                    if (zk.exists("/openstack_ha/hosts/start_migration/"+ host)): # it check the permission from the dashborad
-                                        print(" api down host :"+host+"present in zookeeper down_node:"+zk_down_Node)
-                                        print("Strart migration....!!!!!")
-                                        print("migratie instance from the "+host)
-                                        instance_migration(dhosts,task)
-                                    else:
-                                        #check for time out
-                                        print("Checking Timeout for Down Node",host)
-                                        curent_time = time.time()
-                                        if (zk.exists("/openstack_ha/hosts/time_out/"+host)):
-                                            down_host_failuretime = zk.get("/openstack_ha/hosts/time_out/"+host)[0]
-                                            down_host_failuretime = down_host_failuretime.decode(encoding='UTF-8')
-                                            print("down_host_failuretime",down_host_failuretime)
-                                            down_host_failuretime = float(down_host_failuretime)
-                                            print(type(down_host_failuretime))
-                                            time_interval = curent_time - down_host_failuretime
-                                            if time_interval>migrate_time:
-                                                instance_migration(dhosts,task)
-                                            else:
-                                                print("Will Wait for another %d"%(migrate_time-time_interval))
-                                        else:
-                                            print("%s Node Does'nt have TimeOut Value. Hence will not migrate forever"%host)
-                                else:
-                                    print("ping test success....!!! Node is alive... Please Check the APIs and other Openstack Services")
+                            if host in zk_down:
+                                #Node will present in zk_down only when all of it's instances are migrated
+                                print("Host %s Already handled...!!!!!"%host)
                             else:
-                                print("Host %s Under Maintenance"%host)
-                        elif host in zk_down:
-                            print("Host %s Already handled...!!!!!"%host)
+                                #Node down on api,zk and ( not handled | handling )
+                                if host not in dishosts:
+                                    #Node Not disabled | disabled reason is not skippable
+                                    print(host," is not disabled or reason is not maintenance")
+                                    if(zk.exists("/openstack_ha/hosts/time_out/"+host)==None):
+                                        print("Inside Time out Node Creation")
+                                        #adding host down time
+                                        host_down_time = time.time()
+                                        host_down_time = str.encode(str(host_down_time))
+                                        print(host_down_time)
+                                        zk.create("/openstack_ha/hosts/time_out/"+host, host_down_time)
+                                    # add ping test
+                                    ping_status=ping_check(host)
+                                    if(ping_status):
+                                        print("ping test success....!!! Node is alive... Please Check the APIs and other Openstack Services")
+                                    else:
+                                        print("Ping test also Failed on ",host," proceed with migration")
+                                        if (zk.exists("/openstack_ha/hosts/start_migration/"+ host)): # it checks the permission from the dashborad
+                                            print(" api down host :"+host+"present in zookeeper down_node:"+calculated_down_nodes)
+                                            print("Strart migration....!!!!!")
+                                            print("migratie instance from the "+host)
+                                            instance_migration(api_down_nodes,task)
+                                        else:
+                                            #check for time out
+                                            print("Checking Timeout for Down Node",host)
+                                            curent_time = time.time()
+                                            if (zk.exists("/openstack_ha/hosts/time_out/"+host)):
+                                                down_host_failuretime = zk.get("/openstack_ha/hosts/time_out/"+host)[0]
+                                                down_host_failuretime = down_host_failuretime.decode(encoding='UTF-8')
+                                                print("down_host_failuretime",down_host_failuretime)
+                                                down_host_failuretime = float(down_host_failuretime)
+                                                print(type(down_host_failuretime))
+                                                time_interval = curent_time - down_host_failuretime
+                                                if time_interval>migrate_time:
+                                                    instance_migration(api_down_nodes,task)
+                                                else:
+                                                    print("Will Wait for another %d"%(migrate_time-time_interval))
+                                            else:
+                                                print("%s Node Does'nt have TimeOut Value. Hence will not migrate forever"%host)
+                                else:
+                                    print("Host %s Under Maintenance"%host)
                         else:
-                            print("api failure....!!!!!",host)
+                            if host not in zk_all:
+                                print("Scheduler not even initialized")
+                            else:
+                                # host in zk_alive: Api says Node is down but zookeeper says it's alive
+                                print("api failure....!!!!!",host)
                 else:
                     print("Un-Manageble Disaster Too many Nodes are down")
 
