@@ -11,7 +11,8 @@ import kazoo.exceptions as kexception
 import kazoo
 from kazoo.client import KazooClient
 import os
-
+from nova import exception as nova_exceptions
+from novaclient import exceptions as novaclient_exceptions
 
 controller_ip="30.20.0.2"
 user ="admin"
@@ -30,7 +31,7 @@ api_retry_interval = 1000 #In MilliSeconds
 poll_status_count = 100
 poll_status_interval = 2000 #In MilliSeconds
 
-migrate_time=60# In Seconds
+migrate_time=6# In Seconds
 
 maintenance_state = ['maintenance','skip','pause_migration']
 kazoo_exceptions = [obj for name, obj in inspect.getmembers(kexception) if inspect.isclass(obj) and issubclass(obj, Exception)]
@@ -75,7 +76,7 @@ def ping_check(hostname):
     #and then check the response...
     if response == 0:
         print hostname, 'is up!'
-        return True
+        return False
     else:
         print hostname, 'is down!'
         return False
@@ -147,8 +148,9 @@ def client_init():
 
 # Instacne Functions
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
-def info_collection(instance_id):
+def info_collection(instance_id,cinder):
     try:
+        print("INside the inf_collection...!",cinder)
         instance = nova.servers.get(instance_id)
         info = instance._info
         ip_list = floating_ip_check(info)
@@ -170,18 +172,19 @@ def delete_instance(instance_object):
     except Exception as e:
         print('Exception in step5',e)
 
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=100,wait_fixed=10000)
 def delete_instance_status(instance_object):
     try:
         allow_retry_task = ['deleting',None]
         tmp_ins = nova.servers.get(instance_object.id)
         if tmp_ins._info['OS-EXT-STS:vm_state'] == 'error':
             tmp_ins.force_delete()
+            
         elif tmp_ins._info['OS-EXT-STS:task_state'] in allow_retry_task:
             raise Exception("poll")
     except Exception as e:
         print('Exception in step6: ',e)
-        if isinstance(e,exceptions.NotFound):
+        if isinstance(e,novaclient_exceptions.NotFound):
             print("Instance Not Found hence deleted")
         else:
             raise Exception(e) 
@@ -196,20 +199,6 @@ def list_instances(host_name=None):
     ins_list = nova.servers.list(search_opts={'host':host_name})
     return ins_list
 
-def delete_instance(instance_object):
-    """Input - Instance Object
-    Op - Deletes Instance
-    Output - True | False
-    """
-    try:
-        nova.servers.delete(instance_object.id)
-    except Exception as e:
-        print e
-        return False
-    else:
-        print instance_object.id,"Deleted"
-        return True
-    
 @dbwrap
 def get_instance_uuid(cursor,name):
     cursor.execute("select uuid from nova.instances  where display_name='%s' and deleted=0 order by created_at desc;"%name)
@@ -230,7 +219,7 @@ def get_instance(name):
     return instance
  
 
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)               
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=10,wait_fixed=10000)               
 def create_instance(name=None,image=None,bdm=None,\
                          flavor=None,nics=None,availability_zone=None,\
                          disk_config=None,meta=None,security_groups=None):
@@ -243,7 +232,7 @@ def create_instance(name=None,image=None,bdm=None,\
     except Exception as e:
         print('Exception in step8',e)
 
-@retry(retry_on_exception=poll_vm_status,stop_max_attempt_number=3,wait_fixed=1000)               
+@retry(retry_on_exception=poll_vm_status,stop_max_attempt_number=100,wait_fixed=10000)               
 def create_instance_status(instance_object):
     try:        
         allow_retry = ['spawning','building','starting','powering_on','scheduling','block_device_mapping','networking']
@@ -259,7 +248,8 @@ def create_instance_status(instance_object):
         print('Exception in step9',e)
         if e.message == 'error':
             print("Instance - %s went to ERROR state'%(instance_object.id)")
-        raise Exception(e)
+        else:
+            raise Exception(e)
     
 
     
@@ -276,12 +266,12 @@ def detach_volume(volume,cinder=None):
     Output - True | False
     """
     try:
-        cinder.volumes.detach(volume[dev])
+        cinder.volumes.detach(volume)
     except Exception as e:
         print('Soft Exception in step3',e)
 
-@retry(retry_on_exception=poll_status,stop_max_attempt_number=3,wait_fixed=1000)      
-def detached_volume_status(volume):
+@retry(retry_on_exception=poll_status,stop_max_attempt_number=10,wait_fixed=1000)      
+def detached_volume_status(volume,cinder=None):
     try:
         allow_retry = ['detaching','in-use'] 
         tmp_vol = cinder.volumes.get(volume)
@@ -305,6 +295,8 @@ def cinder_volume_check(info,cinder=None):
     try:
         volumes = {cinder.volumes.get(x['id']).attachments[0]['device']:x['id'] for x in info.get('os-extended-volumes:volumes_attached') }
         
+        #tmp_volumes = [ for x in info.get('os-extended-volumes:volumes_attached') ]
+        #volumes = {cinder.volumes.get(x['id']).attachments[0]['device']:x['id'] for x in tmp_volumes }
         
         if volumes.has_key('/dev/vda'):
             bdm = {'vda': volumes['/dev/vda']}
@@ -321,7 +313,7 @@ def cinder_volume_check(info,cinder=None):
     return bdm,volumes
 
         
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)                  
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=100,wait_fixed=1000)                  
 def attach_volumes(instance,volumes):
     """Input - Volumes - Dictionary Containing volume details 
     Eg: {'vdb':'16e5593c-15c7-48a6-b46f-2bda2951e3b0','vdc':'16e5593c-15c7-48a6-b46f-2bda2951esd0'}

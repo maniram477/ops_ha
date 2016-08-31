@@ -20,7 +20,7 @@ def migrate(instance_id):
     try:
         # Seperate Each unit of function and give retry for each one separately
         cinder,neutron = client_init()
-        instance_object,info,ip_list,bdm,extra = info_collection(instance_id)
+        instance_object,info,ip_list,bdm,extra = info_collection(instance_id,cinder)
         tmp_host = info['OS-EXT-SRV-ATTR:host']
         # Check Whether BDM is available
         print("Information Collected")
@@ -28,7 +28,7 @@ def migrate(instance_id):
         if len(extra) > 0:
             for volume in extra:
                 detach_volume(extra[volume],cinder=cinder)
-                detached_volume_status(extra[volume])
+                detached_volume_status(extra[volume],cinder=cinder)
 
         print("Extra Volume Detached")
         
