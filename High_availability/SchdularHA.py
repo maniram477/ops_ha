@@ -37,17 +37,17 @@ def check_hosts(zk,host_name,task):
                 calculated_down_nodes =  list(set(zk_all) - set(zk_alive))
 
             # Scheduler Only failure
-            scheduler_down = list(set(calculated_down_nodes).difference(set(api_down_nodes))
+            scheduler_down = list(set(calculated_down_nodes).difference(set(api_down_nodes)))
             for node in scheduler_down:
                 print("HA Scheduler Failed on Node : %s "%node)
             
-            api_down = list(set(api_down_nodes).difference(set(calculated_down_nodes))
+            api_down = list(set(api_down_nodes).difference(set(calculated_down_nodes)))
             for node in api_down:
                 print("API Failed on Node : %s "%node)
-                if host not in zk_all:
-                                print("HA Scheduler not even initialized %s"%host)
+                if node not in zk_all:
+                                print("HA Scheduler not even initialized %s"%node)
 
-            api_scheduler_down = list(set(api_down_nodes).intersection(set(calculated_down_nodes))
+            api_scheduler_down = list(set(api_down_nodes).intersection(set(calculated_down_nodes)))
 
             # Api only failure | Complete Host Failure ( Not yet Handled | Handling | Handled  )
             if(len(api_scheduler_down))==0:
