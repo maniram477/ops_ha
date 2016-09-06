@@ -4,9 +4,9 @@ from StructureZoo import  *
 from common_functions import *
 from ha_agent import migrate
 import time
-
-
-#import nova Exceptions
+import logging.config
+logging.config.fileConfig("ha_agent.conf")
+scheduler_log=logging.getLogger('scheduler')
 
 
 def check_hosts(zk,host_name,task,scheduler_log):
@@ -22,7 +22,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
         #create = createNodeinAll(zk=zk,host_name=host_name)
         imalive(zk=zk)
         if (leader == host_name):
-            scheduler_log.debug("Leader Name.....!",host_name)
+            scheduler_log.debug("Leader Name.....!%s"%host_name)
             host_dict = list_hosts()
             allhosts = host_dict['all_list']
             api_down_nodes = host_dict['down_list']
@@ -131,7 +131,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
 #"""Import ensureBasicStructure()--It ensure the DataStructure in Zookeeper and createNode()--It ensure the node is alive. Functions are from new_basicstrut """
 #zk = KazooClient(hosts='127.0.0.1:2181')
 zk.start()
-BasicStruct=ensureBasicStructure(zk=zk,scheduler_log=scheduler_log)
+BasicStruct=ensureBasicStructure(zk=zk)
 Node_creation=createNodeinAll(zk=zk,host_name=host_name,scheduler_log=scheduler_log)
 election_Node=election_node(zk=zk,host_name=host_name,scheduler_log=scheduler_log)
 
@@ -139,3 +139,4 @@ election_Node=election_node(zk=zk,host_name=host_name,scheduler_log=scheduler_lo
 while True:
     check_hosts(zk,host_name,migrate,scheduler_log)
     time.sleep(scheduler_interval)
+
