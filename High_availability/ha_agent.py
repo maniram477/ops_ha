@@ -10,9 +10,7 @@ import time
 celery = Celery('migrate')
 celery.config_from_object('config')
 
-@celery.task(name='migrate.test')
-def test(instance_id):
-    print(instance_id)
+
 
 
 @celery.task(name='migrate.migrate')
@@ -25,11 +23,11 @@ def migrate(instance_id):
         # Check Whether BDM is available
         print("Information Collected")
 
-        if len(extra) > 0:
+        """if len(extra) > 0:
             for volume in extra:
                 detach_volume(extra[volume],cinder=cinder)
                 detached_volume_status(extra[volume],cinder=cinder)
-
+"""
         print("Extra Volume Detached")
         
         # Update BDM Delete on Terminate Status
@@ -43,7 +41,10 @@ def migrate(instance_id):
         # Test 1 : Update Volumes set BDM as available and Create New Instance from it.
         
         # Can add one more layer of retry for entire instance recreation process
+        detached_volume_status(bdm['vda'], cinder=cinder)
+
         new_instance = recreate_instance(instance_object=instance_object,bdm=bdm,neutron=neutron)
+        create_instance_status(new_instance)
         print("Recreate Finished")
         new_info = new_instance._info
         new_instance_id = new_instance.id

@@ -14,9 +14,9 @@ import os
 from nova import exception as nova_exceptions
 from novaclient import exceptions as novaclient_exceptions
 
-controller_ip="30.20.0.2"
+controller_ip="30.20.0.9"
 user ="admin"
-passwd = "admin"
+passwd = "p@ssw0rd"
 tenant = "admin"
 wait_time = 5 #In Seconds - Based on SLA
 
@@ -76,7 +76,7 @@ def ping_check(hostname):
     #and then check the response...
     if response == 0:
         print hostname, 'is up!'
-        return False
+        return True
     else:
         print hostname, 'is down!'
         return False
@@ -276,6 +276,7 @@ def detached_volume_status(volume,cinder=None):
         allow_retry = ['detaching','in-use'] 
         tmp_vol = cinder.volumes.get(volume)
         if tmp_vol.status in allow_retry:
+            tmp_vol.detach()
             raise Exception("poll")
     except Exception as e:
         print(e)
@@ -406,7 +407,7 @@ def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
     instance_object = create_instance(name=name,image=image,bdm=bdm,\
                     flavor=flavor,nics=nics,availability_zone=availability_zone,\
                     disk_config=disk_config,meta=meta,security_groups=security_groups) 
-    create_instance_status(instance_object)
+    #create_instance_status(instance_object)
     return instance_object
  
 #HA-Agent Migration Functions

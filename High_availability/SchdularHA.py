@@ -2,7 +2,7 @@
 #scheduler
 from StructureZoo import  *
 from common_functions import *
-from ha_agent import test,migrate
+from ha_agent import migrate
 import time
 #import nova Exceptions
 
@@ -137,5 +137,5 @@ election_Node=election_node(zk=zk,host_name=host_name)
 
 
 while True:
-    check_hosts(zk,host_name,test)
+    check_hosts(zk,host_name,migrate)
     time.sleep(scheduler_interval)
