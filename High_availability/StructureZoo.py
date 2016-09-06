@@ -7,6 +7,9 @@ import time
 zk = KazooClient(hosts='127.0.0.1:2181')
 zk.start()
 host_name=socket.gethostname()
+import logging.config
+logging.config.fileConfig("ha_agent.conf")
+scheduler_log=logging.getLogger('scheduler')
 
 def ensureBasicStructure(zk=zk):
     zk.ensure_path("/openstack_ha")
@@ -25,7 +28,7 @@ def ensureBasicStructure(zk=zk):
     zk.ensure_path("/openstack_ha/hosts/time_out")
 
 
-def createNodeinAll(zk=zk,host_name=host_name):
+def createNodeinAll(zk=zk,host_name=host_name,scheduler_log=scheduler_log):
     try:
         zk.create("/openstack_ha/hosts/all/" + host_name)
     except kazoo.exceptions.NodeExistsError:
@@ -40,28 +43,28 @@ def createNodeinAll(zk=zk,host_name=host_name):
     try:
         zk.delete("/openstack_ha/hosts/down/" + host_name, recursive=True)
     except kazoo.exceptions.NoNodeException:
-        print("Node not present in Down path")
+        scheduler_log.debug("Node not present in Down path")
     try:
         zk.delete("/openstack_ha/hosts/time_out/" + host_name, recursive=True)
     except kazoo.exceptions.NoNodeException:
-        print("Node not present in Down path")
+        scheduler_log.debug("Node not present in Down path")
     try:
         zk.delete("/openstack_ha/instances/down_host/" + host_name, recursive=True)
     except kazoo.exceptions.NoNodeException:
-        print("Node not present in Down path")
+        scheduler_log.debug("Node not present in Down path")
 
-def imalive(zk=zk,host_name=host_name):
+def imalive(zk=zk,host_name=host_name,scheduler_log=scheduler_log):
     try:
         zk.create("/openstack_ha/hosts/alive/" + host_name, b"a value", None, True)
     except kazoo.exceptions.NodeExistsError:
         #print("Node all ready created in alive")    
         pass
 
-def election_node(zk=zk,host_name=host_name):
+def election_node(zk=zk,host_name=host_name,scheduler_log=scheduler_log):
     try:
         zk.create("/openstack_ha/hosts/election/" + host_name, b"a value", None, True, True)
     except kazoo.exceptions.NodeExistsError:
-        print("Node all ready created in election")
+        scheduler_log.debug("Node all ready created in election")
 
 
 def leaderCheck(zk=zk):

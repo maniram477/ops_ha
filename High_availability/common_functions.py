@@ -13,7 +13,9 @@ from kazoo.client import KazooClient
 import os
 from nova import exception as nova_exceptions
 from novaclient import exceptions as novaclient_exceptions
-
+import logging.config
+logging.config.fileConfig("ha_agent.conf")
+ha_agent=logging.getLogger('ha_agent')
 controller_ip="30.20.0.9"
 user ="admin"
 passwd = "p@ssw0rd"
@@ -70,15 +72,15 @@ def get_ip_address(ifname):
 
 # Health Check Functions
 def ping_check(hostname):
-    print("Pinging ",hostname)
+    ha_agent.debug("Pinging.... ",hostname)
     response = os.system("ping -c 1 " + hostname)
 
     #and then check the response...
     if response == 0:
-        print hostname, 'is up!'
+        ha_agent.debug(hostname, 'is up!')
         return True
     else:
-        print hostname, 'is down!'
+        ha_agent.debug(hostname, 'is down!')
         return False
 
 
@@ -96,7 +98,7 @@ def dbwrap(func):
         except Exception as e:
             #log.error()
             retval = None
-            print e
+            ha_agent.warning(e)
         finally:
             cursor.close()
         return retval
@@ -112,7 +114,7 @@ def list_hosts():
                 'disabled_list': [host.host for host in nova.services.list(binary="nova-compute") if host.status.lower() == 'disabled' if host.disabled_reason in maintenance_state]\
                }
     except Exception as ee:
-        print(ee)
+        ha_agent.warning("Inside the list host Function..!",ee)
         raise Exception('step0')
 
 def down_hosts():
@@ -139,7 +141,7 @@ def client_init():
         cinder = cinder_client.Client(1,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip)
         return cinder,neutron
     except Exception as ee:
-        print(ee)
+        ha_agent.warning("During neutron,cinder initialization",ee)
         raise Exception('step1')
     
 
@@ -150,14 +152,14 @@ def client_init():
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
 def info_collection(instance_id,cinder):
     try:
-        print("INside the inf_collection...!",cinder)
+        ha_agent.debug("Inside the info_collection...!",cinder)
         instance = nova.servers.get(instance_id)
         info = instance._info
         ip_list = floating_ip_check(info)
         bdm,extra = cinder_volume_check(info,cinder=cinder)
         return instance,info,ip_list,bdm,extra
     except Exception as ee:
-        print(ee)
+        ha_agent.warn("Collecting the Infromation about instances",ee)
         raise Exception('step2')
 
         
@@ -170,7 +172,7 @@ def delete_instance(instance_object):
     try:
         nova.servers.delete(instance_object.id)
     except Exception as e:
-        print('Exception in step5',e)
+        ha_agent.warn("During the deletion of instance...!",e)
 
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=100,wait_fixed=10000)
 def delete_instance_status(instance_object):
@@ -183,11 +185,11 @@ def delete_instance_status(instance_object):
         elif tmp_ins._info['OS-EXT-STS:task_state'] in allow_retry_task:
             raise Exception("poll")
     except Exception as e:
-        print('Exception in step6: ',e)
+        ha_agent.warn("Exception in deleting instance...!",e)
         if isinstance(e,novaclient_exceptions.NotFound):
-            print("Instance Not Found hence deleted")
+            ha_agent.debug("Instance Not Found hence deleted")
         else:
-            raise Exception(e) 
+            raise Exception(e)
 
    
 
@@ -213,7 +215,7 @@ def get_instance(name):
     try:
         instance = nova.servers.get(uuid)
     except Exception as e:
-        print e
+        ha_agent.warn("Exception occured duting get uuid of instance..!",e)
         #log.error(e)
         return None
     return instance
@@ -230,7 +232,7 @@ def create_instance(name=None,image=None,bdm=None,\
                              disk_config=disk_config,meta=meta,security_groups=security_groups)
         return instance_object
     except Exception as e:
-        print('Exception in step8',e)
+        ha_agent.warning("Exception during instance creation...!",e)
 
 @retry(retry_on_exception=poll_vm_status,stop_max_attempt_number=100,wait_fixed=10000)               
 def create_instance_status(instance_object):
@@ -239,15 +241,15 @@ def create_instance_status(instance_object):
         tmp_ins = nova.servers.get(instance_object.id)
         status = ( tmp_ins._info['OS-EXT-STS:vm_state'], tmp_ins._info['OS-EXT-STS:task_state'] )
         if status[0] == 'active':
-            print("Success")
+            ha_agent.debug("After creation:  Instance in active state")
         elif status[1] in allow_retry:
             raise Exception("poll")
         elif status[0] == 'error':
             raise Exception("error")
     except Exception as e:
-        print('Exception in step9',e)
+        ha_agent.warn("Exception: checking the instance status after creation...!",e)
         if e.message == 'error':
-            print("Instance - %s went to ERROR state'%(instance_object.id)")
+            ha_agent.error("Instance - %s went to ERROR state",(instance_object.id))
         else:
             raise Exception(e)
     
@@ -268,7 +270,7 @@ def detach_volume(volume,cinder=None):
     try:
         cinder.volumes.detach(volume)
     except Exception as e:
-        print('Soft Exception in step3',e)
+        ha_agent.warn("Soft Exception: During detach_volume",e)
 
 @retry(retry_on_exception=poll_status,stop_max_attempt_number=10,wait_fixed=1000)      
 def detached_volume_status(volume,cinder=None):
@@ -279,11 +281,11 @@ def detached_volume_status(volume,cinder=None):
             tmp_vol.detach()
             raise Exception("poll")
     except Exception as e:
-        print(e)
+        ha_agent.warn("Exception Checking detached_volume_status",e)
         if e.message == 'poll':
             raise Exception("poll")
         else:
-            raise Exception('step4')
+            raise Exception('Exception Checking detached_volume_status"')
 
 
 def cinder_volume_check(info,cinder=None):
@@ -305,7 +307,7 @@ def cinder_volume_check(info,cinder=None):
             
     except Exception as e:
         #log.warning(e)
-        print e
+        ha_agent.warning("Exception:cinder_volume_check",e)
         bdm = None
     else:
         #if block_device_mapping.has_key('vda'):
@@ -325,7 +327,7 @@ def attach_volumes(instance,volumes):
         for dev in volumes:
             nova.volumes.create_server_volume(instance,volumes[dev],dev)
     except Exception as e:
-        print('Exception in step11',e)
+        ha_agent.warning("Exception During Attach_volumes",e)
 
     
 
@@ -360,7 +362,7 @@ def get_fixed_ip(info,neutron):
                     nics.append(tmp_dict)
                     return nics
     except Exception as e:
-        print('Exception in step7',e)    
+        ha_agent.warning("Exception: get_fixed_ip",e)
         
     
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)                  
@@ -375,7 +377,7 @@ def attach_flt_ip(ip_list,instance_object):
         for flt_ip,fix_ip in ip_list:
             instance_object.add_floating_ip(flt_ip,fix_ip)
     except Exception as e:
-        print('Exception in step10',e)
+        ha_agent.warning("Exception: attach_flt_ip", e)
     
 def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
     '''Takes (Instance Object ,Target Host)  as input,Deletes the Instance,Creates similiar Instance on another Healthy Host 
@@ -386,7 +388,6 @@ def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
     info = instance_object._info
     host=info['OS-EXT-SRV-ATTR:host']
     name= info['name']
-    print name
     inst_id = info['id']
     flavor= info['flavor']['id']
     availability_zone=info['OS-EXT-AZ:availability_zone']
@@ -426,33 +427,29 @@ def instance_migration(dhosts,task):
             for instance_obj in list_instances(dhost):
                 # Addon-Feature
                 # Can Add another check to only select instances which have HA option enabled
-                print(instance_obj.id)
                 zk.create("/openstack_ha/instances/down_instances/" + dhost+"/"+instance_obj.id)
                 #create instance detatils under the down hosts in zookeepr
                 #migrate.apply_async((instance_obj.id,), queue='mars', countdown=wait_time)
         message_queue(dhost,task)
 
-
 def message_queue(dhost=None,task=None):
     instance_list=zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
     pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
-
     if(len(instance_list)!=0):
         #while(len(instance_list)!=0)
         #instance_list = zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
-        print("Instances yet to be handled: ",instance_list," Instances on Queue: ", pending_instances_list )
+        ha_agent.debug("Instances yet to be handled: ",instance_list," Instances on Queue: ", pending_instances_list )
         if(len(pending_instances_list)<10):
             add_pending_instance_list=10-len(pending_instances_list)
             for i in range(add_pending_instance_list):
-                print("Adding %d more instances to Queue"%add_pending_instance_list)
+                ha_agent.debug("Adding %d more instances to Queue"%add_pending_instance_list)
                 try:
                     zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
                     zk.delete("/openstack_ha/instances/down_instances/" + dhost + "/" + instance_list[i],recursive=True)
                     instance_string = str(instance_list[i])
                     task.apply_async((instance_string,), queue='mars', countdown=5)
                 except Exception as e:
-                    print(e)
-
+                    ha_agent.warning("Exception: message_queue Function..!",e)
             #afteradd_pending_instances_list = zk.get_children("/openstack_ha/instances/pending/" + dhost)
             #for j in afteradd_pending_instances_list:
             #    task.apply_async((afteradd_pending_instances_list[j],), queue='mars', countdown=wait_time)
