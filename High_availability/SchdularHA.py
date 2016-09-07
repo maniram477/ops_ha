@@ -139,4 +139,5 @@ election_Node=election_node(zk=zk,host_name=host_name,scheduler_log=scheduler_lo
 while True:
     check_hosts(zk,host_name,migrate,scheduler_log)
     time.sleep(scheduler_interval)
+    
 
