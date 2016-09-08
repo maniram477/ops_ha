@@ -61,7 +61,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
                 if len(api_scheduler_down) <= len(allhosts) - 1:
                     scheduler_log.warn("Seems like Manageble Disaster")
                     for host in api_scheduler_down:
-                        scheduler_log.warning("Both Api and HA scheduler on ",host,' are down')
+                        scheduler_log.warning("Both Api and HA scheduler on" +host+" are down")
                         #checks whether down host from api is un handled(not present in down node calculate from zookeeper )
                         #(host in zk_all and host not in zk_alive) == calculated_down_nodes
                         if host in zk_down:
