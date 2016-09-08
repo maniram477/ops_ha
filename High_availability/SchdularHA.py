@@ -118,14 +118,15 @@ def check_hosts(zk,host_name,task,scheduler_log):
         if issubclass(e.__class__,kexception.NoNodeError):
             scheduler_log.exception("No node error",e)
         elif any(issubclass(e.__class__, lv) for lv in kazoo_exceptions):
-            scheduler_log.exception("Kazoo Exception.....: ",e)
+            scheduler_log.exception("Kazoo Exception.....: ")
             time.sleep(2)
             zk = KazooClient(hosts='127.0.0.1:2181')
             zk.start()
             Node_creation = createNodeinAll(zk=zk, host_name=host_name)
             election_Node = election_node(zk=zk, host_name=host_name)
         else:
-            scheduler_log.warning("Unhandled Error ",e)
+            scheduler_log.warning("Unhandled Error ")
+            scheduler_log.exception("")
 
 
 #"""Import ensureBasicStructure()--It ensure the DataStructure in Zookeeper and createNode()--It ensure the node is alive. Functions are from new_basicstrut """
