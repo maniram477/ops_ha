@@ -1,0 +1,1916 @@
+2016-09-08 09:48:50,216 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:48:50,223 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:48:50,678 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:48:55,683 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:48:55,686 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:48:55,865 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:00,870 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:00,873 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:01,017 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:06,022 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:06,026 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:06,198 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:11,203 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:11,206 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:11,348 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:16,354 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:16,357 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:16,505 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:21,510 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:21,514 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:21,684 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:26,689 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:26,694 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:26,833 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:31,838 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:31,841 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:31,988 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:36,993 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:36,997 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:37,113 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:42,119 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:42,122 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:42,278 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:47,283 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:47,286 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:47,437 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:52,442 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:52,445 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:52,611 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:49:57,614 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:49:57,618 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:49:57,769 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:02,769 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:02,773 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:02,929 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:07,934 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:07,939 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:08,094 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:13,099 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:13,102 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:13,243 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:18,248 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:18,254 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:18,417 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:23,420 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:23,423 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:23,564 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:28,569 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:28,573 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:28,704 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:33,708 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:33,711 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:33,853 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:38,858 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:38,862 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:39,002 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:44,007 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:44,010 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:44,162 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:49,167 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:49,170 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:49,313 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:54,318 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:54,322 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:54,484 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:50:59,487 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:50:59,491 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:50:59,655 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:04,659 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:04,662 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:04,825 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:09,828 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:09,831 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:09,986 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:14,990 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:14,993 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:15,133 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:20,139 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:20,143 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:20,282 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:25,287 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:25,290 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:25,446 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:30,451 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:30,455 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:30,583 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:35,588 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:35,591 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:35,739 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:40,745 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:40,749 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:40,893 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:45,900 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:45,903 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:46,076 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:51,081 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:51,086 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:51,229 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:51:56,233 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:51:56,237 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:51:56,380 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:52:01,386 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:52:01,389 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:52:01,541 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:52:06,544 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:52:06,550 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:52:06,705 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:52:11,711 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:52:11,714 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 09:52:11,872 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 09:54:16,163 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:54:21,167 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:54:26,175 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:54:31,181 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:54:36,187 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:54:41,197 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:54:46,206 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:54:51,214 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:54:56,222 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:01,230 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:06,234 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:11,243 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:16,246 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:21,255 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:26,263 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:31,272 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:36,279 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:41,287 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:46,295 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:51,303 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:55:56,308 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:01,315 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:06,324 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:11,331 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:16,338 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:21,344 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:26,353 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:31,362 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:36,370 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:41,378 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:46,382 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:51,390 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:56:56,399 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:01,406 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:06,414 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:11,423 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:16,431 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:21,436 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:26,444 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:31,451 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:36,459 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:41,467 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:46,475 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:51,484 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:57:56,492 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:58:01,499 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:58:06,507 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 09:58:11,514 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:57:36,995 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:57:42,007 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:57:47,015 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:57:52,024 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:57:57,031 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:02,041 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:07,049 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:12,059 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:17,068 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:22,078 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:27,087 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:32,096 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:37,102 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:42,113 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:47,122 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:52,130 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:58:57,138 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:02,146 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:07,156 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:12,165 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:17,176 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:22,182 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:27,192 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:32,198 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:37,207 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:42,216 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:47,224 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:52,233 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 10:59:57,244 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:02,251 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:07,261 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:12,265 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:17,274 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:22,284 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:27,292 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:32,296 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:37,305 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:42,315 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:47,324 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:52,334 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:00:57,343 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:02,353 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:07,358 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:12,368 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:17,374 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:22,383 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:27,390 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:32,400 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:37,406 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:42,412 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:47,419 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:52,428 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:01:57,436 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:02,444 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:07,448 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:12,456 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:17,465 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:22,475 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:27,483 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:32,490 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:37,500 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:42,508 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:47,516 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:52,525 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:02:57,531 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:02,540 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:07,547 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:12,556 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:17,565 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:22,576 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:27,583 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:32,592 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:37,600 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:42,609 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:47,619 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:52,626 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:03:57,634 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:02,640 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:07,648 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:12,658 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:17,667 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:22,675 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:27,683 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:32,691 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:37,700 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:42,710 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:47,718 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:52,728 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:04:57,736 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:02,744 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:07,752 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:12,758 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:17,766 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:22,774 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:27,783 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:32,792 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:37,803 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:42,810 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:47,818 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:52,827 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:05:57,836 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:02,842 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:07,852 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:12,859 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:17,868 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:22,875 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:27,883 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:32,890 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:37,898 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:42,906 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:47,914 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:52,921 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:06:57,930 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:02,939 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:07,948 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:12,956 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:17,963 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:22,971 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:27,981 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:32,990 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:37,996 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:43,004 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:48,012 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:53,021 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:07:58,027 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:03,035 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:08,044 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:13,052 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:18,062 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:23,073 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:28,082 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:33,091 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:38,100 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:43,110 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:48,119 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:53,128 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:08:58,135 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:03,142 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:08,150 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:13,158 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:18,167 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:23,175 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:28,182 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:33,190 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:38,198 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:43,208 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:48,216 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:53,222 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:09:58,231 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:03,239 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:08,247 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:13,256 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:18,262 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:23,272 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:28,281 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:33,288 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:38,297 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:43,306 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:48,314 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:53,323 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:10:58,331 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:03,339 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:08,348 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:13,356 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:18,367 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:23,376 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:28,384 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:33,391 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:38,398 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:43,407 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:48,415 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:53,422 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:11:58,432 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:03,441 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:08,450 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:13,459 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:18,468 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:23,478 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:28,482 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:33,492 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:38,499 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:43,505 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:48,513 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:53,522 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:12:58,530 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:03,538 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:08,547 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:13,557 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:18,567 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:23,573 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:28,582 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:33,591 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:38,600 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:43,609 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:48,615 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:53,624 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:13:58,633 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:03,638 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:08,643 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:13,652 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:18,656 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:23,665 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:28,672 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:33,682 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:38,691 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:43,698 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:48,706 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:53,714 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:14:58,722 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:03,731 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:08,738 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:13,748 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:18,758 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:23,768 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:28,778 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:33,787 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:38,796 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:43,804 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:48,810 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:53,818 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:15:58,826 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:03,834 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:08,842 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:13,851 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:18,859 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:23,867 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:28,875 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:33,883 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:38,890 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:43,899 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:48,908 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:53,916 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:16:58,920 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:03,924 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:08,933 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:13,942 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:18,950 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:23,960 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:28,964 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:33,968 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:38,973 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:43,981 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:48,989 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:53,998 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:17:53,999 - scheduler - ERROR - Kazoo Exception.....: 
+Traceback (most recent call last):
+  File "SchdularHA.py", line 21, in check_hosts
+    leader = leaderCheck(zk=zk)
+  File "/root/ha_tools/ops_ha/High_availability/StructureZoo.py", line 69, in leaderCheck
+    leader_candi=zk.get_children("/openstack_ha/hosts/election")
+  File "/root/ha_tools/local/lib/python2.7/site-packages/kazoo/client.py", line 1079, in get_children
+    return self.get_children_async(path, watch, include_data).get()
+  File "/root/ha_tools/local/lib/python2.7/site-packages/kazoo/handlers/utils.py", line 72, in get
+    raise self._exception
+SessionExpiredError
+2016-09-08 11:31:41,319 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:31:46,326 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:31:51,336 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:31:56,345 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:01,353 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:06,362 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:11,372 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:16,382 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:21,391 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:26,400 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:31,406 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:36,415 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:41,422 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:46,432 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:51,437 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:32:56,446 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:01,454 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:06,462 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:11,470 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:16,480 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:16,483 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 11:33:16,736 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 11:33:16,737 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 11:33:16,737 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 11:33:21,742 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:21,746 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 11:33:21,837 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 11:33:21,837 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 11:33:21,838 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 11:33:26,842 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:26,847 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 11:33:27,075 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 11:33:27,075 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 11:33:27,075 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 11:33:32,081 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:32,084 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 11:33:32,216 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 11:33:32,216 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 11:33:32,216 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 11:33:37,221 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:37,226 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 11:33:37,333 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 11:33:37,333 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 11:33:37,333 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 11:33:42,338 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:42,342 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 11:33:42,449 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 11:33:42,449 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 11:33:42,449 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 11:33:47,453 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:47,457 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 11:33:47,558 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 11:33:47,558 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 11:33:47,558 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 11:33:52,563 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:52,567 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 11:33:52,671 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 11:33:52,671 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 11:33:52,671 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 11:33:57,674 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:33:57,678 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 11:33:57,788 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 11:33:57,789 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 11:33:57,789 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 11:34:02,794 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 11:34:02,798 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 11:34:02,930 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 11:34:02,931 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 11:34:02,931 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 11:59:18,447 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-08 11:59:18,605 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-08 12:13:09,744 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:13:09,747 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:13:10,123 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 12:13:10,123 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 12:13:10,123 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:13:15,126 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:13:15,129 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:13:15,261 - scheduler - DEBUG - HA Scheduler Failed on Node : node-2.domain.tld 
+2016-09-08 12:13:15,261 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 12:13:15,261 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:14:21,476 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:14:21,479 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:14:21,728 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:14:26,733 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:14:26,737 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:14:26,869 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:14:31,874 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:14:31,877 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:14:31,988 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:14:36,993 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:14:36,998 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:14:37,152 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:14:42,156 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:14:42,160 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:14:42,295 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:14:47,298 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:14:47,302 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:14:47,408 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:14:52,415 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:14:52,420 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:14:52,545 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:14:57,546 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:14:57,550 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:14:57,657 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:02,662 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:02,665 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:02,794 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:07,799 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:07,803 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:07,947 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:12,953 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:12,956 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:13,092 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:18,093 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:18,097 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:18,200 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:23,205 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:23,209 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:23,327 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:28,328 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:28,332 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:28,442 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:33,447 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:33,452 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:33,579 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:38,585 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:38,588 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:38,697 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:43,702 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:43,706 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:43,837 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:48,842 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:48,848 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:48,975 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:53,980 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:53,984 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:54,106 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:15:59,111 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:15:59,115 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:15:59,275 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:04,280 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:04,285 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:04,400 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:09,403 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:09,408 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:09,523 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:14,527 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:14,531 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:14,660 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:19,665 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:19,669 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:19,784 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:24,786 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:24,789 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:24,915 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:29,920 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:29,924 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:30,050 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:35,055 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:35,059 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:35,199 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:40,204 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:40,208 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:40,335 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:45,336 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:45,340 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:45,465 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:50,470 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:50,475 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:50,612 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:16:55,617 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:16:55,620 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:16:55,743 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:00,746 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:00,749 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:00,879 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:05,884 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:05,888 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:06,020 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:11,022 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:11,025 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:11,152 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:16,156 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:16,159 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:16,269 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:21,274 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:21,278 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:21,396 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:26,401 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:26,404 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:26,531 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:31,535 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:31,539 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:31,657 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:36,663 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:36,666 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:36,789 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:41,794 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:41,798 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:41,946 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:46,951 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:46,955 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:47,071 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:52,077 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:52,080 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:52,193 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:17:57,199 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:17:57,202 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:17:57,321 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:02,326 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:02,329 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:02,449 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:07,453 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:07,457 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:07,574 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:12,578 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:12,581 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:12,700 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:17,705 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:17,708 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:17,822 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:22,827 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:22,832 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:22,945 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:27,946 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:27,950 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:28,067 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:33,071 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:33,075 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:33,211 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:38,214 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:38,217 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:38,345 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:43,350 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:43,353 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:43,464 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:48,468 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:48,472 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:48,571 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:53,575 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:53,580 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:53,683 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:18:58,683 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:18:58,687 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:18:58,819 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:18:58,820 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:03,820 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:03,824 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:03,941 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:03,941 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:08,946 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:08,951 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:09,095 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:09,095 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:14,100 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:14,103 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:14,227 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:14,227 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:19,232 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:19,236 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:19,363 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:19,363 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:24,369 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:24,373 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:24,815 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:24,815 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:29,820 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:29,824 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:29,944 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:29,944 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:34,946 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:34,950 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:35,083 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:35,083 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:40,087 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:40,090 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:40,220 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:40,220 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:45,225 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:45,230 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:45,377 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:45,377 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:50,382 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:50,385 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:50,499 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:50,499 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:19:55,504 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:19:55,508 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:19:55,645 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:19:55,645 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:00,650 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:00,653 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:00,764 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:00,764 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:05,766 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:05,769 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:05,895 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:05,896 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:10,899 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:10,903 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:11,023 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:11,023 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:16,027 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:16,032 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:16,153 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:16,153 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:21,158 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:21,161 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:21,285 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:21,285 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:26,290 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:26,294 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:26,409 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:26,409 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:31,414 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:31,418 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:31,549 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:31,549 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:36,554 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:36,557 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:36,674 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:36,674 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:41,680 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:41,683 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:41,805 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:41,805 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:46,810 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:46,813 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:46,951 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:46,951 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:51,955 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:51,959 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:52,082 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:52,082 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:20:57,087 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:20:57,091 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:20:57,219 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:20:57,220 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:02,225 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:02,228 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:02,329 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:02,329 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:07,330 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:07,334 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:07,470 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:07,470 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:12,471 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:12,475 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:12,583 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:12,583 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:17,588 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:17,592 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:17,704 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:17,704 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:22,709 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:22,713 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:22,842 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:22,843 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:27,848 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:27,851 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:27,961 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:27,961 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:32,966 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:32,970 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:33,103 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:33,103 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:38,107 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:38,111 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:38,249 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:38,251 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:43,256 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:43,259 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:43,388 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:43,388 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:48,391 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:48,395 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:48,554 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:48,554 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:53,559 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:53,562 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:53,697 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:53,698 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:21:58,703 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:21:58,707 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:21:58,827 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:21:58,827 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:03,832 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:03,836 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:03,959 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:03,959 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:08,965 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:08,969 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:09,088 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:09,088 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:14,093 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:14,100 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:14,214 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:14,215 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:19,219 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:19,223 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:19,369 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:19,370 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:24,375 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:24,379 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:24,492 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:24,493 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:29,498 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:29,501 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:29,624 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:29,624 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:34,627 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:34,631 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:34,754 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:34,755 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:39,760 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:39,763 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:39,880 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:39,880 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:44,885 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:44,888 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:45,012 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:22:45,012 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:45,012 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:50,017 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:50,020 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:50,154 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:22:50,154 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:50,154 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:22:55,156 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:22:55,163 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:22:55,284 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:22:55,284 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:22:55,284 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:00,290 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:00,293 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:00,400 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:00,400 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:00,400 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:05,405 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:05,409 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:05,557 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:05,558 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:05,558 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:10,562 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:10,565 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:10,708 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:10,708 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:10,708 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:15,710 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:15,713 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:15,823 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:15,824 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:15,824 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:20,827 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:20,833 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:20,961 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:20,962 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:20,962 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:25,967 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:25,972 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:26,083 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:26,083 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:26,083 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:31,087 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:31,090 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:31,226 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:31,226 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:31,227 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:36,232 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:36,236 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:36,383 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:36,383 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:36,383 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:41,388 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:41,392 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:41,497 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:41,498 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:41,498 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:46,500 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:46,504 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:46,644 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:46,645 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:46,645 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:51,650 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:51,653 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:51,791 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:51,792 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:51,792 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:23:56,797 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:23:56,801 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:23:57,186 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:23:57,187 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:23:57,187 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:02,191 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:02,195 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:02,311 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:02,311 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:02,312 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:07,312 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:07,316 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:07,436 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:07,436 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:07,436 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:12,441 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:12,448 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:12,591 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:12,591 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:12,591 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:17,594 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:17,598 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:17,738 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:17,738 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:17,738 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:22,743 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:22,747 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:22,860 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:22,861 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:22,861 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:27,866 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:27,869 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:28,076 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:28,076 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:28,077 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:33,078 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:33,081 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:33,196 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:33,197 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:33,197 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:38,200 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:38,203 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:38,354 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:38,354 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:38,354 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:43,359 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:43,362 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:43,493 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:43,494 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:43,494 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:48,498 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:48,501 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:48,640 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:48,640 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:48,640 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:53,643 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:53,647 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:53,754 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:53,754 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:53,754 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:24:58,759 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:24:58,763 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:24:58,880 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:24:58,880 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:24:58,881 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:03,886 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:03,889 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:04,007 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:04,007 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:04,007 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:09,012 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:09,015 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:09,140 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:09,140 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:09,140 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:14,142 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:14,145 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:14,276 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:14,276 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:14,276 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:19,279 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:19,284 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:19,402 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:19,403 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:19,403 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:24,403 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:24,408 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:24,535 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:24,535 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:24,535 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:29,540 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:29,544 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:29,660 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:29,660 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:29,660 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:34,665 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:34,668 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:34,787 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:34,787 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:34,787 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:39,792 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:39,796 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:39,915 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:39,915 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:39,916 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:44,920 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:44,925 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:45,050 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:45,051 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:45,051 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:50,056 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:50,060 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:50,176 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:50,176 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:50,176 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:25:55,181 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:25:55,185 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:25:55,319 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:25:55,319 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:25:55,319 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:00,324 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:00,329 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:00,455 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:00,455 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:00,455 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:05,456 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:05,459 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:05,583 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:05,583 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:05,583 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:10,588 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:10,592 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:10,725 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:10,725 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:10,725 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:15,730 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:15,733 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:15,846 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:15,846 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:15,846 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:20,851 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:20,860 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:20,977 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:20,978 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:20,978 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:25,983 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:25,987 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:26,077 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:26,077 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:26,077 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:31,079 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:31,082 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:31,203 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:31,204 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:31,204 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:36,208 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:36,212 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:36,343 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:36,344 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:36,344 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:41,349 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:41,353 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:41,496 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:41,496 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:41,496 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:46,501 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:46,505 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:46,628 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:46,628 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:46,628 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:51,633 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:51,637 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:51,772 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:51,772 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:51,773 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:26:56,778 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:26:56,781 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:26:56,929 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:26:56,929 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:26:56,929 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:01,934 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:01,938 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:02,095 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:02,095 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:02,095 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:07,100 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:07,104 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:07,255 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:07,255 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:07,255 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:12,259 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:12,263 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:12,401 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:12,401 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:12,401 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:17,406 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:17,409 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:17,518 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:17,519 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:17,519 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:22,523 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:22,527 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:22,652 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:22,653 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:22,653 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:27,658 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:27,661 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:27,767 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:27,768 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:27,768 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:32,770 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:32,773 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:32,884 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:32,884 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:32,884 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:37,889 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:37,892 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:38,056 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:38,056 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:38,056 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:43,061 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:43,064 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:43,192 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:43,192 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:43,192 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:48,194 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:48,198 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:48,335 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:48,335 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:48,335 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:53,338 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:53,342 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:53,484 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:53,484 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:53,484 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:27:58,490 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:27:58,493 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:27:58,635 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:27:58,635 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:27:58,635 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:03,640 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:03,645 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:03,762 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:03,762 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:03,762 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:08,767 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:08,771 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:08,887 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:08,888 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:08,888 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:13,893 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:13,898 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:14,040 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:14,041 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:14,041 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:19,045 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:19,049 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:19,172 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:19,172 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:19,172 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:24,174 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:24,179 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:24,289 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:24,289 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:24,289 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:29,294 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:29,298 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:29,435 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:29,435 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:29,436 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:34,439 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:34,443 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:34,591 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:34,591 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:34,591 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:39,595 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:39,599 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:39,741 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:39,741 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:39,741 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:44,744 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:44,748 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:44,876 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:44,877 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:44,877 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:49,883 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:49,886 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:50,025 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:50,026 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:50,026 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:28:55,030 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:28:55,034 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:28:55,204 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:28:55,205 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:28:55,205 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:00,210 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:00,213 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:00,337 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:00,338 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:00,338 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:05,343 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:05,346 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:05,467 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:05,467 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:05,467 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:10,472 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:10,475 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:10,598 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:10,598 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:10,598 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:15,603 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:15,606 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:15,728 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:15,728 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:15,728 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:20,732 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:20,735 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:20,854 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:20,855 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:20,855 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:25,859 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:25,864 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:26,000 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:26,000 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:26,000 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:31,005 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:31,008 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:31,252 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:31,252 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:31,252 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:36,255 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:36,257 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:36,383 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:36,383 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:36,383 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:41,387 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:41,391 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:41,511 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:41,511 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:41,511 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:46,515 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:46,520 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:46,661 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:46,661 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:46,661 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:51,663 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:51,666 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:51,795 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:51,795 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:51,796 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:29:56,800 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:29:56,804 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:29:56,928 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:29:56,928 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:29:56,928 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:01,930 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:01,934 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:02,063 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:02,063 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:02,063 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:07,068 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:07,072 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:07,217 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:07,217 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:07,217 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:12,222 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:12,225 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:12,372 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:12,372 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:12,372 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:17,375 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:17,378 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:17,535 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:17,535 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:17,535 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:22,539 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:22,543 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:22,671 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:22,671 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:22,672 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:27,676 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:27,681 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:27,823 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:27,823 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:27,823 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:32,828 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:32,833 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:32,957 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:32,957 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:32,957 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:37,962 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:37,965 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:38,101 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:38,102 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:38,102 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:43,107 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:43,111 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:43,240 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:43,240 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:43,240 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:48,243 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:48,247 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:48,386 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:48,386 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:48,387 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:53,390 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:53,395 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:53,528 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:53,529 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:53,529 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:30:58,536 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:30:58,540 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:30:58,658 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:30:58,658 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:30:58,659 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:03,663 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:03,667 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:03,783 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:03,783 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:03,783 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:08,788 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:08,792 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:08,944 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:08,944 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:08,944 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:13,949 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:13,953 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:14,091 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:14,091 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:14,091 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:19,095 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:19,098 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:19,217 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:19,218 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:19,218 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:24,222 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:24,226 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:24,355 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:24,355 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:24,355 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:29,359 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:29,362 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:29,492 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:29,492 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:29,492 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:34,497 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:34,501 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:34,623 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:34,623 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:34,623 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:39,628 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:39,632 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:39,741 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:39,741 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:39,742 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:44,747 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:44,752 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:44,911 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:44,911 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:44,911 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:49,915 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:49,920 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:50,055 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:50,055 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:50,055 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:31:55,060 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:31:55,064 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:31:55,186 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:31:55,186 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:31:55,187 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:00,191 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:00,194 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:00,314 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:00,315 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:00,315 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:05,320 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:05,324 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:05,447 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:05,447 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:05,447 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:10,452 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:10,456 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:10,575 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:10,576 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:10,576 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:15,579 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:15,582 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:15,711 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:15,712 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:15,712 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:20,717 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:20,721 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:20,853 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:20,853 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:20,853 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:25,858 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:25,863 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:25,969 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:25,970 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:25,970 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:30,974 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:30,977 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:31,118 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:31,119 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:31,119 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:36,124 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:36,129 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:36,297 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:36,298 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:36,298 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:41,303 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:41,306 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:41,425 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:41,425 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:41,425 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:46,428 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:46,431 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:46,565 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:46,566 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:46,566 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:51,571 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:51,575 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:51,723 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:51,723 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:51,723 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:32:56,727 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:32:56,732 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:32:56,845 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:32:56,845 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:32:56,845 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:01,850 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:01,854 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:01,983 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:01,983 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:01,983 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:06,987 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:06,991 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:07,111 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:07,111 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:07,111 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:12,115 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:12,120 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:12,291 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:12,291 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:12,291 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:17,296 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:17,300 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:17,427 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:17,427 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:17,427 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:22,432 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:22,436 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:22,561 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:22,562 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:22,562 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:27,567 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:27,570 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:27,709 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:27,709 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:27,709 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:32,714 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:32,717 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:32,857 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:32,858 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:32,858 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:37,862 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:37,865 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:37,987 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:37,987 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:37,987 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:42,992 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:42,996 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:43,168 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:43,169 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:43,169 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:48,174 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:48,179 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:48,314 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:48,315 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:48,315 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:53,320 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:53,324 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:53,451 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:53,452 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:53,452 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:33:58,457 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:33:58,461 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:33:58,607 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:33:58,608 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:33:58,608 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:03,613 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:03,621 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:03,759 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:03,759 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:03,760 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:08,764 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:08,768 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:08,904 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:08,904 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:08,904 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:13,909 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:13,912 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:14,049 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:14,049 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:14,049 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:19,054 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:19,059 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:19,188 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:19,188 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:19,188 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:24,193 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:24,197 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:24,360 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:24,360 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:24,360 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:29,365 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:29,367 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:29,486 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:29,486 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:29,486 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:34,491 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:34,494 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:34,693 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:34,693 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:34,693 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:39,694 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:39,698 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:39,823 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:39,823 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:39,823 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:44,826 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:44,829 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:44,950 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:44,950 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:44,951 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:49,956 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:49,961 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:50,132 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:50,132 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:50,133 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:34:55,138 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:34:55,142 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:34:55,292 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:34:55,292 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:34:55,292 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:00,299 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:00,302 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:00,434 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:00,434 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:00,434 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:05,436 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:05,439 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:05,578 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:05,579 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:05,579 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:10,583 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:10,586 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:10,699 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:10,699 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:10,699 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:15,704 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:15,707 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:15,853 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:15,853 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:15,853 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:20,858 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:20,862 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:20,975 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:20,975 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:20,975 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:25,980 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:25,983 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:26,133 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:26,133 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:26,133 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:31,138 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:31,141 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:31,270 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:31,270 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:31,271 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:36,275 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:36,278 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:36,411 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:36,411 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:36,411 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:41,415 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:41,419 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:41,544 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:41,544 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:41,544 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:46,549 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:46,553 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:46,690 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:46,691 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:46,691 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:51,696 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:51,700 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:51,832 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:51,832 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:51,833 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:35:56,838 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:35:56,841 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:35:56,961 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:35:56,961 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:35:56,961 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:01,966 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:01,969 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:02,081 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:02,081 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:02,081 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:07,086 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:07,089 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:07,220 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:07,220 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:07,220 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:12,224 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:12,228 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:12,342 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:12,342 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:12,342 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:17,347 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:17,352 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:17,511 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:17,512 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:17,512 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:22,517 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:22,523 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:22,649 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:22,650 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:22,650 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:27,655 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:27,659 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:27,798 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:27,799 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:27,799 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:32,804 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:32,807 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:32,919 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:32,919 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:32,919 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:37,924 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:37,927 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:38,064 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:38,064 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:38,064 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:43,069 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:43,072 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:43,231 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:43,232 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:43,232 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:48,237 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:48,241 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:48,373 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:48,373 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:48,373 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:53,378 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:53,381 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:53,516 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:53,516 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:53,516 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:36:58,519 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:36:58,523 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:36:58,638 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:36:58,638 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:36:58,638 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:03,640 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:03,644 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:03,751 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:03,752 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:03,752 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:08,754 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:08,757 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:08,893 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:08,893 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:08,893 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:13,898 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:13,902 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:14,031 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:14,031 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:14,031 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:19,031 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:19,035 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:19,167 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:19,167 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:19,167 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:24,172 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:24,177 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:24,316 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:24,316 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:24,317 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:29,322 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:29,325 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:29,446 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:29,446 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:29,446 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:34,451 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:34,455 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:34,588 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:34,589 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:34,589 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:39,593 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:39,597 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:39,727 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:39,727 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:39,727 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:44,732 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:44,736 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:44,864 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:44,865 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:44,865 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:49,870 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:49,874 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:50,038 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:50,039 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:50,039 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:37:55,044 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:37:55,047 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:37:55,165 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:37:55,165 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:37:55,166 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:00,171 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:00,182 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:00,369 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:38:00,369 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:00,369 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:05,375 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:05,378 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:05,499 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:38:05,499 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:05,499 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:10,500 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:10,504 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:10,627 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:38:10,628 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:10,628 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:15,631 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:15,636 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:15,779 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:38:15,779 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:15,780 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:20,783 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:20,787 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:20,920 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:38:20,920 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:20,920 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:25,925 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:25,929 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:26,076 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:38:26,076 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:26,076 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:31,079 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:31,083 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:31,210 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:38:31,211 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:31,211 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:36,213 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:36,218 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:36,352 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:38:36,352 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:36,352 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:41,357 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:41,362 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:41,514 - scheduler - DEBUG - API Failed on Node : node-2.domain.tld 
+2016-09-08 12:38:41,514 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:41,514 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:46,519 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:46,524 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:46,652 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:46,653 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:51,656 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:51,663 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:51,806 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:51,806 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:38:56,811 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:38:56,814 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:38:56,954 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:38:56,954 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:01,958 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:01,961 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:02,089 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:02,089 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:07,094 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:07,098 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:07,244 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:07,244 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:12,249 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:12,256 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:12,401 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:12,401 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:17,402 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:17,405 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:17,512 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:17,513 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:22,515 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:22,520 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:22,627 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:22,627 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:27,632 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:27,637 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:27,758 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:27,758 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:32,763 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:32,766 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:32,881 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:32,882 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:37,882 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:37,885 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:38,114 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:38,114 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:43,120 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:43,123 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:43,247 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:43,248 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:48,253 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:48,256 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:48,405 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:48,405 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:53,410 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:53,415 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:53,526 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:53,526 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:39:58,531 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:39:58,535 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:39:58,675 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:39:58,676 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:03,680 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:03,688 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:03,815 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:03,815 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:08,819 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:08,824 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:08,963 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:08,963 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:13,967 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:13,973 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:14,138 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:14,139 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:19,142 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:19,145 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:19,304 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:19,304 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:24,309 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:24,312 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:24,444 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:24,444 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:29,450 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:29,453 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:29,583 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:29,583 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:34,588 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:34,592 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:34,755 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:34,755 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:39,758 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:39,761 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:39,896 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:39,896 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:44,901 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:44,905 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:45,065 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:45,065 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:50,070 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:50,076 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:50,209 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:50,209 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:40:55,214 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:40:55,217 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:40:55,353 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:40:55,353 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:41:00,358 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:41:00,362 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:41:00,507 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:41:00,507 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:41:05,512 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:41:05,516 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:41:05,633 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:41:05,633 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:41:10,638 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:41:10,642 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:41:10,778 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:41:10,778 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:41:15,783 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:41:15,787 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:41:15,917 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 12:41:15,918 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:41:15,918 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:41:20,923 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:41:20,926 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:41:21,059 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 12:41:21,060 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:41:21,060 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:41:26,065 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:41:26,069 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:41:26,189 - scheduler - DEBUG - HA Scheduler Failed on Node : node-3.domain.tld 
+2016-09-08 12:41:26,189 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:41:26,189 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:41:31,194 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:41:31,198 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:41:31,345 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:41:31,345 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-08 12:41:36,350 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-08 12:41:36,353 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-08 12:41:36,499 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
+2016-09-08 12:41:36,499 - scheduler - DEBUG - Hosts working Normally....!!!

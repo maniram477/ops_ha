@@ -71,7 +71,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
                             #Node down on api,zk and ( not handled | handling )
                             if host not in dishosts:
                                 #Node Not disabled | disabled reason is not skippable
-                                scheduler_log.debug(host," is not disabled or reason is not maintenance")
+                                scheduler_log.debug(host+" is not disabled or reason is not maintenance")
                                 if(zk.exists("/openstack_ha/hosts/time_out/"+host)==None):
                                     scheduler_log.debug("Inside Time out Node Creation")
                                     #adding host down time
@@ -86,7 +86,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                     scheduler_log.debug("ping test success....!!! Node is alive... Please Check the APIs,HA Scheduler and other Openstack Services")
 
                                 else:
-                                    scheduler_log.warning("Ping test also Failed on ",host," proceed with migration")
+                                    scheduler_log.warning("Ping test also Failed on "+host+" proceed with migration")
                                     if (zk.exists("/openstack_ha/hosts/start_migration/"+ host)): # it checks the permission from the dashborad
                                         scheduler_log.warning(" api down host :"+host+"present in zookeeper down_node:"+calculated_down_nodes)
                                         scheduler_log.debug("Strart migration....!!!!!")
@@ -116,7 +116,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
 
     except Exception as e:
         if issubclass(e.__class__,kexception.NoNodeError):
-            scheduler_log.exception("No node error",e)
+            scheduler_log.exception("No node error")
         elif any(issubclass(e.__class__, lv) for lv in kazoo_exceptions):
             scheduler_log.exception("Kazoo Exception.....: ")
             time.sleep(2)

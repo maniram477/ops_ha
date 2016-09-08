@@ -33,7 +33,7 @@ api_retry_interval = 1000 #In MilliSeconds
 poll_status_count = 100
 poll_status_interval = 2000 #In MilliSeconds
 
-migrate_time=6# In Seconds
+migrate_time=600# In Seconds
 
 maintenance_state = ['maintenance','skip','pause_migration']
 kazoo_exceptions = [obj for name, obj in inspect.getmembers(kexception) if inspect.isclass(obj) and issubclass(obj, Exception)]
