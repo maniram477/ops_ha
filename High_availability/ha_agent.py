@@ -12,7 +12,7 @@ celery.config_from_object('config')
 
 tmp_host=""
 new_tmp_host=""
-
+volumes={}
 
 @celery.task(name='migrate.migrate')
 def migrate(instance_id):
@@ -21,27 +21,28 @@ def migrate(instance_id):
         cinder,neutron = client_init()
         instance_object,info,ip_list,bdm,extra = info_collection(instance_id,cinder)
         global tmp_host
-        tmp_host = info['OS-EXT-SRV-ATTR:host']
+        tmp_host = info['OS-EXT-SRV-ATTR:host'] 
+        volumes.update(bdm)
         # Check Whether BDM is available
         ha_agent.debug("Information Collected")
         if not ip_list:
-            fixed_ip=''
+            fixed_ip=info['addresses']['net04'][0]['addr']
             folating_ip=''
         else:
             folating_ip=ip_list[0][0]
             fixed_ip=ip_list[0][1]
-        if bool(extra):
-            bdm.update(extra)
-            volume=bdm
+        if bool(extra):            
+            volumes.update(extra)
+            volume=volumes
         else:
-            volume=bdm
+            volume=volumes
         old_instance=json.dumps({"instance_name":instance_object.name,"host_name":tmp_host,"instance_id":instance_object.id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
         old_instance_json=str.encode(old_instance)    
         """if len(extra) > 0:
             for volume in extra:
                 detach_volume(extra[volume],cinder=cinder)
                 detached_volume_status(extra[volume],cinder=cinder)
-"""
+        """
         ha_agent.debug("Extra Volume Detached")
         
         # Update BDM Delete on Terminate Status
@@ -55,7 +56,10 @@ def migrate(instance_id):
         # Test 1 : Update Volumes set BDM as available and Create New Instance from it.
         
         # Can add one more layer of retry for entire instance recreation process
-        detached_volume_status(bdm['vda'], cinder=cinder)
+        if(bool(bdm)):           
+            detached_volume_status(bdm['vda'], cinder=cinder)
+        else:
+            bdm=None
 
         new_instance = recreate_instance(instance_object=instance_object,bdm=bdm,neutron=neutron)
         create_instance_status(new_instance)
@@ -79,8 +83,8 @@ def migrate(instance_id):
         new_tmp_host = info['OS-EXT-SRV-ATTR:host']
         # Check Whether BDM is available
         ha_agent.debug("Information Collected")
-         if not ip_list:
-            fixed_ip=''
+        if not ip_list:
+            fixed_ip=info['addresses']['net04'][0]['addr']
             folating_ip=''
         else:
             folating_ip=ip_list[0][0]
@@ -90,10 +94,8 @@ def migrate(instance_id):
             volume=bdm
         else:
             volume=bdm    
-        sha={"instance_name":new_instance.name,"host_name":new_tmp_host,"instance_id":new_instance.id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume}
-        print("new instance details.........!")
-        print(sha)
-        new_instance_details=json.dumps({"instance_name":new_instance.name,"host_name":new_tmp_host,"instance_id":new_instance.id,"folating_ip":ip_list[0][0],"fixed_ip":ip_list[0][1],"volume":volume},ensure_ascii=True)
+    
+        new_instance_details=json.dumps({"instance_name":new_instance.name,"host_name":new_tmp_host,"instance_id":new_instance.id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
         new_instance_json=str.encode(new_instance_details)
         
     
@@ -103,29 +105,31 @@ def migrate(instance_id):
         if any(issubclass(e.__class__, lv) for lv in kazoo_exceptions):
             print("Kazoo Exception.....: ",e)
             time.sleep(2)
-            zk = KazooClient(hosts='127.0.0.1:2181')
+            zk = KazooClient(hosts='172.30.64.14:2181,172.30.64.13:2181,172.30.64.12:2181')
             zk.start()
             ha_agent.debug("Successfull Migration.Adding to Migrated zNode")
-            zk.ensure_path("/openstack_ha/instances/failure/"+new_tmp_host)
-            zk.create("/openstack_ha/instances/failure/"+new_tmp_host+"/"+new_instance.id,new_instance_json)
+            zk.ensure_path("/openstack_ha/instances/migrated/"+new_tmp_host)
+            zk.create("/openstack_ha/instances/migrated/"+new_tmp_host+"/"+new_instance.id,new_instance_json)
             #zk.create("/openstack_ha/instances/migrated/"+tmp_host+"/"+instance_id+"/"+new_instance_id)
         else:
+            zk = KazooClient(hosts='172.30.64.14:2181,172.30.64.13:2181,172.30.64.12:2181')
+            zk.start()
             ha_agent.error("Exception hence adding to failure zNode")
             zk.ensure_path("/openstack_ha/instances/failure/"+tmp_host)
             zk.create("/openstack_ha/instances/failure/"+tmp_host+"/"+instance_id,old_instance_json)
             #zk.create("/openstack_ha/instances/failure/"+instance_id)
     else:
-        zk = KazooClient(hosts='127.0.0.1:2181')
+        zk = KazooClient(hosts='172.30.64.14:2181,172.30.64.13:2181,172.30.64.12:2181')
         zk.start()
         ha_agent.debug("Successfull Migration.Adding to Migrated zNode")
-        zk.ensure_path("/openstack_ha/instances/failure/"+new_tmp_host)
-        zk.create("/openstack_ha/instances/failure/"+new_tmp_host+"/"+new_instance.id,new_instance_json)
+        zk.ensure_path("/openstack_ha/instances/migrated/"+new_tmp_host)
+        zk.create("/openstack_ha/instances/migrated/"+new_tmp_host+"/"+new_instance.id,new_instance_json)
         #zk.create("/openstack_ha/instances/migrated/"+instance_id)
     finally:
-        zk = KazooClient(hosts='127.0.0.1:2181')
+        zk = KazooClient(hosts='172.30.64.14:2181,172.30.64.13:2181,172.30.64.12:2181')
         zk.start()
         ha_agent.debug("Removing Instance from pending")
-        #zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
+        zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
         #zk.delete("/openstack_ha/instances/pending/"+instance_id)
 
             
