@@ -120,10 +120,13 @@ def check_hosts(zk,host_name,task,scheduler_log):
         elif any(issubclass(e.__class__, lv) for lv in kazoo_exceptions):
             scheduler_log.exception("Kazoo Exception.....: ")
             time.sleep(2)
-            zk = KazooClient(hosts='127.0.0.1:2181')
-            zk.start()
-            Node_creation = createNodeinAll(zk=zk, host_name=host_name)
-            election_Node = election_node(zk=zk, host_name=host_name)
+            try:
+                zk = KazooClient(hosts='127.0.0.1:2181')
+                zk.start()            
+                Node_creation = createNodeinAll(zk=zk, host_name=host_name)
+                election_Node = election_node(zk=zk, host_name=host_name)
+            except:
+                pass
         else:
             scheduler_log.warning("Unhandled Error ")
             scheduler_log.exception("")
