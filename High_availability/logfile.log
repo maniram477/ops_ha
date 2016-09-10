@@ -1914,3 +1914,2020 @@ SessionExpiredError
 2016-09-08 12:41:36,353 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
 2016-09-08 12:41:36,499 - scheduler - DEBUG - API Failed on Node : node-1.domain.tld 
 2016-09-08 12:41:36,499 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-10 08:04:05,057 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 08:04:10,066 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 08:04:15,074 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 08:04:20,082 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 08:04:25,090 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 08:04:30,099 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 08:13:09,784 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 08:13:09,791 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-10 08:13:11,794 - scheduler - WARNING - Unhandled Error 
+2016-09-10 08:13:11,794 - scheduler - ERROR - 
+Traceback (most recent call last):
+  File "SchdularHA.py", line 26, in check_hosts
+    host_dict = list_hosts()
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 68, in wrapped_f
+    return Retrying(*dargs, **dkw).call(f, *args, **kw)
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 229, in call
+    raise attempt.get()
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 261, in get
+    six.reraise(self.value[0], self.value[1], self.value[2])
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 217, in call
+    attempt = Attempt(fn(*args, **kwargs), attempt_number, False)
+TypeError: list_hosts() takes exactly 1 argument (0 given)
+2016-09-10 08:13:16,798 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 08:13:16,803 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-10 08:13:18,805 - scheduler - WARNING - Unhandled Error 
+2016-09-10 08:13:18,805 - scheduler - ERROR - 
+Traceback (most recent call last):
+  File "SchdularHA.py", line 26, in check_hosts
+    host_dict = list_hosts()
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 68, in wrapped_f
+    return Retrying(*dargs, **dkw).call(f, *args, **kw)
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 229, in call
+    raise attempt.get()
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 261, in get
+    six.reraise(self.value[0], self.value[1], self.value[2])
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 217, in call
+    attempt = Attempt(fn(*args, **kwargs), attempt_number, False)
+TypeError: list_hosts() takes exactly 1 argument (0 given)
+2016-09-10 08:14:56,405 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 08:14:56,409 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-10 08:14:56,800 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-10 08:15:01,805 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 08:15:01,811 - scheduler - DEBUG - Leader Name.....!node-1.domain.tld
+2016-09-10 08:15:01,961 - scheduler - DEBUG - Hosts working Normally....!!!
+2016-09-10 09:47:02,932 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:47:07,959 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:47:12,968 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:47:17,979 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:47:22,989 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:47:27,998 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:47:33,007 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:49:19,705 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 09:49:19,748 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 09:49:21,512 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 09:49:31,993 - ha_agent - DEBUG - Information Collected
+2016-09-10 09:49:31,994 - ha_agent - DEBUG - Extra Volume Detached
+2016-09-10 09:49:32,514 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 09:49:32,516 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:49:44,608 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 09:49:44,665 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:49:54,885 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 09:49:54,919 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:50:05,181 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 09:50:05,182 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:50:15,325 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 09:50:15,326 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 186, in delete_instance_status
+    tmp_ins = nova.servers.get(instance_object.id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance 4885a3cd-fdc8-4826-aa6a-00e9f3f24ad8 could not be found. (HTTP 404) (Request-ID: req-ed74bef3-ce77-4082-95d4-afe9b7fbad2e)
+2016-09-10 09:50:15,407 - ha_agent - DEBUG - Instance Not Found hence deleted
+2016-09-10 09:50:15,408 - ha_agent - DEBUG - Old Instance deleted
+2016-09-10 09:50:23,127 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 09:50:23,153 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:50:33,974 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 09:50:33,975 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:50:44,725 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 09:50:44,726 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:50:54,985 - ha_agent - DEBUG - After creation:  Instance in active state
+2016-09-10 09:50:54,986 - ha_agent - DEBUG - Recreate Finished
+2016-09-10 09:50:54,986 - ha_agent - DEBUG - Floating IP attached Successfully
+2016-09-10 09:52:34,090 - ha_agent - ERROR - Overall Task Exception 
+Traceback (most recent call last):
+  File "ha_agent.py", line 75, in migrate
+    attach_volumes(new_info['id'],extra)
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 68, in wrapped_f
+    return Retrying(*dargs, **dkw).call(f, *args, **kw)
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 229, in call
+    raise attempt.get()
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 261, in get
+    six.reraise(self.value[0], self.value[1], self.value[2])
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 217, in call
+    attempt = Attempt(fn(*args, **kwargs), attempt_number, False)
+TypeError: attach_volumes() takes exactly 3 arguments (2 given)
+2016-09-10 09:52:34,187 - ha_agent - ERROR - Exception hence adding to failure zNode
+2016-09-10 09:52:34,391 - ha_agent - DEBUG - Removing Instance from pending
+2016-09-10 09:53:43,707 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 09:53:43,710 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 09:53:44,435 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 09:53:45,756 - ha_agent - DEBUG - Information Collected
+2016-09-10 09:53:45,757 - ha_agent - DEBUG - Extra Volume Detached
+2016-09-10 09:53:46,535 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 09:53:46,536 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:53:56,638 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 09:53:56,638 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 186, in delete_instance_status
+    tmp_ins = nova.servers.get(instance_object.id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance 23921681-760c-46b0-89e8-c912dfb50794 could not be found. (HTTP 404) (Request-ID: req-f7d51131-f484-4b8c-bef2-f5860719a86e)
+2016-09-10 09:53:56,646 - ha_agent - DEBUG - Instance Not Found hence deleted
+2016-09-10 09:53:56,647 - ha_agent - DEBUG - Old Instance deleted
+2016-09-10 09:53:59,122 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 09:53:59,124 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:54:09,272 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 09:54:09,273 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:54:09,549 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:54:14,577 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:54:19,583 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:54:19,601 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 09:54:19,602 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 09:54:29,898 - ha_agent - DEBUG - After creation:  Instance in active state
+2016-09-10 09:54:29,899 - ha_agent - DEBUG - Recreate Finished
+2016-09-10 09:54:29,900 - ha_agent - DEBUG - Floating IP attached Successfully
+2016-09-10 09:54:50,143 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:54:55,151 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:00,155 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:05,164 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:10,171 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:15,178 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:20,183 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:25,192 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:30,201 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:35,207 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:40,216 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:45,224 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:50,228 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:55:55,235 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:00,244 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:05,250 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:08,991 - ha_agent - ERROR - Overall Task Exception 
+Traceback (most recent call last):
+  File "ha_agent.py", line 75, in migrate
+    attach_volumes(new_info['id'],extra)
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 68, in wrapped_f
+    return Retrying(*dargs, **dkw).call(f, *args, **kw)
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 229, in call
+    raise attempt.get()
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 261, in get
+    six.reraise(self.value[0], self.value[1], self.value[2])
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 217, in call
+    attempt = Attempt(fn(*args, **kwargs), attempt_number, False)
+TypeError: attach_volumes() takes exactly 3 arguments (2 given)
+2016-09-10 09:56:09,015 - ha_agent - ERROR - Exception hence adding to failure zNode
+2016-09-10 09:56:09,028 - ha_agent - DEBUG - Removing Instance from pending
+2016-09-10 09:56:10,255 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:15,264 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:20,272 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:25,281 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:30,290 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:35,298 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:40,307 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:45,311 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:50,321 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:56:55,330 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:00,338 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:05,347 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:10,356 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:15,365 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:20,372 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:25,379 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:30,388 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:35,392 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:40,400 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:45,409 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:50,425 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:57:55,434 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:00,542 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:05,556 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:10,565 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:15,573 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:20,595 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:25,603 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:30,611 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:35,619 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:40,625 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:45,633 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:50,640 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:58:55,648 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:00,656 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:05,664 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:10,670 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:15,678 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:20,687 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:25,696 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:30,704 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:35,712 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:40,721 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:45,729 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:50,751 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 09:59:55,800 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:00,809 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:05,815 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:10,824 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:15,833 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:20,842 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:25,854 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:30,883 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:35,893 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:40,909 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:45,918 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:51,252 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:00:58,023 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:01:03,155 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:01:08,699 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:01:16,841 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:01:22,220 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:01:27,530 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:01:33,324 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:01:39,244 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:01:44,760 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:01:50,000 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:01:55,629 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:01,180 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:06,523 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:11,560 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:16,565 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:21,602 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:26,649 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:31,668 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:36,708 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:41,725 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:46,733 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:51,760 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:02:56,779 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:02,297 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:07,869 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:13,147 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:19,023 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:24,031 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:29,045 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:34,054 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:39,062 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:44,070 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:49,078 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:54,086 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:03:59,156 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:04:01,314 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:04:01,315 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 10:04:01,578 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 10:04:02,048 - ha_agent - DEBUG - Information Collected
+2016-09-10 10:04:02,049 - ha_agent - DEBUG - Extra Volume Detached
+2016-09-10 10:04:02,557 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 10:04:02,558 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:04:04,181 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:04:09,187 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:04:12,658 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 10:04:12,665 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 186, in delete_instance_status
+    tmp_ins = nova.servers.get(instance_object.id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance 71c2a0cf-e885-44ea-94dc-1a0b364cecea could not be found. (HTTP 404) (Request-ID: req-ba93abb0-b0b5-4878-9f1d-a3d9d9ddd3a3)
+2016-09-10 10:04:12,691 - ha_agent - DEBUG - Instance Not Found hence deleted
+2016-09-10 10:04:12,691 - ha_agent - DEBUG - Old Instance deleted
+2016-09-10 10:04:14,197 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:04:15,390 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:04:15,435 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:04:20,220 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:04:25,583 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:04:25,975 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:04:25,987 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:04:31,444 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:04:36,564 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:04:36,692 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:04:37,148 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:04:42,460 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:04:47,684 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:04:53,316 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:04:53,363 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:04:58,976 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:03,981 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:04,178 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:05:04,179 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:05:08,987 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:13,996 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:14,281 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:05:14,283 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:05:19,004 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:24,012 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:24,509 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:05:24,510 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:05:29,021 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:34,236 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:34,736 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:05:34,741 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:05:39,628 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:44,729 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:44,963 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:05:44,964 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:05:49,739 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:54,745 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:05:55,086 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:05:55,087 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:05:59,750 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:04,765 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:05,371 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:06:05,371 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:06:09,774 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:14,779 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:15,554 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:06:15,555 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:06:19,788 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:24,794 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:25,724 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:06:25,725 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:06:29,802 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:34,812 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:35,901 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:06:35,902 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:06:39,820 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:44,828 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:46,110 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:06:46,111 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:06:49,836 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:54,843 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:06:56,320 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:06:56,322 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:06:59,853 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:04,859 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:06,529 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:07:06,530 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:07:09,869 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:14,877 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:16,762 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:07:16,763 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:07:19,881 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:24,890 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:26,877 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:07:26,878 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:07:29,896 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:34,905 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:37,010 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:07:37,011 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:07:39,911 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:44,920 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:47,125 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:07:47,126 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:07:49,929 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:54,935 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:07:57,233 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:07:57,234 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:07:59,958 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:04,967 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:07,482 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:08:07,483 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:08:09,975 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:14,983 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:17,585 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:08:17,586 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:08:19,992 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:25,000 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:27,769 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:08:27,770 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:08:30,009 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:35,015 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:37,910 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:08:37,911 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:08:40,025 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:45,031 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:48,028 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:08:48,029 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:08:50,038 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:55,044 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:08:58,249 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:08:58,250 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:09:00,053 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:05,059 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:08,509 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:09:08,510 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:09:10,069 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:15,077 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:18,738 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:09:18,740 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:09:20,086 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:25,093 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:28,954 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:09:28,961 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:09:30,121 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:35,129 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:39,205 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:09:39,207 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:09:40,137 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:45,315 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:49,437 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:09:49,438 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:09:50,323 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:55,328 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:09:59,629 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:09:59,630 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:10:00,335 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:05,353 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:09,746 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:10:09,761 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:10:10,408 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:15,416 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:20,302 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:10:20,322 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:10:20,422 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:25,431 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:30,439 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:30,475 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:10:30,476 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:10:35,468 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:40,477 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:40,586 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:10:40,587 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:10:45,486 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:50,493 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:10:50,970 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:10:50,971 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:10:55,500 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:00,508 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:01,163 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:11:01,164 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:11:05,516 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:10,525 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:11,308 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:11:11,310 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:11:15,534 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:20,545 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:21,466 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:11:21,468 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:11:25,554 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:30,563 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:31,737 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:11:31,740 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:11:35,888 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:40,911 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:41,986 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:11:41,988 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:11:45,920 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:50,929 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:11:52,173 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:11:52,174 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:11:55,934 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:00,942 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:02,293 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:12:02,294 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:12:05,951 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:10,956 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:12,467 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:12:12,468 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:12:15,965 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:20,972 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:22,666 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:12:22,667 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:12:25,980 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:30,987 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:32,870 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:12:32,872 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:12:35,996 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:41,005 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:43,046 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:12:43,047 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:12:46,014 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:51,024 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:12:53,190 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:12:53,191 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:12:56,031 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:01,040 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:03,433 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:13:03,434 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:13:06,049 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:11,058 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:13,658 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:13:13,659 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:13:16,064 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:21,074 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:23,935 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:13:23,938 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:13:26,082 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:31,089 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:34,171 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:13:34,172 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:13:36,093 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:41,098 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:44,415 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:13:44,415 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:13:46,104 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:51,112 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:13:54,619 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:13:54,620 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:13:56,121 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:01,129 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:04,739 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:14:04,740 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:14:06,138 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:11,147 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:15,040 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:14:15,041 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:14:16,153 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:21,158 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:25,159 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:14:25,160 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:14:26,168 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:31,173 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:35,414 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:14:35,415 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:14:36,180 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:41,185 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:45,685 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:14:45,686 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:14:46,194 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:51,203 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:14:55,773 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:14:55,776 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:14:56,211 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:01,220 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:05,990 - ha_agent - DEBUG - After creation:  Instance in active state
+2016-09-10 10:15:05,991 - ha_agent - DEBUG - Recreate Finished
+2016-09-10 10:15:05,992 - ha_agent - DEBUG - Floating IP attached Successfully
+2016-09-10 10:15:06,228 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:11,234 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:16,242 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:21,250 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:26,257 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:31,265 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:36,272 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:41,279 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:46,288 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:51,295 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:15:56,304 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:01,313 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:06,321 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:11,328 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:16,337 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:21,345 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:26,354 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:31,362 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:36,371 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:41,380 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:45,078 - ha_agent - ERROR - Overall Task Exception 
+Traceback (most recent call last):
+  File "ha_agent.py", line 75, in migrate
+    attach_volumes(new_info['id'],extra)
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 68, in wrapped_f
+    return Retrying(*dargs, **dkw).call(f, *args, **kw)
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 229, in call
+    raise attempt.get()
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 261, in get
+    six.reraise(self.value[0], self.value[1], self.value[2])
+  File "/usr/lib/python2.7/dist-packages/retrying.py", line 217, in call
+    attempt = Attempt(fn(*args, **kwargs), attempt_number, False)
+TypeError: attach_volumes() takes exactly 3 arguments (2 given)
+2016-09-10 10:16:45,113 - ha_agent - ERROR - Exception hence adding to failure zNode
+2016-09-10 10:16:45,128 - ha_agent - DEBUG - Removing Instance from pending
+2016-09-10 10:16:46,389 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:51,398 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:16:56,406 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:01,415 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:06,422 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:11,430 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:16,437 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:21,446 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:26,453 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:31,462 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:36,468 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:41,477 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:46,486 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:51,491 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:17:56,500 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:01,508 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:06,516 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:11,522 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:16,531 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:21,540 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:26,549 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:31,557 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:36,566 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:41,573 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:46,581 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:51,588 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:18:56,595 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:01,601 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:06,610 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:11,619 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:16,628 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:21,637 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:26,645 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:31,654 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:36,662 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:41,667 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:46,671 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:51,680 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:19:56,689 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:01,697 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:02,028 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:20:02,029 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 10:20:02,278 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 10:20:02,733 - ha_agent - DEBUG - Information Collected
+2016-09-10 10:20:02,734 - ha_agent - DEBUG - Extra Volume Detached
+2016-09-10 10:20:03,264 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 10:20:03,265 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:20:06,703 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:11,712 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:13,329 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 10:20:13,330 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 186, in delete_instance_status
+    tmp_ins = nova.servers.get(instance_object.id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance 63b9d94d-22b2-4331-aae1-3d10df36cdb5 could not be found. (HTTP 404) (Request-ID: req-2126c74d-617f-4216-8ccb-fc2553a26779)
+2016-09-10 10:20:13,342 - ha_agent - DEBUG - Instance Not Found hence deleted
+2016-09-10 10:20:13,343 - ha_agent - DEBUG - Old Instance deleted
+2016-09-10 10:20:14,759 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:20:14,760 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:20:16,747 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:21,755 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:24,945 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:20:24,946 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 256, in create_instance_status
+    raise Exception("error")
+Exception: error
+2016-09-10 10:20:24,947 - ha_agent - ERROR - Instance - 9df6ca5d-ef8b-4f08-8b92-c75b434c062c went to ERROR state
+2016-09-10 10:20:24,948 - ha_agent - DEBUG - Recreate Finished
+2016-09-10 10:20:24,948 - ha_agent - DEBUG - Floating IP attached Successfully
+2016-09-10 10:20:24,949 - ha_agent - DEBUG - Volume attached Successfully
+2016-09-10 10:20:24,949 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:20:25,121 - ha_agent - DEBUG - Information Collected
+2016-09-10 10:20:25,122 - ha_agent - ERROR - Overall Task Exception 
+Traceback (most recent call last):
+  File "ha_agent.py", line 87, in migrate
+    fixed_ip=info['addresses']['net04'][0]['addr']
+KeyError: 'net04'
+2016-09-10 10:20:25,132 - ha_agent - ERROR - Exception hence adding to failure zNode
+2016-09-10 10:20:25,141 - ha_agent - DEBUG - Removing Instance from pending
+2016-09-10 10:20:26,762 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:31,771 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:36,780 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:41,790 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:46,797 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:51,805 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:20:56,815 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:01,822 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:06,828 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:11,837 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:16,843 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:21,852 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:26,861 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:31,870 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:36,876 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:41,885 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:46,894 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:51,899 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:21:56,906 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:01,912 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:06,921 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:11,928 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:16,936 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:21,944 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:26,952 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:31,961 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:36,968 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:41,977 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:46,983 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:51,992 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:22:57,000 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:02,007 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:07,017 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:12,025 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:17,031 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:22,040 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:27,048 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:32,057 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:37,062 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:42,071 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:47,081 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:52,090 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:23:57,098 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:02,106 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:07,115 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:12,124 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:17,133 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:22,140 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:27,147 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:32,155 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:37,162 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:42,171 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:47,180 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:52,184 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:24:57,193 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:02,202 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:07,212 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:12,220 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:17,228 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:22,236 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:27,245 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:32,251 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:37,260 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:42,269 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:47,278 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:52,287 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:25:57,295 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:02,304 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:07,311 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:12,320 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:17,328 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:22,337 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:27,344 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:32,351 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:37,360 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:42,369 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:47,377 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:52,386 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:26:57,396 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:02,404 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:07,410 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:12,418 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:17,427 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:22,436 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:27,444 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:32,449 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:37,458 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:42,464 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:47,471 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:52,480 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:27:57,485 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:02,495 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:07,504 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:12,509 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:17,514 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:22,522 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:27,527 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:32,536 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:37,544 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:42,552 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:47,560 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:52,567 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:28:57,576 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:02,586 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:07,593 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:12,598 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:17,605 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:22,613 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:27,622 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:32,630 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:37,639 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:42,648 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:47,656 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:52,666 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:29:57,670 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:02,680 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:07,688 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:12,697 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:17,703 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:22,712 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:27,716 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:32,725 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:37,732 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:42,741 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:47,750 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:52,759 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:30:57,765 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:02,774 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:07,781 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:12,786 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:17,795 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:22,803 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:27,809 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:32,818 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:37,826 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:42,831 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:47,839 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:52,844 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:31:57,852 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:02,859 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:07,868 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:12,875 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:17,884 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:22,890 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:27,900 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:32,906 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:37,916 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:42,925 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:47,934 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:52,942 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:32:57,951 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:02,960 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:07,968 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:12,975 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:17,984 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:22,993 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:27,999 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:33,007 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:38,016 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:43,025 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:48,033 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:53,041 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:33:58,050 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:03,054 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:08,062 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:13,067 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:18,076 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:23,084 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:28,093 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:33,102 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:38,109 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:43,117 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:48,122 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:52,818 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:34:52,821 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 10:34:52,961 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 10:34:53,130 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:34:53,897 - ha_agent - DEBUG - Information Collected
+2016-09-10 10:34:53,898 - ha_agent - DEBUG - Extra Volume Detached
+2016-09-10 10:34:54,467 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 10:34:54,468 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:34:58,139 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:03,148 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:04,538 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 10:35:04,539 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 186, in delete_instance_status
+    tmp_ins = nova.servers.get(instance_object.id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance d753c09c-cfc2-4cae-89e6-231a9f18e0a5 could not be found. (HTTP 404) (Request-ID: req-ed60f470-4094-44ae-a01b-46fef2a46bd2)
+2016-09-10 10:35:04,542 - ha_agent - DEBUG - Instance Not Found hence deleted
+2016-09-10 10:35:04,542 - ha_agent - DEBUG - Old Instance deleted
+2016-09-10 10:35:06,578 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:35:06,579 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 10:35:08,156 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:13,165 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:16,782 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 10:35:16,783 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 256, in create_instance_status
+    raise Exception("error")
+Exception: error
+2016-09-10 10:35:16,785 - ha_agent - ERROR - Instance - 3761c154-5ba7-4838-a989-18a4403ab6c3 went to ERROR state
+2016-09-10 10:35:16,785 - ha_agent - DEBUG - Recreate Finished
+2016-09-10 10:35:16,851 - ha_agent - WARNING - Exception: attach_flt_ip
+2016-09-10 10:35:16,852 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 392, in attach_flt_ip
+    instance_object.add_floating_ip(flt_ip,fix_ip)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 132, in add_floating_ip
+    self.manager.add_floating_ip(self, address, fixed_address)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 618, in add_floating_ip
+    {'address': address, 'fixed_address': fixed_address})
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 1238, in _action
+    return self.api.client.post(url, body=body)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 447, in post
+    return self._cs_request(url, 'POST', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+BadRequest: No nw_info cache associated with instance (HTTP 400) (Request-ID: req-0016d9dc-635a-4dbb-9502-5af516a20a3c)
+2016-09-10 10:35:16,853 - ha_agent - DEBUG - Floating IP attached Successfully
+2016-09-10 10:35:16,914 - ha_agent - WARNING - Exception During Attach_volumes
+2016-09-10 10:35:16,915 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 340, in attach_volumes
+    nova.volumes.create_server_volume(instance,volumes[dev],dev)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/volumes.py", line 127, in create_server_volume
+    body, "volumeAttachment")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 161, in _create
+    _resp, body = self.api.client.post(url, body=body)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 447, in post
+    return self._cs_request(url, 'POST', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+Conflict: Cannot 'attach_volume' instance 3761c154-5ba7-4838-a989-18a4403ab6c3 while it is in vm_state error (HTTP 409) (Request-ID: req-484ac45c-6309-427a-9ec7-850397b49015)
+2016-09-10 10:35:16,921 - ha_agent - DEBUG - Volume attached Successfully
+2016-09-10 10:35:16,921 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:35:17,045 - ha_agent - DEBUG - Information Collected
+2016-09-10 10:35:17,045 - ha_agent - ERROR - Overall Task Exception 
+Traceback (most recent call last):
+  File "ha_agent.py", line 87, in migrate
+    fixed_ip=info['addresses']['net04'][0]['addr']
+KeyError: 'net04'
+2016-09-10 10:35:17,056 - ha_agent - ERROR - Exception hence adding to failure zNode
+2016-09-10 10:35:17,065 - ha_agent - DEBUG - Removing Instance from pending
+2016-09-10 10:35:18,174 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:23,181 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:28,187 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:33,196 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:38,205 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:43,214 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:48,224 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:53,233 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:35:58,240 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:03,248 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:08,257 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:13,266 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:18,276 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:23,280 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:28,287 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:33,295 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:38,304 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:43,312 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:48,321 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:53,328 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:36:58,337 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:03,343 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:08,352 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:13,359 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:18,367 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:23,375 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:28,385 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:33,392 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:38,399 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:43,408 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:48,417 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:53,425 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:37:58,434 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:03,444 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:08,452 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:13,460 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:18,469 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:23,473 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:28,481 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:33,490 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:38,499 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:43,509 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:48,515 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:53,526 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:38:58,531 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:03,541 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:08,546 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:13,555 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:18,562 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:23,571 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:28,578 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:33,587 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:38,593 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:43,603 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:48,609 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:53,617 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:39:58,624 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:03,633 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:08,639 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:13,645 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:18,654 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:23,662 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:28,670 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:33,679 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:38,687 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:43,696 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:48,705 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:53,713 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:40:58,720 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:03,729 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:08,737 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:13,746 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:18,753 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:23,761 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:28,767 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:33,776 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:38,782 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:43,791 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:48,799 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:53,808 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:41:58,814 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:03,820 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:08,828 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:13,834 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:18,842 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:23,850 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:28,858 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:33,867 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:38,875 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:43,884 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:48,891 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:53,901 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:42:58,907 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:03,916 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:08,925 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:13,934 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:18,942 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:23,950 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:28,959 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:33,963 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:38,971 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:43,978 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:48,986 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:53,990 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:43:58,999 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:04,009 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:09,015 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:14,024 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:19,031 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:24,037 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:29,046 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:34,054 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:39,062 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:44,071 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:49,078 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:54,087 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:44:59,096 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:04,105 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:09,109 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:14,116 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:19,126 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:24,133 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:29,140 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:34,145 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:39,152 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:44,161 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:49,170 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:54,178 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:45:59,185 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:04,194 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:09,204 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:14,212 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:19,221 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:24,228 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:29,234 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:30,927 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:46:30,928 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 10:46:31,039 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 10:46:31,197 - ha_agent - WARNING - Collecting the Infromation about instances
+2016-09-10 10:46:31,198 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 159, in info_collection
+    instance = nova.servers.get(instance_id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance d753c09c-cfc2-4cae-89e6-231a9f18e0a5 could not be found. (HTTP 404) (Request-ID: req-0e0d5818-68e9-4844-84ce-e9739fb0423b)
+2016-09-10 10:46:32,201 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:46:32,286 - ha_agent - WARNING - Collecting the Infromation about instances
+2016-09-10 10:46:32,289 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 159, in info_collection
+    instance = nova.servers.get(instance_id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance d753c09c-cfc2-4cae-89e6-231a9f18e0a5 could not be found. (HTTP 404) (Request-ID: req-7c7d254c-6f47-46ea-b4ef-6d6cd46ff213)
+2016-09-10 10:46:33,291 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:46:33,349 - ha_agent - WARNING - Collecting the Infromation about instances
+2016-09-10 10:46:33,349 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 159, in info_collection
+    instance = nova.servers.get(instance_id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance d753c09c-cfc2-4cae-89e6-231a9f18e0a5 could not be found. (HTTP 404) (Request-ID: req-aea7d0da-3422-469a-8ca1-0fe20f39bb54)
+2016-09-10 10:46:34,240 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:39,250 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:44,258 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:49,263 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:54,273 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:46:59,281 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:04,285 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:09,294 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:14,300 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:19,304 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:24,311 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:29,318 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:34,326 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:39,333 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:44,341 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:48,665 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:47:48,667 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 10:47:48,801 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 10:47:49,350 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:54,358 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:47:59,367 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:04,377 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:09,386 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:14,390 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:19,399 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:24,407 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:29,416 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:34,424 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:39,433 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:44,442 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:49,450 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:54,459 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:48:59,469 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:04,478 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:09,484 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:14,493 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:19,499 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:24,508 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:29,515 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:34,525 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:39,535 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:44,543 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:49,551 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:54,559 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:49:59,568 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:04,576 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:09,584 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:14,593 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:19,597 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:24,606 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:29,615 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:34,620 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:39,627 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:44,634 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:49,640 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:54,649 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:50:59,654 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:04,662 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:09,672 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:14,681 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:19,685 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:24,692 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:29,700 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:34,705 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:39,713 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:44,722 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:49,730 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:54,735 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:51:59,744 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:04,751 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:09,760 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:14,765 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:19,773 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:24,777 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:25,839 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:52:29,781 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:34,789 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:39,795 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:44,804 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:49,812 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:54,821 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:52:59,830 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:04,835 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:09,843 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:14,851 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:19,860 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:24,867 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:29,875 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:34,884 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:39,890 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:44,899 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:49,744 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 10:53:49,746 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 10:53:49,870 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 10:53:49,907 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:50,571 - ha_agent - DEBUG - Information Collected
+2016-09-10 10:53:50,571 - ha_agent - ERROR - Overall Task Exception 
+Traceback (most recent call last):
+  File "ha_agent.py", line 39, in migrate
+    old_instance=json.dumps({"instance_name":instance_object.name,"host_name":tmp_host,"instance_id":instance_object.id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
+UnboundLocalError: local variable 'fixed_ip' referenced before assignment
+2016-09-10 10:53:50,581 - ha_agent - ERROR - Exception hence adding to failure zNode
+2016-09-10 10:53:50,591 - ha_agent - DEBUG - Removing Instance from pending
+2016-09-10 10:53:54,916 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:53:59,921 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:04,928 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:09,936 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:14,946 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:19,954 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:24,962 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:29,968 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:34,976 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:39,979 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:44,984 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:49,993 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:54:55,000 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:00,009 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:05,015 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:10,024 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:15,029 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:20,038 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:25,046 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:30,055 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:35,063 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:40,072 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:45,081 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:50,089 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:55:55,097 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:00,105 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:05,112 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:10,120 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:15,125 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:20,130 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:25,135 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:30,140 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:35,145 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:40,152 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:45,161 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:50,168 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:56:55,176 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:00,184 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:05,193 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:10,201 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:15,212 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:20,217 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:25,222 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:30,231 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:35,240 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:40,248 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:45,256 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:50,263 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:57:55,272 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:00,281 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:05,288 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:10,292 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:15,300 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:20,309 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:25,316 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:30,325 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:35,331 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:40,339 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:45,348 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:50,355 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:58:55,360 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:00,369 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:05,375 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:10,383 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:15,387 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:20,396 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:25,404 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:30,409 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:35,416 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:40,425 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:45,433 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:50,441 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 10:59:55,450 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:00,457 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:05,465 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:10,474 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:15,481 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:20,489 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:25,498 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:30,503 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:35,512 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:40,521 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:45,529 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:50,537 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:00:55,545 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:00,554 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:05,563 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:08,833 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 11:01:08,835 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 11:01:08,994 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 11:01:09,654 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:01:09,655 - ha_agent - DEBUG - Extra Volume Detached
+2016-09-10 11:01:10,571 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:15,162 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 11:01:15,163 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:01:15,579 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:20,585 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:25,234 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 11:01:25,236 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 186, in delete_instance_status
+    tmp_ins = nova.servers.get(instance_object.id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance 66f08848-df22-4d94-8f70-7c766bcff5b6 could not be found. (HTTP 404) (Request-ID: req-32a34fde-9a65-44f4-97be-581f418bc09c)
+2016-09-10 11:01:25,237 - ha_agent - DEBUG - Instance Not Found hence deleted
+2016-09-10 11:01:25,238 - ha_agent - DEBUG - Old Instance deleted
+2016-09-10 11:01:25,593 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:26,423 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 11:01:26,424 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:01:30,602 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:35,609 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:36,669 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 11:01:36,670 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 256, in create_instance_status
+    raise Exception("error")
+Exception: error
+2016-09-10 11:01:36,671 - ha_agent - ERROR - Instance - 82f96a4f-d731-4d45-b94d-275b32ba8c81 went to ERROR state
+2016-09-10 11:01:36,672 - ha_agent - DEBUG - Recreate Finished
+2016-09-10 11:01:36,673 - ha_agent - DEBUG - Floating IP attached Successfully
+2016-09-10 11:01:36,673 - ha_agent - DEBUG - Volume attached Successfully
+2016-09-10 11:01:36,674 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 11:01:36,878 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:01:36,879 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:01:37,096 - ha_agent - DEBUG - Successfull Migration.Adding to Migrated zNode
+2016-09-10 11:01:37,105 - ha_agent - DEBUG - Removing Instance from pending
+2016-09-10 11:01:40,616 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:45,625 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:50,632 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:01:55,640 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:00,648 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:05,652 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:10,660 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:15,666 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:20,673 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:25,678 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:30,686 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:35,695 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:40,703 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:45,711 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:50,718 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:02:55,727 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:00,734 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:05,743 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:10,754 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:15,764 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:20,770 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:25,778 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:30,785 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:35,793 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:40,801 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:45,808 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:50,815 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:03:55,824 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:00,832 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:05,840 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:10,847 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:15,856 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:20,863 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:25,872 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:30,880 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:35,888 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:40,896 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:45,900 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:50,907 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:04:55,916 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:00,924 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:05,932 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:10,937 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:15,944 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:20,950 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:25,958 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:30,964 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:35,968 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:40,976 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:45,984 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:50,992 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:05:56,000 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:01,008 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:06,013 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:11,019 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:16,027 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:21,036 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:26,045 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:31,053 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:36,061 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:41,069 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:46,073 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:51,082 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:06:56,090 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:01,099 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:06,108 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:11,115 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:16,123 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:21,132 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:26,139 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:31,144 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:36,150 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:41,156 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:46,165 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:51,173 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:07:56,182 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:01,190 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:06,196 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:11,200 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:16,208 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:21,216 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:26,225 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:31,229 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:36,234 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:41,242 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:46,246 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:51,254 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:08:56,262 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:01,270 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:06,278 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:11,288 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:14,431 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 11:09:14,433 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 11:09:14,554 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 11:09:15,449 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:09:15,450 - ha_agent - DEBUG - Extra Volume Detached
+2016-09-10 11:09:16,001 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 11:09:16,002 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:09:16,296 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:21,301 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:26,078 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 11:09:26,079 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 186, in delete_instance_status
+    tmp_ins = nova.servers.get(instance_object.id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance 2aaa7294-e8ec-400c-94fa-3044b89155b9 could not be found. (HTTP 404) (Request-ID: req-fff0c0fa-66e6-49a0-bfa1-f70cb8ecf6c4)
+2016-09-10 11:09:26,084 - ha_agent - DEBUG - Instance Not Found hence deleted
+2016-09-10 11:09:26,085 - ha_agent - DEBUG - Old Instance deleted
+2016-09-10 11:09:26,309 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:28,290 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 11:09:28,292 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:09:31,314 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:36,322 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:38,559 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 11:09:38,560 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:09:41,329 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:46,337 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:48,834 - ha_agent - DEBUG - After creation:  Instance in active state
+2016-09-10 11:09:48,835 - ha_agent - DEBUG - Recreate Finished
+2016-09-10 11:09:48,836 - ha_agent - DEBUG - Floating IP attached Successfully
+2016-09-10 11:09:48,837 - ha_agent - DEBUG - Volume attached Successfully
+2016-09-10 11:09:48,838 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 11:09:49,593 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:09:49,777 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:09:49,997 - ha_agent - DEBUG - Successfull Migration.Adding to Migrated zNode
+2016-09-10 11:09:50,012 - ha_agent - DEBUG - Removing Instance from pending
+2016-09-10 11:09:51,343 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:09:56,349 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:01,358 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:06,363 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:11,371 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:16,375 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:21,384 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:26,391 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:31,400 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:36,408 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:38,499 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 11:10:38,501 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 11:10:38,624 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 11:10:39,347 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:10:39,348 - ha_agent - DEBUG - Extra Volume Detached
+2016-09-10 11:10:39,782 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 11:10:39,782 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:10:41,416 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:46,424 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:49,826 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 11:10:49,827 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 186, in delete_instance_status
+    tmp_ins = nova.servers.get(instance_object.id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance 98232c2e-14f8-4830-a2e1-6e9c92a8be51 could not be found. (HTTP 404) (Request-ID: req-ed8c6e39-a059-4589-8056-31c84d5d4a55)
+2016-09-10 11:10:49,829 - ha_agent - DEBUG - Instance Not Found hence deleted
+2016-09-10 11:10:49,829 - ha_agent - DEBUG - Old Instance deleted
+2016-09-10 11:10:51,073 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 11:10:51,074 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:10:51,432 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:10:56,441 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:01,449 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:01,475 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 11:11:01,475 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:11:06,456 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:11,464 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:11,942 - ha_agent - DEBUG - After creation:  Instance in active state
+2016-09-10 11:11:11,944 - ha_agent - DEBUG - Recreate Finished
+2016-09-10 11:11:16,468 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:18,149 - ha_agent - DEBUG - Floating IP attached Successfully
+2016-09-10 11:11:18,149 - ha_agent - DEBUG - Volume attached Successfully
+2016-09-10 11:11:18,150 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 11:11:18,538 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:11:18,669 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:11:18,923 - ha_agent - DEBUG - Successfull Migration.Adding to Migrated zNode
+2016-09-10 11:11:18,936 - ha_agent - DEBUG - Removing Instance from pending
+2016-09-10 11:11:21,477 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:26,484 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:31,492 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:36,500 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:41,508 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:46,514 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:51,520 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:11:56,528 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:01,536 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:06,544 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:11,552 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:16,560 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:19,003 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 11:12:19,004 - novaclient.client - DEBUG - New session created for: (http://30.20.0.9:5000)
+2016-09-10 11:12:19,162 - novaclient.client - DEBUG - New session created for: (http://172.30.64.11:8774)
+2016-09-10 11:12:20,121 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:12:20,122 - ha_agent - DEBUG - Extra Volume Detached
+2016-09-10 11:12:20,649 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 11:12:20,650 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:12:21,568 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:26,578 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:30,871 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 11:12:30,874 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 191, in delete_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:12:31,586 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:36,590 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:40,940 - ha_agent - WARNING - Exception in deleting instance...!
+2016-09-10 11:12:40,942 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 186, in delete_instance_status
+    tmp_ins = nova.servers.get(instance_object.id)
+  File "/usr/lib/python2.7/dist-packages/novaclient/v2/servers.py", line 532, in get
+    return self._get("/servers/%s" % base.getid(server), "server")
+  File "/usr/lib/python2.7/dist-packages/novaclient/base.py", line 156, in _get
+    _resp, body = self.api.client.get(url)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 444, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 422, in _cs_request
+    resp, body = self._time_request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 393, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/novaclient/client.py", line 387, in request
+    raise exceptions.from_response(resp, body, url, method)
+NotFound: Instance 242fcee8-70b7-4ba9-bcf2-ecfbc458cf37 could not be found. (HTTP 404) (Request-ID: req-83178e70-a01e-40d1-8d64-f3663d2bf6e3)
+2016-09-10 11:12:40,943 - ha_agent - DEBUG - Instance Not Found hence deleted
+2016-09-10 11:12:40,944 - ha_agent - DEBUG - Old Instance deleted
+2016-09-10 11:12:41,599 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:42,280 - ha_agent - WARNING - Exception: checking the instance status after creation...!
+2016-09-10 11:12:42,281 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 254, in create_instance_status
+    raise Exception("poll")
+Exception: poll
+2016-09-10 11:12:46,608 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:51,616 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:12:52,617 - ha_agent - DEBUG - After creation:  Instance in active state
+2016-09-10 11:12:52,618 - ha_agent - DEBUG - Recreate Finished
+2016-09-10 11:12:53,846 - ha_agent - DEBUG - Floating IP attached Successfully
+2016-09-10 11:12:54,493 - ha_agent - DEBUG - Volume attached Successfully
+2016-09-10 11:12:54,493 - ha_agent - DEBUG - Inside the info_collection...!
+2016-09-10 11:12:55,131 - ha_agent - WARNING - Exception:cinder_volume_check
+2016-09-10 11:12:55,131 - ha_agent - ERROR - 
+Traceback (most recent call last):
+  File "common_functions.py", line 310, in cinder_volume_check
+    volumes = {cinder.volumes.get(x['id']).attachments[0]['device']:x['id'] for x in info.get('os-extended-volumes:volumes_attached') }
+  File "common_functions.py", line 310, in <dictcomp>
+    volumes = {cinder.volumes.get(x['id']).attachments[0]['device']:x['id'] for x in info.get('os-extended-volumes:volumes_attached') }
+IndexError: list index out of range
+2016-09-10 11:12:55,132 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:12:55,258 - ha_agent - DEBUG - Information Collected
+2016-09-10 11:12:55,530 - ha_agent - DEBUG - Successfull Migration.Adding to Migrated zNode
+2016-09-10 11:12:55,542 - ha_agent - DEBUG - Removing Instance from pending
+2016-09-10 11:12:56,624 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:01,628 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:06,636 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:11,640 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:16,649 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:21,656 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:26,663 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:31,667 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:36,673 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:41,681 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:46,687 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:51,691 - scheduler - DEBUG - scheduler before start...!!!
+2016-09-10 11:13:56,699 - scheduler - DEBUG - scheduler before start...!!!

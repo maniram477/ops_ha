@@ -10,27 +10,30 @@ import json
 celery = Celery('migrate')
 celery.config_from_object('config')
 
-tmp_host=""
-new_tmp_host=""
-volumes={}
 
 @celery.task(name='migrate.migrate')
 def migrate(instance_id):
     try:
+        tmp_host=""
+        new_tmp_host=""
+        volumes={}
         # Seperate Each unit of function and give retry for each one separately
         cinder,neutron,nova = client_init()
-        instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder)
-        global tmp_host
+        instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder)      
         tmp_host = info['OS-EXT-SRV-ATTR:host'] 
         volumes.update(bdm)
+        nics = get_fixed_ip(info,neutron)
+        if not nics:
+            fixed_ip=None
+        else:
+            fixed_ip=nics[0]
         # Check Whether BDM is available
         ha_agent.debug("Information Collected")
-        if not ip_list:
-            fixed_ip=info['addresses']['net04'][0]['addr']
-            folating_ip=''
+        if not ip_list:            
+            folating_ip=None
         else:
             folating_ip=ip_list[0][0]
-            fixed_ip=ip_list[0][1]
+       
         if bool(extra):            
             volumes.update(extra)
             volume=volumes
@@ -72,23 +75,28 @@ def migrate(instance_id):
         attach_flt_ip(ip_list,new_instance)
         ha_agent.debug("Floating IP attached Successfully")
 
-        attach_volumes(new_info['id'],extra)
+        attach_volumes(nova,new_info['id'],extra)
         ha_agent.debug("Volume attached Successfully")
         #zk = KazooClient(hosts='127.0.0.1:2181')
         #zk.start()
         
         #create new_instance json
         instance_object1,info,ip_list,bdm,extra = info_collection(nova,new_instance_id,cinder)
-        global new_tmp_host
         new_tmp_host = info['OS-EXT-SRV-ATTR:host']
         # Check Whether BDM is available
         ha_agent.debug("Information Collected")
-        if not ip_list:
-            fixed_ip=info['addresses']['net04'][0]['addr']
-            folating_ip=''
+        nics = get_fixed_ip(info,neutron)
+        if not nics:
+            fixed_ip=None
+        else:
+            fixed_ip=nics[0]
+        # Check Whether BDM is available
+        ha_agent.debug("Information Collected")
+        if not ip_list:            
+            folating_ip=None
         else:
             folating_ip=ip_list[0][0]
-            fixed_ip=ip_list[0][1]
+            
         if bool(extra):
             bdm.update(extra)
             volume=bdm

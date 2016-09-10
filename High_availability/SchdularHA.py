@@ -23,7 +23,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
         imalive(zk=zk)
         if (leader == host_name):
             scheduler_log.debug("Leader Name.....!%s"%host_name)
-            host_dict = list_hosts()
+            host_dict = list_hosts(nova)
             allhosts = host_dict['all_list']
             api_down_nodes = host_dict['down_list']
             dishosts = host_dict['disabled_list']
@@ -91,7 +91,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                         scheduler_log.warning(" api down host :"+host+"present in zookeeper down_node:"+calculated_down_nodes)
                                         scheduler_log.debug("Strart migration....!!!!!")
                                         scheduler_log.debug("migratie instance from the "+host)
-                                        instance_migration(api_down_nodes,task)
+                                        instance_migration(nova,api_down_nodes,task)
                                     else:
                                         #check for time out
                                         scheduler_log.debug("Checking Timeout for Down Node",host)
@@ -103,7 +103,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                             down_host_failuretime = float(down_host_failuretime)
                                             time_interval = curent_time - down_host_failuretime
                                             if time_interval>migrate_time:
-                                                instance_migration(api_down_nodes,task)
+                                                instance_migration(nova,api_down_nodes,task)
                                             else:
                                                 scheduler_log.debug("Will Wait for another %d"%(migrate_time-time_interval))
                                         else:
