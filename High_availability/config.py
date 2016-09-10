@@ -3,8 +3,9 @@
 #Config File
 from common_functions import get_ip_address
 ip_address = get_ip_address('br-mgmt')
-
-BROKER_URL = 'amqp://nova:FWlPjEo0@%s:5673//'%ip_address
+RABBIT_USER = 'nova'
+RABBIT_PASSWORD = '0vu9UvyR'
+BROKER_URL = 'amqp://%s:%s@%s:5673//'%(RABBIT_USER,RABBIT_PASSWORD,ip_address)
 
 #CELERY_RESULT_BACKEND = "amqp"
 CELERY_RESULT_BACKEND = None
