@@ -88,7 +88,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                 else:
                                     scheduler_log.warning("Ping test also Failed on "+host+" proceed with migration")
                                     if (zk.exists("/openstack_ha/hosts/start_migration/"+ host)): # it checks the permission from the dashborad
-                                        scheduler_log.warning(" api down host :"+host+"present in zookeeper down_node:"+calculated_down_nodes)
+                                        scheduler_log.warning(" api down host :"+host+"present in zookeeper down_node:")
                                         scheduler_log.debug("Strart migration....!!!!!")
                                         scheduler_log.debug("migratie instance from the "+host)
                                         instance_migration(nova,api_down_nodes,task)
