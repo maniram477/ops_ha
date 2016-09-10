@@ -18,8 +18,8 @@ volumes={}
 def migrate(instance_id):
     try:
         # Seperate Each unit of function and give retry for each one separately
-        cinder,neutron = client_init()
-        instance_object,info,ip_list,bdm,extra = info_collection(instance_id,cinder)
+        cinder,neutron,nova = client_init()
+        instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder)
         global tmp_host
         tmp_host = info['OS-EXT-SRV-ATTR:host'] 
         volumes.update(bdm)
@@ -48,8 +48,8 @@ def migrate(instance_id):
         # Update BDM Delete on Terminate Status
         # Two Mysql queries 1. Get current status 2. Set DoT to False
         
-        delete_instance(instance_object)
-        delete_instance_status(instance_object)
+        delete_instance(nova,instance_object)
+        delete_instance_status(nova,instance_object)
         ha_agent.debug("Old Instance deleted")
 
         # Check Whether BDM is available
@@ -61,8 +61,8 @@ def migrate(instance_id):
         else:
             bdm=None
 
-        new_instance = recreate_instance(instance_object=instance_object,bdm=bdm,neutron=neutron)
-        create_instance_status(new_instance)
+        new_instance = recreate_instance(nova,instance_object=instance_object,bdm=bdm,neutron=neutron)
+        create_instance_status(nova,new_instance)
         ha_agent.debug("Recreate Finished")
         new_info = new_instance._info
         new_instance_id = new_instance.id
@@ -78,7 +78,7 @@ def migrate(instance_id):
         #zk.start()
         
         #create new_instance json
-        instance_object1,info,ip_list,bdm,extra = info_collection(new_instance_id,cinder)
+        instance_object1,info,ip_list,bdm,extra = info_collection(nova,new_instance_id,cinder)
         global new_tmp_host
         new_tmp_host = info['OS-EXT-SRV-ATTR:host']
         # Check Whether BDM is available

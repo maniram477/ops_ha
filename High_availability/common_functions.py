@@ -107,7 +107,7 @@ def dbwrap(func):
 
 # Host Functions
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
-def list_hosts():
+def list_hosts(nova):
     try:
         return {'all_list': [host.host for host in nova.services.list(binary="nova-compute")],\
                 'down_list': [host.host for host in nova.services.list(binary="nova-compute") if host.state.lower() == 'down'],\
@@ -118,15 +118,15 @@ def list_hosts():
         ha_agent.exception('')
         raise Exception('step0')
 
-def down_hosts():
+def down_hosts(nova):
     return [host.host for host in nova.services.list(binary="nova-compute") if host.state.lower() == 'down']
 
 
-def active_hosts():
+def active_hosts(nova):
     return [host.host for host in nova.services.list(binary="nova-compute") if host.state.lower() == 'up']
 
 
-def host_disable():
+def host_disable(nova):
     pass
 
 
@@ -140,7 +140,8 @@ def client_init():
                                             tenant_name=tenant,
                                             auth_url="http://%s:5000/v2.0"%controller_ip)
         cinder = cinder_client.Client(1,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip)
-        return cinder,neutron
+        nova = nova_client.Client(2,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip,connection_pool=True)
+        return cinder,neutron,nova
     except Exception as ee:
         ha_agent.warning("During neutron,cinder initialization")
         ha_agent.exception('')
@@ -152,7 +153,7 @@ def client_init():
 
 # Instacne Functions
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
-def info_collection(instance_id,cinder):
+def info_collection(nova,instance_id,cinder):
     try:
         ha_agent.debug("Inside the info_collection...!")
         instance = nova.servers.get(instance_id)
@@ -167,7 +168,7 @@ def info_collection(instance_id,cinder):
 
         
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
-def delete_instance(instance_object):
+def delete_instance(nova,instance_object):
     """Input - Instance Object
     Op - Deletes Instance
     Output - True | False
@@ -179,7 +180,7 @@ def delete_instance(instance_object):
         ha_agent.exception('')
 
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=100,wait_fixed=10000)
-def delete_instance_status(instance_object):
+def delete_instance_status(nova,instance_object):
     try:
         allow_retry_task = ['deleting',None]
         tmp_ins = nova.servers.get(instance_object.id)
@@ -198,7 +199,7 @@ def delete_instance_status(instance_object):
 
    
 
-def list_instances(host_name=None):
+def list_instances(nova,host_name=None):
     """Input - Hostname (optional)
     Op - List Instances (on specific Host if Host given as Input | on All Host ) 
     Output - Instance List
@@ -211,7 +212,7 @@ def get_instance_uuid(cursor,name):
     cursor.execute("select uuid from nova.instances  where display_name='%s' and deleted=0 order by created_at desc;"%name)
     return cursor.fetchone()    
     
-def get_instance(name):
+def get_instance(nova,name):
     """Input - Name of the Instance 
     Op - Finds the newly created Instance with display_name,deleted,meta as identifiers
     Output - Instance Object
@@ -228,7 +229,7 @@ def get_instance(name):
  
 
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=10,wait_fixed=10000)               
-def create_instance(name=None,image=None,bdm=None,\
+def create_instance(nova,name=None,image=None,bdm=None,\
                          flavor=None,nics=None,availability_zone=None,\
                          disk_config=None,meta=None,security_groups=None):
     try:
@@ -242,7 +243,7 @@ def create_instance(name=None,image=None,bdm=None,\
         ha_agent.exception('')
 
 @retry(retry_on_exception=poll_vm_status,stop_max_attempt_number=100,wait_fixed=10000)               
-def create_instance_status(instance_object):
+def create_instance_status(nova,instance_object):
     try:        
         allow_retry = ['spawning','building','starting','powering_on','scheduling','block_device_mapping','networking']
         tmp_ins = nova.servers.get(instance_object.id)
@@ -328,7 +329,7 @@ def cinder_volume_check(info,cinder=None):
 
         
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=100,wait_fixed=1000)                  
-def attach_volumes(instance,volumes):
+def attach_volumes(nova,instance,volumes):
     """Input - Volumes - Dictionary Containing volume details 
     Eg: {'vdb':'16e5593c-15c7-48a6-b46f-2bda2951e3b0','vdc':'16e5593c-15c7-48a6-b46f-2bda2951esd0'}
         - Instance ID
@@ -393,7 +394,7 @@ def attach_flt_ip(ip_list,instance_object):
         ha_agent.warning("Exception: attach_flt_ip")
         ha_agent.exception('')
     
-def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
+def recreate_instance(nova,instance_object,target_host=None,bdm=None,neutron=None):
     '''Takes (Instance Object ,Target Host)  as input,Deletes the Instance,Creates similiar Instance on another Healthy Host 
        returns (True | False) '''
     
@@ -419,7 +420,7 @@ def recreate_instance(instance_object,target_host=None,bdm=None,neutron=None):
     nics = get_fixed_ip(info,neutron)
     
     #time.sleep(15)
-    instance_object = create_instance(name=name,image=image,bdm=bdm,\
+    instance_object = create_instance(nova,name=name,image=image,bdm=bdm,\
                     flavor=flavor,nics=nics,availability_zone=availability_zone,\
                     disk_config=disk_config,meta=meta,security_groups=security_groups) 
     #create_instance_status(instance_object)
