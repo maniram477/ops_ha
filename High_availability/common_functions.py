@@ -13,6 +13,8 @@ from kazoo.client import KazooClient
 import os
 from nova import exception as nova_exceptions
 from novaclient import exceptions as novaclient_exceptions
+from cinderclient import exceptions as c_exception
+import cinderclient.openstack.common.apiclient.exceptions as c_api_exception
 import logging.config
 logging.config.fileConfig("ha_agent.conf")
 ha_agent=logging.getLogger('ha_agent')
@@ -21,6 +23,9 @@ user ="admin"
 passwd = "p@ssw0rd"
 tenant = "admin"
 wait_time = 5 #In Seconds - Based on SLA
+mysql_user =""
+mysql_pass =""
+
 
 host_name=socket.gethostname()
 
@@ -37,11 +42,16 @@ migrate_time=600# In Seconds
 
 maintenance_state = ['maintenance','skip','pause_migration']
 kazoo_exceptions = [obj for name, obj in inspect.getmembers(kexception) if inspect.isclass(obj) and issubclass(obj, Exception)]
+cinder_exceptions = [obj for name, obj in inspect.getmembers(c_exception) if inspect.isclass(obj) and issubclass(obj, Exception)]
+cinder_api_exceptions = [obj for name, obj in inspect.getmembers(c_api_exception) if inspect.isclass(obj) and issubclass(obj, Exception)]
+all_cinder_exceptions = cinder_exceptions + cinder_api_exceptions
 
 zk = KazooClient(hosts='127.0.0.1:2181')
 
 nova = nova_client.Client(2,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip,connection_pool=True)
 #conn = MySQLdb.connect(controller_ip,mysql_user,mysql_pass)
+#This Variable is just a placeholder will be updated by client_init()
+conn = None
 
 # Retry Functions
 def api_failure(exc):
@@ -98,7 +108,7 @@ def dbwrap(func):
         except Exception as e:
             #log.error()
             retval = None
-            ha_agent.exception('')
+            ha_agent.exception('MYSQL EXCEPTION')
         finally:
             cursor.close()
         return retval
@@ -141,7 +151,8 @@ def client_init():
                                             auth_url="http://%s:5000/v2.0"%controller_ip)
         cinder = cinder_client.Client(1,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip)
         nova = nova_client.Client(2,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip,connection_pool=True)
-        return cinder,neutron,nova
+        con = MySQLdb.connect(controller_ip,mysql_user,mysql_pass)
+        return cinder,neutron,nova,con
     except Exception as ee:
         ha_agent.warning("During neutron,cinder initialization")
         ha_agent.exception('')
@@ -267,6 +278,9 @@ def create_instance_status(nova,instance_object):
     
     
 # Volume Related Functions     
+@dbwrap
+def detach_volume_db(cursor,vol_id):
+    cursor.execute(" update cinder.volumes set status='available',attach_status='detached' where id='%s';"%vol_id)
 
         
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
@@ -293,6 +307,10 @@ def detached_volume_status(volume,cinder=None):
     except Exception as e:
         ha_agent.warn("Exception Checking detached_volume_status")
         ha_agent.exception('')
+        if any(issubclass(e.__class__, lv) for lv in all_cinder_exceptions):
+            ha_agent.info("MAYDAY - Looks Like cinderclient or API is not accessible")
+            ha_agent.info("PARACHUTE - Update MYSQL in-use to available ")
+            detach_volume_db(volume.id)
         if e.message == 'poll':
             raise Exception("poll")
         else:
