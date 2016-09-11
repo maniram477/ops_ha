@@ -16,6 +16,7 @@ from novaclient import exceptions as novaclient_exceptions
 from cinderclient import exceptions as c_exception
 import cinderclient.openstack.common.apiclient.exceptions as c_api_exception
 import logging.config
+import MySQLdb
 logging.config.fileConfig("ha_agent.conf")
 ha_agent=logging.getLogger('ha_agent')
 controller_ip="30.20.0.9"
@@ -25,6 +26,7 @@ tenant = "admin"
 wait_time = 5 #In Seconds - Based on SLA
 mysql_user ="ha"
 mysql_pass ="ha_pass"
+
 
 
 host_name=socket.gethostname()
@@ -50,8 +52,7 @@ zk = KazooClient(hosts='127.0.0.1:2181')
 
 nova = nova_client.Client(2,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip,connection_pool=True)
 #conn = MySQLdb.connect(controller_ip,mysql_user,mysql_pass)
-#This Variable is just a placeholder will be updated by client_init()
-conn = None
+
 
 # Retry Functions
 def api_failure(exc):
@@ -101,7 +102,8 @@ def dbwrap(func):
     should take a cursor as its first argument; other arguments will be
     preserved.
     """
-    def new_func(conn, *args, **kwargs):
+    def new_func(*args, **kwargs):
+        conn = MySQLdb.connect(controller_ip,mysql_user,mysql_pass)
         cursor = conn.cursor()
         try:
             retval = func(cursor, *args, **kwargs)
@@ -111,6 +113,8 @@ def dbwrap(func):
             ha_agent.exception('MYSQL EXCEPTION')
         finally:
             cursor.close()
+            conn.commit()
+            conn.close()
         return retval
     return new_func
 
@@ -151,8 +155,7 @@ def client_init():
                                             auth_url="http://%s:5000/v2.0"%controller_ip)
         cinder = cinder_client.Client(1,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip)
         nova = nova_client.Client(2,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip,connection_pool=True)
-        con = MySQLdb.connect(controller_ip,mysql_user,mysql_pass)
-        return cinder,neutron,nova,con
+        return cinder,neutron,nova
     except Exception as ee:
         ha_agent.warning("During neutron,cinder initialization")
         ha_agent.exception('')
