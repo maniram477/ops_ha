@@ -19,7 +19,8 @@ def migrate(instance_id):
         volumes={}
         # Seperate Each unit of function and give retry for each one separately
         cinder,neutron,nova,con = client_init()
-        global conn = con
+        global conn
+        conn = con
         instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder)      
         tmp_host = info['OS-EXT-SRV-ATTR:host'] 
         volumes.update(bdm)

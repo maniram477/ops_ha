@@ -23,8 +23,8 @@ user ="admin"
 passwd = "p@ssw0rd"
 tenant = "admin"
 wait_time = 5 #In Seconds - Based on SLA
-mysql_user =""
-mysql_pass =""
+mysql_user ="ha"
+mysql_pass ="ha_pass"
 
 
 host_name=socket.gethostname()
