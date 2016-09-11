@@ -277,9 +277,19 @@ def create_instance_status(nova,instance_object):
             raise Exception(e)
     
 
+
+@dbwrap
+def Volume_delete_on_terminate(cursor,ins_id):
+    cursor.execute("select delete_on_termination from block_device_mapping where instance_uuid='%s';"%ins_id)
+    dot_status = cursor.fetchone()
+    cursor.execute("update block_device_mapping set delete_on_termination=False where instance_uuid='%s';"%ins_id)
+    return dot_status
+
+@dbwrap
+def dot_status_update(cursor,ins_id,status):
+    cursor.execute("update block_device_mapping set delete_on_termination=%s where instance_uuid='%s';"%(status,ins_id))
     
-    
-    
+
 # Volume Related Functions     
 @dbwrap
 def detach_volume_db(cursor,vol_id):

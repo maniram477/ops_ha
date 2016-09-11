@@ -20,7 +20,7 @@ def migrate(instance_id):
         # Seperate Each unit of function and give retry for each one separately
         cinder,neutron,nova= client_init()
         instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder)      
-        tmp_host = info['OS-EXT-SRV-ATTR:host'] 
+        tmp_host = info['OS-EXT-SRV-ATTR:host']
         volumes.update(bdm)
         nics = get_fixed_ip(info,neutron)
         if not nics:
@@ -50,6 +50,8 @@ def migrate(instance_id):
         
         # Update BDM Delete on Terminate Status
         # Two Mysql queries 1. Get current status 2. Set DoT to False
+        dot_status = Volume_delete_on_terminate(instance_id)
+
         
         delete_instance(nova,instance_object)
         delete_instance_status(nova,instance_object)
@@ -70,7 +72,7 @@ def migrate(instance_id):
         new_info = new_instance._info
         new_instance_id = new_instance.id
         # Update BDM Delete on Terminate Status to previous state
-        
+        dot_status_update(new_instance_id,dot_status)
         # Check whether floating_ip and additional Volumes are available
         attach_flt_ip(ip_list,new_instance)
         ha_agent.debug("Floating IP attached Successfully")
