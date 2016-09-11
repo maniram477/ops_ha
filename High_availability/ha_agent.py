@@ -51,6 +51,7 @@ def migrate(instance_id):
         # Update BDM Delete on Terminate Status
         # Two Mysql queries 1. Get current status 2. Set DoT to False
         dot_status = Volume_delete_on_terminate(instance_id)
+        dot_status = dot_status[0]
 
         
         delete_instance(nova,instance_object)
