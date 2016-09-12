@@ -458,7 +458,7 @@ def recreate_instance(nova,instance_object,target_host=None,bdm=None,neutron=Non
     return instance_object
  
 #HA-Agent Migration Functions
-def instance_migration(dhosts,task):
+def instance_migration(nova,dhosts,task):
     for dhost in dhosts:
 
         if(zk.exists("/openstack_ha/instances/pending/" + dhost)==None):
@@ -470,7 +470,7 @@ def instance_migration(dhosts,task):
         
         if(zk.exists("/openstack_ha/instances/down_instances/" + dhost)==None):
             zk.create("/openstack_ha/instances/down_instances/" + dhost)
-            for instance_obj in list_instances(dhost):
+            for instance_obj in list_instances(nova,dhost):
                 # Addon-Feature
                 # Can Add another check to only select instances which have HA option enabled
                 zk.create("/openstack_ha/instances/down_instances/" + dhost+"/"+instance_obj.id)
