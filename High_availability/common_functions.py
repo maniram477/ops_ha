@@ -323,7 +323,7 @@ def detached_volume_status(volume,cinder=None):
         if any(issubclass(e.__class__, lv) for lv in all_cinder_exceptions):
             ha_agent.info("MAYDAY - Looks Like cinderclient or API is not accessible")
             ha_agent.info("PARACHUTE - Update MYSQL in-use to available ")
-            detach_volume_db(volume)
+            detach_volume_db(str(volume))
         if e.message == 'poll':
             raise Exception("poll")
         else:
