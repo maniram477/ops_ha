@@ -83,15 +83,15 @@ def get_ip_address(ifname):
 
 # Health Check Functions
 def ping_check(hostname):
-    ha_agent.debug("Pinging.... " + hostname)
+    #ha_agent.debug("Pinging.... " + hostname)
     response = os.system("ping -c 1 " + hostname)
 
     #and then check the response...
     if response == 0:
-        ha_agent.debug(hostname + 'is up!')
+        #ha_agent.debug(hostname + 'is up!')
         return True
     else:
-        ha_agent.debug(hostname + 'is down!')
+        #ha_agent.debug(hostname + 'is down!')
         return False
 
 
