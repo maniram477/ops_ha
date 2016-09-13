@@ -86,7 +86,7 @@ def get_ip_address(ifname):
 # Health Check Functions
 def ping_check(hostname):
     scheduler_log.debug("Pinging.... " + hostname)
-    response = os.system("ping -c 1 " + hostname)
+    response = os.system("/bin/ping -c 1 " + hostname)
     scheduler_log.debug("Response from ping check %d"%(response))
     #and then check the response...
     if response == 0:
