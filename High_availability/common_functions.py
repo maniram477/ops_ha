@@ -492,8 +492,8 @@ def message_queue(dhost=None,task=None):
 
         if(len(pending_instances_list)<10):
             add_pending_instance_list=10-len(pending_instances_list)
+            scheduler_log.debug("Adding %d more instances to Queue"%add_pending_instance_list)
             for i in range(add_pending_instance_list):
-                scheduler_log.debug("Adding %d more instances to Queue"%add_pending_instance_list)
                 try:
                     zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
                     zk.delete("/openstack_ha/instances/down_instances/" + dhost + "/" + instance_list[i],recursive=True)
@@ -505,6 +505,9 @@ def message_queue(dhost=None,task=None):
             #afteradd_pending_instances_list = zk.get_children("/openstack_ha/instances/pending/" + dhost)
             #for j in afteradd_pending_instances_list:
             #    task.apply_async((afteradd_pending_instances_list[j],), queue='mars', countdown=wait_time)
+        else:
+            scheduler_log.debug("Waiting.. .. ..Migration Queue is Already Full...")
+
     else:
         if (zk.exists("/openstack_ha/hosts/down/" + dhost) == None):
             zk.create("/openstack_ha/hosts/down/" + dhost)
