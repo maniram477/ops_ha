@@ -19,6 +19,8 @@ import logging.config
 import MySQLdb
 logging.config.fileConfig("ha_agent.conf")
 ha_agent=logging.getLogger('ha_agent')
+logging.config.fileConfig("ha_agent.conf")
+scheduler_log=logging.getLogger('scheduler')
 controller_ip="30.20.0.9"
 user ="admin"
 passwd = "p@ssw0rd"
@@ -83,15 +85,15 @@ def get_ip_address(ifname):
 
 # Health Check Functions
 def ping_check(hostname):
-    #ha_agent.debug("Pinging.... " + hostname)
+    scheduler_log.debug("Pinging.... " + hostname)
     response = os.system("ping -c 1 " + hostname)
-
+    scheduler_log.debug("Response from ping check %d"%(response))
     #and then check the response...
     if response == 0:
-        #ha_agent.debug(hostname + 'is up!')
+        scheduler_log.debug(hostname + 'is up!')
         return True
     else:
-        #ha_agent.debug(hostname + 'is down!')
+        scheduler_log.debug(hostname + 'is down!')
         return False
 
 
@@ -481,22 +483,25 @@ def instance_migration(nova,dhosts,task):
 def message_queue(dhost=None,task=None):
     instance_list=zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
     pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
+    scheduler_log.debug("Instances yet to be added to Migration Queue: %d"%(len(instance_list)))
+    scheduler_log.debug("Instances already on Migration Queue: %d"%(len(pending_instances_list)))
     if(len(instance_list)!=0):
         #while(len(instance_list)!=0)
         #instance_list = zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
-        ha_agent.debug("Instances yet to be handled: ",instance_list," Instances on Queue: ", pending_instances_list )
+        scheduler_log.debug("Instances yet to be handled: %d Instances on Queue:  %d"%(len(instance_list),len(pending_instances_list)))
+
         if(len(pending_instances_list)<10):
             add_pending_instance_list=10-len(pending_instances_list)
             for i in range(add_pending_instance_list):
-                ha_agent.debug("Adding %d more instances to Queue"%add_pending_instance_list)
+                scheduler_log.debug("Adding %d more instances to Queue"%add_pending_instance_list)
                 try:
                     zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
                     zk.delete("/openstack_ha/instances/down_instances/" + dhost + "/" + instance_list[i],recursive=True)
                     instance_string = str(instance_list[i])
                     task.apply_async((instance_string,), queue='mars', countdown=5)
                 except Exception as e:
-                    ha_agent.warning("Exception: message_queue Function..!")
-                    ha_agent.exception('')
+                    scheduler_log.warning("Exception: message_queue Function..!")
+                    scheduler_log.exception('')
             #afteradd_pending_instances_list = zk.get_children("/openstack_ha/instances/pending/" + dhost)
             #for j in afteradd_pending_instances_list:
             #    task.apply_async((afteradd_pending_instances_list[j],), queue='mars', countdown=wait_time)
