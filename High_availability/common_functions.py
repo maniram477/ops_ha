@@ -176,7 +176,7 @@ def info_collection(nova,instance_id,cinder):
         ip_list = floating_ip_check(info)
         bdm,extra = cinder_volume_check(info,cinder=cinder)
         return instance,info,ip_list,bdm,extra
-    except Exception as ee:
+    except Exception as e:
         ha_agent.warn("Collecting the Infromation about instances")
         ha_agent.exception('')
         raise Exception('step2')
@@ -424,7 +424,23 @@ def attach_flt_ip(ip_list,instance_object):
     except Exception as e:
         ha_agent.warning("Exception: attach_flt_ip")
         ha_agent.exception('')
-    
+
+def remove_fixed_ip(nova,inst_id,fixed_ip):
+    try:
+        nova.servers.remove_fixed_ip(inst_id,fixed_ip)
+    except Exception as e:
+        ha_agent.warning("Exception: remove_fixed_ip")
+        ha_agent.exception('')
+
+def remove_floating_ip(nova,inst_id,floating_ip):
+    try:
+        nova.servers.remove_floating_ip(inst_id,floating_ip)
+    except Exception as e:
+        ha_agent.warning("Exception: remove_floating_ip")
+        ha_agent.exception('')
+
+
+#Migration
 def recreate_instance(nova,instance_object,target_host=None,bdm=None,neutron=None):
     '''Takes (Instance Object ,Target Host)  as input,Deletes the Instance,Creates similiar Instance on another Healthy Host 
        returns (True | False) '''

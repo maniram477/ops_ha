@@ -19,53 +19,74 @@ def migrate(instance_id):
         volumes={}
         # Seperate Each unit of function and give retry for each one separately
         cinder,neutron,nova= client_init()
-        instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder)      
-        tmp_host = info['OS-EXT-SRV-ATTR:host']
-        volumes.update(bdm)
-        nics = get_fixed_ip(info,neutron)
-        if not nics:
-            fixed_ip=None
-        else:
-            fixed_ip=nics[0]
-        # Check Whether BDM is available
-        ha_agent.debug("Information Collected")
-        if not ip_list:            
-            folating_ip=None
-        else:
-            folating_ip=ip_list[0][0]
-       
-        if bool(extra):            
-            volumes.update(extra)
-            volume=volumes
-        else:
-            volume=volumes
-        old_instance=json.dumps({"instance_name":instance_object.name,"host_name":tmp_host,"instance_id":instance_object.id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
-        old_instance_json=str.encode(old_instance)    
-        """if len(extra) > 0:
-            for volume in extra:
+        instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder)
+        
+        try:    
+            tmp_host = info['OS-EXT-SRV-ATTR:host']
+            volumes.update(bdm)
+            nics = get_fixed_ip(info,neutron)
+            if not nics:
+                fixed_ip=None
+            else:
+                fixed_ip=nics[0]
+            # Check Whether BDM is available
+            ha_agent.debug("Information Collected")
+            if not ip_list:            
+                folating_ip=None
+            else:
+                folating_ip=ip_list[0][0]
+           
+            if bool(extra):            
+                volumes.update(extra)
+                volume=volumes
+            else:
+                volume=volumes
+            old_instance=json.dumps({"instance_name":instance_object.name,"host_name":tmp_host,"instance_id":instance_object.id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
+            old_instance_json=str.encode(old_instance)    
+        except Exception as e:
+            ha_agent.debug('Json Dump Exception')
+
+        """
+        remove_fixed_ip(nova,instance_object.id,fixed_ip['v4-fixed-ip'])
+        for fip in ip_list:
+            remove_floating_ip(nova,instance_object.id,fip[0])
+        if len(extra) > 0:
+        for volume in extra:
+            try:
                 detach_volume(extra[volume],cinder=cinder)
                 detached_volume_status(extra[volume],cinder=cinder)
+                ha_agent.debug("Extra Volume Detached %s"%extra[volume])
+            except Exception as e:
+                ha_agent.debug('Exception removing extra volume %s'%extra[volume])
         """
-        ha_agent.debug("Extra Volume Detached")
         
         # Update BDM Delete on Terminate Status
         # Two Mysql queries 1. Get current status 2. Set DoT to False
         dot_status = Volume_delete_on_terminate(instance_id)
         dot_status = dot_status[0]
-
+        ha_agent.debug("Delete on Terminate Status Updated")
         
+
         delete_instance(nova,instance_object)
-        delete_instance_status(nova,instance_object)
-        ha_agent.debug("Old Instance deleted")
+        try:
+            delete_instance_status(nova,instance_object)
+            ha_agent.debug("Old Instance deleted")
+        except Exception as e:
+            ha_agent.debug("Unable to delete Instance - Proceeding New Instance Creation")
 
         # Check Whether BDM is available
         # Test 1 : Update Volumes set BDM as available and Create New Instance from it.
         
         # Can add one more layer of retry for entire instance recreation process
-        if(bool(bdm)):           
-            detached_volume_status(bdm['vda'], cinder=cinder)
-        else:
-            bdm=None
+        try:
+            if(bool(bdm)):         
+                detached_volume_status(bdm['vda'], cinder=cinder)
+            else:
+                bdm=None
+        except Exception as e:
+            ha_agent.debug('BDM Volume Detach Exception')
+            detach_volume_db(str(bdm['vda']))
+
 
         new_instance = recreate_instance(nova,instance_object=instance_object,bdm=bdm,neutron=neutron)
         create_instance_status(nova,new_instance)
@@ -82,35 +103,34 @@ def migrate(instance_id):
         ha_agent.debug("Volume attached Successfully")
         #zk = KazooClient(hosts='127.0.0.1:2181')
         #zk.start()
+        try:  
+            #create new_instance json
+            instance_object1,info,ip_list,bdm,extra = info_collection(nova,new_instance_id,cinder)
+            new_tmp_host = info['OS-EXT-SRV-ATTR:host']
+            # Check Whether BDM is available
+            ha_agent.debug("Information Collected")
+            nics = get_fixed_ip(info,neutron)
+            if not nics:
+                fixed_ip=None
+            else:
+                fixed_ip=nics[0]
+            # Check Whether BDM is available
+            ha_agent.debug("Information Collected")
+            if not ip_list:            
+                folating_ip=None
+            else:
+                folating_ip=ip_list[0][0]
+                
+            if bool(extra):
+                bdm.update(extra)
+                volume=bdm
+            else:
+                volume=bdm    
         
-        #create new_instance json
-        instance_object1,info,ip_list,bdm,extra = info_collection(nova,new_instance_id,cinder)
-        new_tmp_host = info['OS-EXT-SRV-ATTR:host']
-        # Check Whether BDM is available
-        ha_agent.debug("Information Collected")
-        nics = get_fixed_ip(info,neutron)
-        if not nics:
-            fixed_ip=None
-        else:
-            fixed_ip=nics[0]
-        # Check Whether BDM is available
-        ha_agent.debug("Information Collected")
-        if not ip_list:            
-            folating_ip=None
-        else:
-            folating_ip=ip_list[0][0]
-            
-        if bool(extra):
-            bdm.update(extra)
-            volume=bdm
-        else:
-            volume=bdm    
-    
-        new_instance_details=json.dumps({"instance_name":new_instance.name,"host_name":new_tmp_host,"instance_id":new_instance.id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
-        new_instance_json=str.encode(new_instance_details)
-        
-    
-        
+            new_instance_details=json.dumps({"instance_name":new_instance.name,"host_name":new_tmp_host,"instance_id":new_instance.id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
+            new_instance_json=str.encode(new_instance_details)
+        except Exception as e:
+            ha_agent.debug('Json Dump after creation of new instance')
     except Exception as e :
         ha_agent.exception("Overall Task Exception ")
         if any(issubclass(e.__class__, lv) for lv in kazoo_exceptions):
