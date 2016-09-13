@@ -41,6 +41,7 @@ def createNodeinAll():
         zk.delete("/openstack_ha/hosts/down/" + host_name, recursive=True)
         zk.delete("/openstack_ha/hosts/time_out/" + host_name, recursive=True)
         zk.delete("/openstack_ha/instances/down_host/" + host_name, recursive=True)
+        zk.delete("/openstack_ha/hosts/start_migration/" + host_name, recursive=True)
     except kazoo.exceptions.NoNodeException:
         print("Node not present in Down path")
 

@@ -19,7 +19,6 @@ import logging.config
 import MySQLdb
 logging.config.fileConfig("ha_agent.conf")
 ha_agent=logging.getLogger('ha_agent')
-logging.config.fileConfig("ha_agent.conf")
 scheduler_log=logging.getLogger('scheduler')
 controller_ip="30.20.0.9"
 user ="admin"
@@ -195,7 +194,7 @@ def delete_instance(nova,instance_object):
         ha_agent.warn("During the deletion of instance...!")
         ha_agent.exception('')
 
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=100,wait_fixed=10000)
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=20,wait_fixed=10000)
 def delete_instance_status(nova,instance_object):
     try:
         allow_retry_task = ['deleting',None]
@@ -213,7 +212,6 @@ def delete_instance_status(nova,instance_object):
         else:
             raise Exception(e)
 
-   
 
 def list_instances(nova,host_name=None):
     """Input - Hostname (optional)
@@ -258,7 +256,7 @@ def create_instance(nova,name=None,image=None,bdm=None,\
         ha_agent.warning("Exception during instance creation...!")
         ha_agent.exception('')
 
-@retry(retry_on_exception=poll_vm_status,stop_max_attempt_number=100,wait_fixed=10000)               
+@retry(retry_on_exception=poll_vm_status,stop_max_attempt_number=20,wait_fixed=10000)               
 def create_instance_status(nova,instance_object):
     try:        
         allow_retry = ['spawning','building','starting','powering_on','scheduling','block_device_mapping','networking']
@@ -321,13 +319,13 @@ def detached_volume_status(volume,cinder=None):
             raise Exception("poll")
     except Exception as e:
         ha_agent.warn("Exception Checking detached_volume_status")
-        ha_agent.exception('')
-        if any(issubclass(e.__class__, lv) for lv in all_cinder_exceptions):
+        ha_agent.exception('')        
+        if e.message == 'poll':
+            raise Exception("poll")         
+        elif any(issubclass(e.__class__, lv) for lv in all_cinder_exceptions):
             ha_agent.info("MAYDAY - Looks Like cinderclient or API is not accessible")
             ha_agent.info("PARACHUTE - Update MYSQL in-use to available ")
             detach_volume_db(str(volume))
-        if e.message == 'poll':
-            raise Exception("poll")
         else:
             raise Exception('Exception Checking detached_volume_status"')
 
