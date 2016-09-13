@@ -446,7 +446,9 @@ def recreate_instance(nova,instance_object,target_host=None,bdm=None,neutron=Non
         moved = '0'
     meta = {'moved':moved,'origin': host }
     image = dict(info['image']).get('id','')
-    security_groups = [x['name'] for x in info.get('security_groups')]
+    security_groups = [x['name'] for x in info.get('security_groups','')]
+    if len(security_groups) == 0:
+        security_groups = ['default']
     
     nics = get_fixed_ip(info,neutron)
     
