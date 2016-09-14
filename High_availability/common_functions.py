@@ -264,10 +264,10 @@ def create_instance_status(nova,instance_object):
         status = ( tmp_ins._info['OS-EXT-STS:vm_state'], tmp_ins._info['OS-EXT-STS:task_state'] )
         if status[0] == 'active':
             ha_agent.debug("After creation:  Instance in active state")
-        elif status[1] in allow_retry:
-            raise Exception("poll")
         elif status[0] == 'error':
             raise Exception("error")
+        elif status[1] in allow_retry:
+            raise Exception("poll")
     except Exception as e:
         ha_agent.warn("Exception: checking the instance status after creation...!")
         ha_agent.exception('')
