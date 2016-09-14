@@ -41,15 +41,23 @@ def createNodeinAll(zk=zk,host_name=host_name,scheduler_log=None):
     try:
         zk.delete("/openstack_ha/hosts/down/" + host_name, recursive=True)
     except kazoo.exceptions.NoNodeException:
-        scheduler_log.debug("Node not present in Down path")
+        scheduler_log.debug("Node not present in down path")
     try:
         zk.delete("/openstack_ha/hosts/time_out/" + host_name, recursive=True)
     except kazoo.exceptions.NoNodeException:
-        scheduler_log.debug("Node not present in Down path")
+        scheduler_log.debug("Node not present in timeout path")
     try:
         zk.delete("/openstack_ha/instances/down_host/" + host_name, recursive=True)
     except kazoo.exceptions.NoNodeException:
-        scheduler_log.debug("Node not present in Down path")
+        scheduler_log.debug("Node not present in down_host path")
+    try:
+        zk.delete("/openstack_ha/instances/pending/" + host_name, recursive=True)
+    except kazoo.exceptions.NoNodeException:
+        scheduler_log.debug("Node not present in pending path")
+    try:
+        zk.delete("/openstack_ha/instances/down_instances/" + host_name, recursive=True)
+    except kazoo.exceptions.NoNodeException:
+        scheduler_log.debug("Node not present in down_instances path")
 
 def imalive(zk=zk,host_name=host_name,scheduler_log=None):
     try:
