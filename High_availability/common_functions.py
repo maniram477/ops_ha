@@ -36,12 +36,14 @@ host_name=socket.gethostname()
 # Use Variables inside retry Functions
 scheduler_interval = 5 #In Seconds
 api_retry_count = 3 
-api_retry_interval = 1000 #In MilliSeconds
+api_retry_interval = 2000 #In MilliSeconds
 
-poll_status_count = 100
-poll_status_interval = 2000 #In MilliSeconds
+poll_status_count = 10
+poll_status_interval = 5000 #In MilliSeconds
 
-migrate_time=600# In Seconds
+migrate_time=120# In Seconds
+num_instances_batch = 10
+
 
 maintenance_state = ['maintenance','skip','pause_migration']
 kazoo_exceptions = [obj for name, obj in inspect.getmembers(kexception) if inspect.isclass(obj) and issubclass(obj, Exception)]
@@ -121,7 +123,7 @@ def dbwrap(func):
 
 
 # Host Functions
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)
 def list_hosts(nova):
     try:
         return {'all_list': [host.host for host in nova.services.list(binary="nova-compute")],\
@@ -147,7 +149,7 @@ def host_disable(nova):
 
 
 
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)
 def client_init():
     try:
         neutron = neutron_client.Client(username=user,
@@ -167,7 +169,7 @@ def client_init():
 
 
 # Instacne Functions
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)
 def info_collection(nova,instance_id,cinder):
     try:
         ha_agent.debug("Inside the info_collection...!")
@@ -182,7 +184,7 @@ def info_collection(nova,instance_id,cinder):
         raise Exception('step2')
 
         
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)
 def delete_instance(nova,instance_object):
     """Input - Instance Object
     Op - Deletes Instance
@@ -194,7 +196,7 @@ def delete_instance(nova,instance_object):
         ha_agent.warn("During the deletion of instance...!")
         ha_agent.exception('')
 
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=20,wait_fixed=10000)
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=poll_status_count,wait_fixed=poll_status_interval)
 def delete_instance_status(nova,instance_object):
     try:
         allow_retry_task = ['deleting',None]
@@ -242,7 +244,7 @@ def get_instance(nova,name):
     return instance
  
 
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=10,wait_fixed=10000)               
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)               
 def create_instance(nova,name=None,image=None,bdm=None,\
                          flavor=None,nics=None,availability_zone=None,\
                          disk_config=None,meta=None,security_groups=None):
@@ -256,7 +258,7 @@ def create_instance(nova,name=None,image=None,bdm=None,\
         ha_agent.warning("Exception during instance creation...!")
         ha_agent.exception('')
 
-@retry(retry_on_exception=poll_vm_status,stop_max_attempt_number=20,wait_fixed=10000)               
+@retry(retry_on_exception=poll_vm_status,stop_max_attempt_number=poll_status_count,wait_fixed=poll_status_interval)               
 def create_instance_status(nova,instance_object):
     try:        
         allow_retry = ['spawning','building','starting','powering_on','scheduling','block_device_mapping','networking']
@@ -296,7 +298,7 @@ def detach_volume_db(cursor,vol_id):
     cursor.execute(" update cinder.volumes set status='available',attach_status='detached' where id='%s';"%vol_id)
 
         
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)
 def detach_volume(volume,cinder=None):
     """Input - Volumes - Dictionary Containing volume details 
     Eg: {'/dev/vdb':'16e5593c-15c7-48a6-b46f-2bda2951e3b0','/dev/vdc':'16e5593c-15c7-48a6-b46f-2bda2951esd0'}
@@ -359,7 +361,7 @@ def cinder_volume_check(info,cinder=None):
     return bdm,volumes
 
         
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=100,wait_fixed=1000)                  
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)                  
 def attach_volumes(nova,instance,volumes):
     """Input - Volumes - Dictionary Containing volume details 
     Eg: {'vdb':'16e5593c-15c7-48a6-b46f-2bda2951e3b0','vdc':'16e5593c-15c7-48a6-b46f-2bda2951esd0'}
@@ -392,7 +394,7 @@ def floating_ip_check(info):
                 
         return tmp_list 
          
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)    
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)    
 def get_fixed_ip(info,neutron):
     try:
         nics = []
@@ -410,7 +412,7 @@ def get_fixed_ip(info,neutron):
         ha_agent.exception('')
         
     
-@retry(retry_on_exception=api_failure,stop_max_attempt_number=3,wait_fixed=1000)                  
+@retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)                  
 def attach_flt_ip(ip_list,instance_object):
     """Input - List of Tuples containing Floating IPs and Fixed IPs 
              - Instance Object
@@ -506,8 +508,8 @@ def message_queue(dhost=None,task=None):
         #instance_list = zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
         scheduler_log.debug("Instances yet to be handled: %d Instances on Queue:  %d"%(len(instance_list),len(pending_instances_list)))
 
-        if(len(pending_instances_list)<10):
-            add_pending_instance_list=10-len(pending_instances_list)
+        if(len(pending_instances_list)<num_instances_batch):
+            add_pending_instance_list=num_instances_batch-len(pending_instances_list)
             scheduler_log.debug("Adding %d more instances to Queue"%add_pending_instance_list)
             for i in range(add_pending_instance_list):
                 try:
