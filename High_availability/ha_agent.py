@@ -139,8 +139,8 @@ def migrate(instance_id):
             zk = KazooClient(hosts='172.30.64.14:2181,172.30.64.13:2181,172.30.64.12:2181')
             zk.start()
             ha_agent.debug("Successfull Migration.Adding to Migrated zNode")
-            zk.ensure_path("/openstack_ha/instances/migrated/"+new_tmp_host)
-            zk.create("/openstack_ha/instances/migrated/"+new_tmp_host+"/"+new_instance.id,new_instance_json)
+            zk.ensure_path("/openstack_ha/instances/migrated/"+tmp_host)
+            zk.create("/openstack_ha/instances/migrated/"+tmp_host+"/"+new_instance.id,new_instance_json)
             #zk.create("/openstack_ha/instances/migrated/"+tmp_host+"/"+instance_id+"/"+new_instance_id)
         else:
             zk = KazooClient(hosts='172.30.64.14:2181,172.30.64.13:2181,172.30.64.12:2181')
@@ -153,8 +153,8 @@ def migrate(instance_id):
         zk = KazooClient(hosts='172.30.64.14:2181,172.30.64.13:2181,172.30.64.12:2181')
         zk.start()
         ha_agent.debug("Successfull Migration.Adding to Migrated zNode")
-        zk.ensure_path("/openstack_ha/instances/migrated/"+new_tmp_host)
-        zk.create("/openstack_ha/instances/migrated/"+new_tmp_host+"/"+new_instance.id,new_instance_json)
+        zk.ensure_path("/openstack_ha/instances/migrated/"+tmp_host)
+        zk.create("/openstack_ha/instances/migrated/"+tmp_host+"/"+new_instance.id,new_instance_json)
         #zk.create("/openstack_ha/instances/migrated/"+instance_id)
     finally:
         zk = KazooClient(hosts='172.30.64.14:2181,172.30.64.13:2181,172.30.64.12:2181')
