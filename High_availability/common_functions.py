@@ -27,7 +27,7 @@ tenant = "admin"
 wait_time = 5 #In Seconds - Based on SLA
 mysql_user ="ha"
 mysql_pass ="ha_pass"
-
+kazoo_hosts='172.30.64.14:2181,172.30.64.13:2181,172.30.64.12:2181'
 
 
 host_name=socket.gethostname()
