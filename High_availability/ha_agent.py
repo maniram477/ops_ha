@@ -16,12 +16,16 @@ def migrate(instance_id):
     try:
         tmp_host=""
         new_tmp_host=""
+        instance_name,instance_id=""
         volumes={}
+        new_tmp_host ,new_instance_name,new_instance_id=""
         # Seperate Each unit of function and give retry for each one separately
         cinder,neutron,nova= client_init()
         instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder)
         
-        try:    
+        try:
+            instance_name=instance_object.name
+            instance_id=instance_object.id
             tmp_host = info['OS-EXT-SRV-ATTR:host']
             volumes.update(bdm)
             nics = get_fixed_ip(info,neutron)
@@ -41,8 +45,14 @@ def migrate(instance_id):
                 volume=volumes
             else:
                 volume=volumes
-            old_instance=json.dumps({"instance_name":instance_object.name,"host_name":tmp_host,"instance_id":instance_object.id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
-            old_instance_json=str.encode(old_instance)    
+            data={"instance_name":instance_name,"host_name":tmp_host,"instance_id":instance_id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume}
+            old_instance=json.dumps({"instance_name":instance_name,"host_name":tmp_host,"instance_id":instance_id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
+            old_instance_json=str.encode(old_instance)
+            #write the instance details to json file
+            with open('migration_old_instance.json', 'a+') as outfile:
+                outfile.write('\n')
+                json.dump(data, outfile, indent=4, sort_keys=True, separators=(',', ':'))
+                outfile.write(',')
         except Exception as e:
             ha_agent.debug('Json Dump Exception')
 
@@ -107,6 +117,9 @@ def migrate(instance_id):
             #create new_instance json
             instance_object1,info,ip_list,bdm,extra = info_collection(nova,new_instance_id,cinder)
             new_tmp_host = info['OS-EXT-SRV-ATTR:host']
+            new_instance_name=new_instance.name
+            new_instance_id=new_instance.id
+            volume=''
             # Check Whether BDM is available
             ha_agent.debug("Information Collected")
             nics = get_fixed_ip(info,neutron)
@@ -125,10 +138,17 @@ def migrate(instance_id):
                 bdm.update(extra)
                 volume=bdm
             else:
-                volume=bdm    
+                volume=bdm
+            data1={"instance_name":new_instance.name,"host_name":new_tmp_host,"instance_id":new_instance_id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume}
         
-            new_instance_details=json.dumps({"instance_name":new_instance.name,"host_name":new_tmp_host,"instance_id":new_instance.id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
+            new_instance_details=json.dumps({"instance_name":new_instance.name,"host_name":new_tmp_host,"instance_id":new_instance_id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
             new_instance_json=str.encode(new_instance_details)
+
+            # write the successfuly migrated instance details to json file
+            with open('migration_old_instance.json', 'a+') as outfile:
+                outfile.write('\n')
+                json.dump(data1, outfile, indent=4, sort_keys=True, separators=(',', ':'))
+                outfile.write(',')
         except Exception as e:
             ha_agent.debug('Json Dump after creation of new instance')
     except Exception as e :
