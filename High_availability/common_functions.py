@@ -17,6 +17,7 @@ from cinderclient import exceptions as c_exception
 import cinderclient.openstack.common.apiclient.exceptions as c_api_exception
 import logging.config
 import MySQLdb
+import json
 logging.config.fileConfig("ha_agent.conf")
 ha_agent=logging.getLogger('ha_agent')
 scheduler_log=logging.getLogger('scheduler')
@@ -530,3 +531,54 @@ def message_queue(dhost=None,task=None):
         if (zk.exists("/openstack_ha/hosts/down/" + dhost) == None):
             zk.create("/openstack_ha/hosts/down/" + dhost)
 
+
+def json_dump_creation(nova=None,instance_id=None,cinder=None,\
+                       neutron=None,old_instance_id=None,filename=None):
+    try:
+            instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder) 
+            tmp_host=""           
+            instance_name=""             
+            flavor=""
+            image=""
+            security_groups=""
+            volumes={}            
+            instance_name=instance_object.name
+            instance_id=instance_object.id
+            tmp_host = info['OS-EXT-SRV-ATTR:host']
+            volumes.update(bdm)
+            nics = get_fixed_ip(info,neutron)
+            if not nics:
+                fixed_ip=None
+            else:
+                fixed_ip=nics[0]
+            # Check Whether BDM is available
+            ha_agent.debug("Information Collected")
+            if not ip_list:            
+                folating_ip=None
+            else:
+                folating_ip=ip_list[0][0]
+           
+            if bool(extra):            
+                volumes.update(extra)
+                volume=volumes
+            else:
+                volume=volumes
+                
+            flavor= info['flavor']['id']
+            image = dict(info['image']).get('id','')
+            security_groups = [x['name'] for x in info.get('security_groups','')]            
+            data={"instance_name":instance_name,"host_name":tmp_host,"instance_id":instance_id,\
+                  "old_instance_id":old_instance_id,"flavor":flavor,"image":image,"security_groups":security_groups,\
+                  "folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume}            
+            old_instance=json.dumps(data,ensure_ascii=True)
+            old_instance_json=str.encode(old_instance)
+            #write the instance details to json file
+            with open(filename, 'a+') as outfile:
+                outfile.write('\n')
+                json.dump(data, outfile, indent=4, sort_keys=True, separators=(',', ':'))
+                outfile.write(',')
+            return old_instance_json
+    except Exception as e:
+            print(e)
+            ha_agent.debug('Json Dump Exception')
+            ha_agent.exception('')

@@ -13,53 +13,16 @@ celery.config_from_object('config')
 
 @celery.task(name='migrate.migrate')
 def migrate(instance_id):
-    try:        
-        tmp_host=""
-        new_tmp_host=""
-        instance_name=""       
-        volumes={}
-        new_tmp_host=""
-        new_instance_name=""
-        new_instance_id=""
-        old_instance_json=""
+    try:
         # Seperate Each unit of function and give retry for each one separately
+        old_instance_id=instance_id
+        tmp_host=""
         cinder,neutron,nova= client_init()        
-        instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder)
+        instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder) 
+        old_instance_json=json_dump_creation(nova,instance_id,cinder,neutron,None,'migration_old_instance.json')       
+        tmp_host = info['OS-EXT-SRV-ATTR:host']      
        
-        try:
-            instance_name=instance_object.name
-            instance_id=instance_object.id
-            tmp_host = info['OS-EXT-SRV-ATTR:host']
-            volumes.update(bdm)
-            nics = get_fixed_ip(info,neutron)
-            if not nics:
-                fixed_ip=None
-            else:
-                fixed_ip=nics[0]
-            # Check Whether BDM is available
-            ha_agent.debug("Information Collected")
-            if not ip_list:            
-                folating_ip=None
-            else:
-                folating_ip=ip_list[0][0]
-           
-            if bool(extra):            
-                volumes.update(extra)
-                volume=volumes
-            else:
-                volume=volumes
-            
-            data={"instance_name":instance_name,"host_name":tmp_host,"instance_id":instance_id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume}            
-            old_instance=json.dumps(data,ensure_ascii=True)
-            old_instance_json=str.encode(old_instance)
-            #write the instance details to json file
-            with open('migration_old_instance.json', 'a+') as outfile:
-                outfile.write('\n')
-                json.dump(data, outfile, indent=4, sort_keys=True, separators=(',', ':'))
-                outfile.write(',')
-        except Exception as e:
-            ha_agent.debug('Json Dump Exception')
-
+        
         """
         remove_fixed_ip(nova,instance_object.id,fixed_ip['v4-fixed-ip'])
         for fip in ip_list:
@@ -112,49 +75,12 @@ def migrate(instance_id):
         # Check whether floating_ip and additional Volumes are available
         attach_flt_ip(ip_list,new_instance)
         ha_agent.debug("Floating IP attached Successfully")
-
         attach_volumes(nova,new_info['id'],extra)
         ha_agent.debug("Volume attached Successfully")
         #zk = KazooClient(hosts='127.0.0.1:2181')
-        #zk.start()
-        try:  
-            #create new_instance json
-            instance_object1,info,ip_list,bdm,extra = info_collection(nova,new_instance_id,cinder)
-            new_tmp_host = info['OS-EXT-SRV-ATTR:host']
-            new_instance_name=new_instance.name
-            new_instance_id=new_instance.id
-            volume=''
-            # Check Whether BDM is available
-            ha_agent.debug("Information Collected")
-            nics = get_fixed_ip(info,neutron)
-            if not nics:
-                fixed_ip=None
-            else:
-                fixed_ip=nics[0]
-            # Check Whether BDM is available
-            ha_agent.debug("Information Collected")
-            if not ip_list:            
-                folating_ip=None
-            else:
-                folating_ip=ip_list[0][0]
-                
-            if bool(extra):
-                bdm.update(extra)
-                volume=bdm
-            else:
-                volume=bdm
-            data1={"instance_name":new_instance.name,"host_name":new_tmp_host,"instance_id":new_instance_id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume}
+        #zk.start()        
+        new_instance_json=json_dump_creation(nova,new_instance_id,cinder,neutron,old_instance_id,'migration_new_instance.json')
         
-            new_instance_details=json.dumps({"instance_name":new_instance.name,"host_name":new_tmp_host,"instance_id":new_instance_id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
-            new_instance_json=str.encode(new_instance_details)
-
-            # write the successfuly migrated instance details to json file
-            with open('migration_New_instance.json', 'a+') as outfile:
-                outfile.write('\n')
-                json.dump(data1, outfile, indent=4, sort_keys=True, separators=(',', ':'))
-                outfile.write(',')
-        except Exception as e:
-            ha_agent.debug('Json Dump after creation of new instance')
     except Exception as e :
         ha_agent.exception("Overall Task Exception ")
         if any(issubclass(e.__class__, lv) for lv in kazoo_exceptions):
@@ -173,6 +99,8 @@ def migrate(instance_id):
             zk.ensure_path("/openstack_ha/instances/failure/"+tmp_host)
             zk.create("/openstack_ha/instances/failure/"+tmp_host+"/"+instance_id,old_instance_json)
             #zk.create("/openstack_ha/instances/failure/"+instance_id)
+            new_instance_json=json_dump_creation(nova,instance_id,cinder,neutron,\
+                                                 None,'migration_Error_instance.json')
     else:
         zk = KazooClient(hosts=kazoo_host_ipaddress)
         zk.start()
@@ -184,8 +112,6 @@ def migrate(instance_id):
         zk = KazooClient(hosts=kazoo_host_ipaddress)
         zk.start()
         ha_agent.debug("Removing Instance from pending")
-        zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
+        #zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
         #zk.delete("/openstack_ha/instances/pending/"+instance_id)
-
-            
 
