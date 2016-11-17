@@ -76,6 +76,11 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                     scheduler_log.debug("Inside Time out Node Creation")
                                     #adding host down time
                                     host_down_time = time.time()
+                                    temp_time=time.localtime(time.time())                                       
+                                    time_suffix=str(temp_time.tm_mday)+"_"+str(temp_time.tm_mon)+"_"+\
+                                    str(temp_time.tm_year)+"_"+str(temp_time.tm_hour)+"_"+\
+                                    str(temp_time.tm_min)
+                                    
                                     host_down_time = str.encode(str(host_down_time))
                                     scheduler_log.debug(host_down_time)
                                     zk.create("/openstack_ha/hosts/time_out/"+host, host_down_time)
@@ -103,7 +108,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                             down_host_failuretime = float(down_host_failuretime)
                                             time_interval = curent_time - down_host_failuretime
                                             if time_interval>migrate_time:
-                                                instance_migration(nova,api_down_nodes,task)
+                                                instance_migration(nova,api_down_nodes,task,time_suffix)
                                             else:
                                                 scheduler_log.debug("Will Wait for another %d"%(migrate_time-time_interval))
                                         else:

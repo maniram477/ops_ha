@@ -479,7 +479,7 @@ def recreate_instance(nova,instance_object,target_host=None,bdm=None,neutron=Non
     return instance_object
  
 #HA-Agent Migration Functions
-def instance_migration(nova,dhosts,task):
+def instance_migration(nova,dhosts,task,time_suffix):
     for dhost in dhosts:
 
         if(zk.exists("/openstack_ha/instances/pending/" + dhost)==None):
@@ -497,9 +497,9 @@ def instance_migration(nova,dhosts,task):
                 zk.create("/openstack_ha/instances/down_instances/" + dhost+"/"+instance_obj.id)
                 #create instance detatils under the down hosts in zookeepr
                 #migrate.apply_async((instance_obj.id,), queue='mars', countdown=wait_time)
-        message_queue(dhost,task)
+        message_queue(dhost,task,time_suffix)
 
-def message_queue(dhost=None,task=None):
+def message_queue(dhost=None,task=None,time_suffix=None):
     instance_list=zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
     pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
     scheduler_log.debug("Instances yet to be added to Migration Queue: %d"%(len(instance_list)))
@@ -517,7 +517,7 @@ def message_queue(dhost=None,task=None):
                     zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
                     zk.delete("/openstack_ha/instances/down_instances/" + dhost + "/" + instance_list[i],recursive=True)
                     instance_string = str(instance_list[i])
-                    task.apply_async((instance_string,), queue='mars', countdown=5)
+                    task.apply_async((instance_string,time_suffix,), queue='mars', countdown=5)
                 except Exception as e:
                     scheduler_log.warning("Exception: message_queue Function..!")
                     scheduler_log.exception('')
@@ -572,13 +572,26 @@ def json_dump_creation(nova=None,instance_id=None,cinder=None,\
                   "folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume}            
             old_instance=json.dumps(data,ensure_ascii=True)
             old_instance_json=str.encode(old_instance)
-            #write the instance details to json file
-            with open(filename, 'a+') as outfile:
-                outfile.write('\n')
-                json.dump(data, outfile, indent=4, sort_keys=True, separators=(',', ':'))
-                outfile.write(',')
-            return old_instance_json
+            #write the instance details to json file           
+            return data,old_instance_json
     except Exception as e:
             print(e)
             ha_agent.debug('Json Dump Exception')
             ha_agent.exception('')
+            
+def json_dump_write(filename=None,data=None):
+     with open(filename, 'a+') as outfile:
+                outfile.write('\n')
+                json.dump(data, outfile, indent=4, sort_keys=True, separators=(',', ':'))
+                outfile.write(',')
+
+def json_dump_edit(data=None,new_instance_id=None,new_host_name=None):
+    old_instance_id=data["instance_id"]  
+    old_host_name=data["host_name"]
+    data["instance_id"] =new_instance_id
+    data["host_name"]=new_host_name
+    data["old_instance_id"] =old_instance_id
+    data["old_host_name"]=old_host_name
+    old_instance=json.dumps(data,ensure_ascii=True)
+    old_instance_json=str.encode(old_instance)
+    return data,old_instance_json
