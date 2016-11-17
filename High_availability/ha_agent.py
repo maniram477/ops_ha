@@ -13,16 +13,19 @@ celery.config_from_object('config')
 
 @celery.task(name='migrate.migrate')
 def migrate(instance_id):
-    try:
+    try:        
         tmp_host=""
         new_tmp_host=""
-        instance_name,instance_id=""
+        instance_name=""       
         volumes={}
-        new_tmp_host ,new_instance_name,new_instance_id=""
+        new_tmp_host=""
+        new_instance_name=""
+        new_instance_id=""
+        old_instance_json=""
         # Seperate Each unit of function and give retry for each one separately
-        cinder,neutron,nova= client_init()
+        cinder,neutron,nova= client_init()        
         instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder)
-        
+       
         try:
             instance_name=instance_object.name
             instance_id=instance_object.id
@@ -45,8 +48,9 @@ def migrate(instance_id):
                 volume=volumes
             else:
                 volume=volumes
-            data={"instance_name":instance_name,"host_name":tmp_host,"instance_id":instance_id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume}
-            old_instance=json.dumps({"instance_name":instance_name,"host_name":tmp_host,"instance_id":instance_id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume},ensure_ascii=True)
+            
+            data={"instance_name":instance_name,"host_name":tmp_host,"instance_id":instance_id,"folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume}            
+            old_instance=json.dumps(data,ensure_ascii=True)
             old_instance_json=str.encode(old_instance)
             #write the instance details to json file
             with open('migration_old_instance.json', 'a+') as outfile:
@@ -145,7 +149,7 @@ def migrate(instance_id):
             new_instance_json=str.encode(new_instance_details)
 
             # write the successfuly migrated instance details to json file
-            with open('migration_old_instance.json', 'a+') as outfile:
+            with open('migration_New_instance.json', 'a+') as outfile:
                 outfile.write('\n')
                 json.dump(data1, outfile, indent=4, sort_keys=True, separators=(',', ':'))
                 outfile.write(',')
@@ -156,31 +160,32 @@ def migrate(instance_id):
         if any(issubclass(e.__class__, lv) for lv in kazoo_exceptions):
             print("Kazoo Exception.....: ",e)
             time.sleep(2)
-            zk = KazooClient(hosts=kazoo_hosts)
+            zk = KazooClient(hosts=kazoo_host_ipaddress)
             zk.start()
             ha_agent.debug("Successfull Migration.Adding to Migrated zNode")
             zk.ensure_path("/openstack_ha/instances/migrated/"+tmp_host)
             zk.create("/openstack_ha/instances/migrated/"+tmp_host+"/"+new_instance.id,new_instance_json)
             #zk.create("/openstack_ha/instances/migrated/"+tmp_host+"/"+instance_id+"/"+new_instance_id)
         else:
-            zk = KazooClient(hosts=kazoo_hosts)
+            zk = KazooClient(hosts=kazoo_host_ipaddress)
             zk.start()
             ha_agent.error("Exception hence adding to failure zNode")
             zk.ensure_path("/openstack_ha/instances/failure/"+tmp_host)
             zk.create("/openstack_ha/instances/failure/"+tmp_host+"/"+instance_id,old_instance_json)
             #zk.create("/openstack_ha/instances/failure/"+instance_id)
     else:
-        zk = KazooClient(hosts=kazoo_hosts)
+        zk = KazooClient(hosts=kazoo_host_ipaddress)
         zk.start()
         ha_agent.debug("Successfull Migration.Adding to Migrated zNode")
         zk.ensure_path("/openstack_ha/instances/migrated/"+tmp_host)
         zk.create("/openstack_ha/instances/migrated/"+tmp_host+"/"+new_instance.id,new_instance_json)
         #zk.create("/openstack_ha/instances/migrated/"+instance_id)
     finally:
-        zk = KazooClient(hosts=kazoo_hosts)
+        zk = KazooClient(hosts=kazoo_host_ipaddress)
         zk.start()
         ha_agent.debug("Removing Instance from pending")
         zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
         #zk.delete("/openstack_ha/instances/pending/"+instance_id)
 
             
+

@@ -20,14 +20,14 @@ import MySQLdb
 logging.config.fileConfig("ha_agent.conf")
 ha_agent=logging.getLogger('ha_agent')
 scheduler_log=logging.getLogger('scheduler')
-controller_ip="30.20.0.9"
+controller_ip="30.20.0.2"
 user ="admin"
-passwd = "p@ssw0rd"
+passwd = "admin"
 tenant = "admin"
 wait_time = 5 #In Seconds - Based on SLA
 mysql_user ="ha"
 mysql_pass ="ha_pass"
-kazoo_hosts='172.30.64.14:2181,172.30.64.13:2181,172.30.64.12:2181'
+kazoo_host_ipaddress='30.20.0.3:2181,30.20.0.4:2181,30.20.0.5:2181'
 
 
 host_name=socket.gethostname()
@@ -170,7 +170,7 @@ def client_init():
 
 # Instacne Functions
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)
-def info_collection(nova,instance_id,cinder):
+def info_collection(nova,instance_id,cinder):    
     try:
         ha_agent.debug("Inside the info_collection...!")
         instance = nova.servers.get(instance_id)
@@ -529,3 +529,4 @@ def message_queue(dhost=None,task=None):
     else:
         if (zk.exists("/openstack_ha/hosts/down/" + dhost) == None):
             zk.create("/openstack_ha/hosts/down/" + dhost)
+
