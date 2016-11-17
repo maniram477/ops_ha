@@ -533,7 +533,7 @@ def message_queue(dhost=None,task=None,time_suffix=None):
 
 
 def json_dump_creation(nova=None,instance_id=None,cinder=None,\
-                       neutron=None,old_instance_id=None,filename=None):
+                       neutron=None,old_instance_id=None):
     try:
             instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder) 
             tmp_host=""           
