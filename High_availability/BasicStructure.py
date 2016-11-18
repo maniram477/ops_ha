@@ -25,6 +25,9 @@ def ensureBasicStructure():
     zk.ensure_path("/openstack_ha/instances/migrated")
     zk.ensure_path("/openstack_ha/instances/failure")
     zk.ensure_path("/openstack_ha/hosts/time_out")
+    zk.ensure_path("/openstack_ha/instances/remigrated")
+    zk.ensure_path("/openstack_ha/instances/remigrated/failure")
+    
 
 
 def createNodeinAll():
