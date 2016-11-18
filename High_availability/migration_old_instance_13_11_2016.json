@@ -1,0 +1,142 @@
+
+{
+    "fixed_ip":{
+        "net-id":"41da73e0-07e4-4e39-9ae5-0dc6c8ad0866",
+        "v4-fixed-ip":"40.20.0.22"
+    },
+    "flavor":"7",
+    "folating_ip":"192.168.30.62",
+    "host_name":"node-23.naanal.local",
+    "image":"",
+    "instance_id":"f8a6684a-072f-493a-9bd7-7e984d373668",
+    "instance_name":"vol_based",
+    "old_instance_id":null,
+    "security_groups":[
+        "default"
+    ],
+    "volume":{
+        "/dev/vdb":"5af6fe6c-0107-4de4-a79c-d41031fb596c",
+        "vda":"1d28f270-19fb-467f-a66a-7c8c814536d2"
+    }
+},
+{
+    "fixed_ip":{
+        "net-id":"41da73e0-07e4-4e39-9ae5-0dc6c8ad0866",
+        "v4-fixed-ip":"40.20.0.18"
+    },
+    "flavor":"1",
+    "folating_ip":"192.168.30.61",
+    "host_name":"node-22.naanal.local",
+    "image":"c59adf34-71c6-4ea6-9d63-c8959c7001ea",
+    "instance_id":"5040dc06-80c8-4846-b0e2-262e8a37f18f",
+    "instance_name":"ha_test-2",
+    "old_instance_id":null,
+    "security_groups":[
+        "default"
+    ],
+    "volume":{
+        "/dev/vdb":"68e032d6-7f5e-4aa2-99e3-e57b551f198e"
+    }
+},
+{
+    "fixed_ip":{
+        "net-id":"41da73e0-07e4-4e39-9ae5-0dc6c8ad0866",
+        "v4-fixed-ip":"40.20.0.17"
+    },
+    "flavor":"1",
+    "folating_ip":null,
+    "host_name":"node-22.naanal.local",
+    "image":"c59adf34-71c6-4ea6-9d63-c8959c7001ea",
+    "instance_id":"92cb0e8a-03ca-46ff-8a84-2d8cf8017f9c",
+    "instance_name":"ha_test-1",
+    "old_instance_id":null,
+    "security_groups":[
+        "default"
+    ],
+    "volume":{}
+},
+{
+    "fixed_ip":{
+        "net-id":"41da73e0-07e4-4e39-9ae5-0dc6c8ad0866",
+        "v4-fixed-ip":"40.20.0.7"
+    },
+    "flavor":"1",
+    "folating_ip":null,
+    "host_name":"node-23.naanal.local",
+    "image":"c59adf34-71c6-4ea6-9d63-c8959c7001ea",
+    "instance_id":"c6c38240-de30-4b7d-86ea-697c7a29457e",
+    "instance_name":"ha_test0-4",
+    "old_instance_id":null,
+    "security_groups":[
+        "default"
+    ],
+    "volume":{}
+},
+{
+    "fixed_ip":{
+        "net-id":"41da73e0-07e4-4e39-9ae5-0dc6c8ad0866",
+        "v4-fixed-ip":"40.20.0.5"
+    },
+    "flavor":"1",
+    "folating_ip":null,
+    "host_name":"node-23.naanal.local",
+    "image":"c59adf34-71c6-4ea6-9d63-c8959c7001ea",
+    "instance_id":"f0a58c35-435c-44eb-8ef6-bcc951edbff9",
+    "instance_name":"ha_test0-1",
+    "old_instance_id":null,
+    "security_groups":[
+        "default"
+    ],
+    "volume":{}
+},
+{
+    "fixed_ip":{
+        "net-id":"41da73e0-07e4-4e39-9ae5-0dc6c8ad0866",
+        "v4-fixed-ip":"40.20.0.21"
+    },
+    "flavor":"1",
+    "folating_ip":null,
+    "host_name":"node-23.naanal.local",
+    "image":"c59adf34-71c6-4ea6-9d63-c8959c7001ea",
+    "instance_id":"584154e7-2911-48c8-beca-1b89a7eb5430",
+    "instance_name":"ha_test-5",
+    "old_instance_id":null,
+    "security_groups":[
+        "default"
+    ],
+    "volume":{}
+},
+{
+    "fixed_ip":{
+        "net-id":"41da73e0-07e4-4e39-9ae5-0dc6c8ad0866",
+        "v4-fixed-ip":"40.20.0.19"
+    },
+    "flavor":"1",
+    "folating_ip":null,
+    "host_name":"node-22.naanal.local",
+    "image":"c59adf34-71c6-4ea6-9d63-c8959c7001ea",
+    "instance_id":"7018dde0-eb8b-4b4c-ad1c-71c74b711fa6",
+    "instance_name":"ha_test-4",
+    "old_instance_id":null,
+    "security_groups":[
+        "default"
+    ],
+    "volume":{}
+},
+{
+    "fixed_ip":{
+        "net-id":"41da73e0-07e4-4e39-9ae5-0dc6c8ad0866",
+        "v4-fixed-ip":"40.20.0.20"
+    },
+    "flavor":"1",
+    "folating_ip":null,
+    "host_name":"node-23.naanal.local",
+    "image":"c59adf34-71c6-4ea6-9d63-c8959c7001ea",
+    "instance_id":"2593a50a-1d6e-4241-b25f-3ce7267ef317",
+    "instance_name":"ha_test-3",
+    "old_instance_id":null,
+    "security_groups":[
+        "default"
+    ],
+    "volume":{}
+},
