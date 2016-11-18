@@ -80,10 +80,12 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                     time_suffix=str(temp_time.tm_mday)+"_"+str(temp_time.tm_mon)+"_"+\
                                     str(temp_time.tm_year)+"_"+str(temp_time.tm_hour)+"_"+\
                                     str(temp_time.tm_min)
+                                    enc_time_suffix=str.encode(time_suffix)
                                     
                                     host_down_time = str.encode(str(host_down_time))
                                     scheduler_log.debug(host_down_time)
                                     zk.create("/openstack_ha/hosts/time_out/"+host, host_down_time)
+                                    zk.create("/openstack_ha/hosts/time_out/"+host+"/time_suffix",enc_time_suffix)
                                 # add ping test
                                 ping_status=ping_check(host)
                                 if(ping_status):
@@ -108,7 +110,9 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                             down_host_failuretime = float(down_host_failuretime)
                                             time_interval = curent_time - down_host_failuretime
                                             if time_interval>migrate_time:
-                                                instance_migration(nova,api_down_nodes,task,time_suffix)
+                                                tmp_time_suffix=zk.get("/openstack_ha/hosts/time_out/"+host+"/time_suffix")[0]
+                                                zk_time_suffix = tmp_time_suffix.decode()
+                                                instance_migration(nova,api_down_nodes,task,zk_time_suffix)
                                             else:
                                                 scheduler_log.debug("Will Wait for another %d"%(migrate_time-time_interval))
                                         else:
