@@ -29,7 +29,7 @@ wait_time = 5 #In Seconds - Based on SLA
 mysql_user ="ha"
 mysql_pass ="ha_pass"
 kazoo_host_ipaddress='30.20.0.3:2181,30.20.0.4:2181,30.20.0.5:2181'
-
+dump_directory="/var/log/ops_ha/json_dump/"
 
 host_name=socket.gethostname()
 
@@ -580,7 +580,8 @@ def json_dump_creation(nova=None,instance_id=None,cinder=None,\
             ha_agent.exception('')
             
 def json_dump_write(filename=None,data=None):
-     with open(filename, 'a+') as outfile:
+    file_path = dump_directory + filename
+     with open(file_path, 'a+') as outfile:
                 outfile.write('\n')
                 json.dump(data, outfile, indent=4, sort_keys=True, separators=(',', ':'))
                 outfile.write(',')
