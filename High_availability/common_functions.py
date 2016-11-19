@@ -267,7 +267,7 @@ def create_instance(nova,name=None,image=None,bdm=None,\
         
         instance_object = nova.servers.create(name=name,image=image,block_device_mapping=bdm,\
                              flavor=flavor,nics=nics,availability_zone=availability_zone,\
-                             disk_config=disk_config,meta=meta,security_groups=security_groups)
+                             disk_config=disk_config,security_groups=security_groups)
         return instance_object
     except Exception as e:
         ha_agent.warning("Exception during instance creation...!")
