@@ -596,7 +596,7 @@ def json_dump_creation(nova=None,instance_id=None,cinder=None,\
             
 def json_dump_write(filename=None,data=None):
     file_path = dump_directory + filename
-     with open(file_path, 'a+') as outfile:
+    with open(file_path, 'a+') as outfile:
                 outfile.write('\n')
                 json.dump(data, outfile, indent=4, sort_keys=True, separators=(',', ':'))
                 outfile.write(',')
