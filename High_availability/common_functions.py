@@ -18,9 +18,14 @@ import cinderclient.openstack.common.apiclient.exceptions as c_api_exception
 import logging.config
 import MySQLdb
 import json
+import string
+
+#Logging Vars
 logging.config.fileConfig("ha_agent.conf")
 ha_agent=logging.getLogger('ha_agent')
 scheduler_log=logging.getLogger('scheduler')
+
+#HA Scheduler and Worker Vars
 controller_ip="30.20.0.2"
 user ="admin"
 passwd = "admin"
@@ -29,7 +34,16 @@ wait_time = 5 #In Seconds - Based on SLA
 mysql_user ="ha"
 mysql_pass ="ha_pass"
 kazoo_host_ipaddress='30.20.0.3:2181,30.20.0.4:2181,30.20.0.5:2181'
+
+#Json Dump Vars
 dump_directory="/var/log/ops_ha/json_dump/"
+
+#Notification Vars
+email = "naanal"
+pwd = "******"
+to_email = ['naanal123@naanal.in','naanaltec@gmail.com']
+
+
 
 host_name=socket.gethostname()
 
@@ -532,6 +546,7 @@ def message_queue(dhost=None,task=None,time_suffix=None):
             zk.create("/openstack_ha/hosts/down/" + dhost)
 
 
+#Json Dump
 def json_dump_creation(nova=None,instance_id=None,cinder=None,\
                        neutron=None,old_instance_id=None):
     try:
@@ -596,3 +611,25 @@ def json_dump_edit(data=None,new_instance_id=None,new_host_name=None):
     old_instance=json.dumps(data,ensure_ascii=True)
     old_instance_json=str.encode(old_instance)
     return data,old_instance_json
+
+
+#Notification
+def notification_mail(subj="",msg="",to_email=to_email):
+    server = smtplib.SMTP('smtp.webfaction.com',25)
+    server.starttls()
+    server.login(email,pwd)
+
+    subj = subj
+    msg = msg
+    email = email + "@naanal.in"
+
+    for i in to_email:
+        BODY = string.join((
+            "From: %s" % email,
+            "To: %s" % to_email,
+            "Subject: %s" % subj ,
+            "",
+            msg
+            ), "\r\n")
+        server.sendmail(email,to_email,BODY)
+    server.quit()

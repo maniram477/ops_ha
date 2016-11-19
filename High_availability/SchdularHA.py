@@ -76,16 +76,29 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                     scheduler_log.debug("Inside Time out Node Creation")
                                     #adding host down time
                                     host_down_time = time.time()
+                                    host_down_time = str.encode(str(host_down_time))
+                                    scheduler_log.debug(host_down_time)
+                                    zk.create("/openstack_ha/hosts/time_out/"+host, host_down_time)
+                                    #adding time_suffix for json_dump file name
                                     temp_time=time.localtime(time.time())                                       
                                     time_suffix=str(temp_time.tm_mday)+"_"+str(temp_time.tm_mon)+"_"+\
                                     str(temp_time.tm_year)+"_"+str(temp_time.tm_hour)+"_"+\
                                     str(temp_time.tm_min)
                                     enc_time_suffix=str.encode(time_suffix)
-                                    
-                                    host_down_time = str.encode(str(host_down_time))
-                                    scheduler_log.debug(host_down_time)
-                                    zk.create("/openstack_ha/hosts/time_out/"+host, host_down_time)
+                                    scheduler_log.debug(time_suffix)
                                     zk.create("/openstack_ha/hosts/time_out/"+host+"/time_suffix",enc_time_suffix)
+
+                                    # call notification_mail(subj,msg) | Adding Down Node details to Notification 
+                                    #try:
+                                    #    subject = "DGP Office VDI Node Down: %s"%host
+                                    #    message = "Please Check the Network Connectivity and Powersupply as soon as possible"
+                                    #    notification_mail(subject,message,to_email=['sysadmin@naanal.in'])
+
+                                    #    message = "Please Contact System Administrator"
+                                    #    notification_mail(subject,message)
+                                    #except Exception as e:
+                                    #    scheduler_log.debug(e)
+
                                 # add ping test
                                 ping_status=ping_check(host)
                                 if(ping_status):
