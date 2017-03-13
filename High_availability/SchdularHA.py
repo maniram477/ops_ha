@@ -89,15 +89,17 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                     zk.create("/openstack_ha/hosts/time_out/"+host+"/time_suffix",enc_time_suffix)
 
                                     # call notification_mail(subj,msg) | Adding Down Node details to Notification 
-                                    #try:
-                                    #    subject = "DGP Office VDI Node Down: %s"%host
-                                    #    message = "Please Check the Network Connectivity and Powersupply as soon as possible"
-                                    #    notification_mail(subject,message,to_email=['sysadmin@naanal.in'])
+                                    try:
+                                        subject = "DGP Office VDI Node Down: %s"%host
+                                        message = "Please Check the Network Connectivity and Powersupply as soon as possible"
+                                        notification_mail(subject,message,to_email=['naanalteam@naanal.in'])
 
-                                    #    message = "Please Contact System Administrator"
-                                    #    notification_mail(subject,message)
-                                    #except Exception as e:
-                                    #    scheduler_log.debug(e)
+                                        message = "Please Contact System Administrator"
+                                        notification_mail(subject,message)
+                                        scheduler_log.debug("mail in Scheduler...!")
+                                    except Exception as e:
+                                        scheduler_log.debug(e)
+                                        scheduler_log.debug("Error....! mail scheduler..!")
 
                                 # add ping test
                                 ping_status=ping_check(host)

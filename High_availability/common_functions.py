@@ -19,6 +19,7 @@ import logging.config
 import MySQLdb
 import json
 import string
+import smtplib
 
 #Logging Vars
 logging.config.fileConfig("ha_agent.conf")
@@ -40,7 +41,7 @@ dump_directory="/var/log/ops_ha/json_dump/"
 
 #Notification Vars
 email = "naanal"
-pwd = "******"
+pwd = "*************"
 to_email = ['naanal123@naanal.in','naanaltec@gmail.com']
 
 
@@ -614,7 +615,7 @@ def json_dump_edit(data=None,new_instance_id=None,new_host_name=None):
 
 
 #Notification
-def notification_mail(subj="",msg="",to_email=to_email):
+def notification_mail(subj="",msg="",to_email=to_email,email=email,pwd=pwd):
     server = smtplib.SMTP('smtp.webfaction.com',25)
     server.starttls()
     server.login(email,pwd)
@@ -622,6 +623,7 @@ def notification_mail(subj="",msg="",to_email=to_email):
     subj = subj
     msg = msg
     email = email + "@naanal.in"
+    print("mail in commonfunctions.........!!!")
 
     for i in to_email:
         BODY = string.join((
