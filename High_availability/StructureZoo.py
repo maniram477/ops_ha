@@ -58,6 +58,10 @@ def createNodeinAll(zk=zk,host_name=host_name,scheduler_log=None):
         zk.delete("/openstack_ha/instances/down_instances/" + host_name, recursive=True)
     except kazoo.exceptions.NoNodeException:
         scheduler_log.debug("Node not present in down_instances path")
+    try:
+        zk.delete("/openstack_ha/hosts/start_migration/" + host_name, recursive=True)
+    except kazoo.exceptions.NoNodeException:
+        scheduler_log.debug("Node not present in start_migration path")
 
 def imalive(zk=zk,host_name=host_name,scheduler_log=None):
     try:
