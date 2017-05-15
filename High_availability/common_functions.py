@@ -29,10 +29,13 @@ scheduler_log=logging.getLogger('scheduler')
 
 #------HA Scheduler and Worker Vars--------#
 
-controller_ip="30.20.0.2" #Management IP address(VIP)
-wait_time = 5 #In Seconds - Based on SLA
+#Number of seconds to wait before adding instance to migration queue
+migrate_time=120# In Seconds. 
+
+num_instances_batch = 10
 
 ##Openstack Credentials
+controller_ip="30.20.0.2" #Management IP address(VIP)
 user ="admin"
 passwd = "admin"
 tenant = "admin"
@@ -74,8 +77,6 @@ poll_status_count = 10
 poll_status_interval = 5000 #In MilliSeconds
 #-------------------------------------------#
 
-migrate_time=120# In Seconds
-num_instances_batch = 10
 
 
 maintenance_state = ['maintenance','skip','pause_migration']
