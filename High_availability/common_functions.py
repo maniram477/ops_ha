@@ -21,41 +21,58 @@ import json
 import string
 import smtplib
 
-#Logging Vars
+#-------------Logging Vars-----------------#
 logging.config.fileConfig("ha_agent.conf")
 ha_agent=logging.getLogger('ha_agent')
 scheduler_log=logging.getLogger('scheduler')
+#------------------------------------------#
 
-#HA Scheduler and Worker Vars
-controller_ip="30.20.0.2"
+#------HA Scheduler and Worker Vars--------#
+
+controller_ip="30.20.0.2" #Management IP address(VIP)
+wait_time = 5 #In Seconds - Based on SLA
+
+##Openstack Credentials
 user ="admin"
 passwd = "admin"
 tenant = "admin"
-wait_time = 5 #In Seconds - Based on SLA
+##
+
+## Mysql User Details
 mysql_user ="ha"
 mysql_pass ="ha_pass"
+##
+
+##Kazoo Client 
 kazoo_host_ipaddress='30.20.0.3:2181,30.20.0.4:2181,30.20.0.5:2181'
+##
 
-#Json Dump Vars
+#-------------------------------------------#
+
+#---------------Json Dump Vars--------------#
 dump_directory="/var/log/ops_ha/json_dump/"
+#-------------------------------------------#
 
-#Notification Vars
+
+
+#----------------Notification Vars----------#
 email = "naanal"
 pwd = "*************"
 to_email = ['naanal123@naanal.in','naanaltec@gmail.com']
-
+#-------------------------------------------#
 
 
 host_name=socket.gethostname()
 
 
-# Use Variables inside retry Functions
+#---Used Variables inside retry Functions---#
 scheduler_interval = 5 #In Seconds
 api_retry_count = 3 
 api_retry_interval = 2000 #In MilliSeconds
 
 poll_status_count = 10
 poll_status_interval = 5000 #In MilliSeconds
+#-------------------------------------------#
 
 migrate_time=120# In Seconds
 num_instances_batch = 10
