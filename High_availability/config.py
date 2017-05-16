@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
-#Config File
+#Config File for Celery
 from common_functions import get_ip_address
 ip_address = get_ip_address('br-mgmt')
 RABBIT_USER = 'nova'
-RABBIT_PASSWORD = 'WUadxi939gMnEFkRhVnbF5Fm'
+RABBIT_PASSWORD = 'RABBIT_PASSWORD'
 BROKER_URL = 'amqp://%s:%s@%s:5673//'%(RABBIT_USER,RABBIT_PASSWORD,ip_address)
 
 #CELERY_RESULT_BACKEND = "amqp"
