@@ -21,76 +21,118 @@ import json
 import string
 import smtplib
 
-#-------------Logging Vars-----------------#
-logging.config.fileConfig("ha_agent.conf")
-ha_agent=logging.getLogger('ha_agent')
-scheduler_log=logging.getLogger('scheduler')
-#------------------------------------------#
-
-#------HA Scheduler and Worker Vars--------#
-
-#Number of seconds to wait before adding instance to migration queue
-migrate_time=120# In Seconds. 
-
-num_instances_batch = 10
-
-##Openstack Credentials
-controller_ip="30.20.0.2" #Management IP address(VIP)
-user ="admin"
-passwd = "admin"
-tenant = "admin"
-##
-
-## Mysql User Details
-mysql_user ="ha"
-mysql_pass ="ha_pass"
-##
-
-##Kazoo Client 
-kazoo_host_ipaddress='30.20.0.3:2181,30.20.0.4:2181,30.20.0.5:2181'
-##
-
-#-------------------------------------------#
-
-#---------------Json Dump Vars--------------#
-dump_directory="/var/log/ops_ha/json_dump/"
-#-------------------------------------------#
-
-
-
-#----------------Notification Vars----------#
-email = "naanal"
-pwd = "*************"
-to_email = ['naanal123@naanal.in','naanaltec@gmail.com']
-#-------------------------------------------#
-
-
 host_name=socket.gethostname()
 
 
-#---Used Variables inside retry Functions---#
-scheduler_interval = 5 #In Seconds
+#------------------Openstack Credentials--------------------#
+controller_ip="" #Management IP address(VIP)
+user =""
+passwd = ""
+tenant = ""
+#-----------------------------------------------------------#
+
+#-------------------Mysql User Details----------------------#
+mysql_user =""
+mysql_pass =""
+#-----------------------------------------------------------#
+
+
+#-----------------------CELERY------------------------------#
+CELERY_RESULT_BACKEND = None
+
+#Number of Workers allowed to run concurrently
+CELERYD_CONCURRENCY = 20
+
+#-----------------RabbitMQ---------------#
+MANAGEMENT_IP = ''
+RABBIT_USER = ''
+RABBIT_PASSWORD = ''
+BROKER_URL = 'amqp://%s:%s@%s:5673//'%(RABBIT_USER,RABBIT_PASSWORD,ip_address)
+
+#Eg: MANAGEMENT_IP = get_ip_address('br-mgmt')
+#Eg: RABBIT_USER = 'nova'
+#Eg: RABBIT_PASSWORD = 'RABBIT_PASSWORD'
+
+#----------------------------------------#
+
+#-----------------------------------------------------------#
+
+
+#----------------------Kazoo Client-------------------------# 
+kazoo_host_ipaddress=''
+
+#Eg: kazoo_host_ipaddress='30.20.0.3:2181,30.20.0.4:2181,30.20.0.5:2181'
+
+#-----------------------------------------------------------#
+
+
+#------------------HA Scheduler and Worker Vars-------------#
+
+#Scheduler's Main Loop Interval 
+scheduler_interval = 5 #In Seconds 
+
+#Number of seconds to wait before adding instance 
+#to Migration queue
+migrate_time=120# In Seconds. 
+
+#Maximum Number of Instances added to Migration Queue in a 
+#single scheduler loop
+num_instances_batch = 10
+
+#-----------------------------------------------------------#
+
+
+#--------------------------Logging Vars---------------------#
+logging.config.fileConfig("ha_agent.conf")
+ha_agent=logging.getLogger('ha_agent')
+scheduler_log=logging.getLogger('scheduler')
+#-----------------------------------------------------------#
+
+
+#--------------Variables for retry Functions----------------#
+
+#Number of times API requests are retried in case of failures
+#and interval between each retry
 api_retry_count = 3 
 api_retry_interval = 2000 #In MilliSeconds
 
+#Number of times poll operations like instance_create_status,
+#Instance_delete_status are allowed and interval between each
+#poll request
 poll_status_count = 10
 poll_status_interval = 5000 #In MilliSeconds
-#-------------------------------------------#
+#-----------------------------------------------------------#
+
+
+#------------------------Json Dump Vars---------------------#
+dump_directory="/var/log/ops_ha/json_dump/"
+#-----------------------------------------------------------#
+
+
+
+#------------------------Notification Vars------------------#                            
+email = ""
+pwd = ""
+to_email = ['']
+#Eg: email = "naanal" Username of Naanal's Webmail
+#Eg: to_email = ['naanal123@naanal.in','naanaltec@gmail.com']
+#-----------------------------------------------------------#
+
 
 
 maintenance_state = ['maintenance','skip','pause_migration']
 
-#-------------------Exceptions--------------#
+#--------------------------Exceptions-----------------------#
 kazoo_exceptions = [obj for name, obj in inspect.getmembers(kexception) if inspect.isclass(obj) and issubclass(obj, Exception)]
 cinder_exceptions = [obj for name, obj in inspect.getmembers(c_exception) if inspect.isclass(obj) and issubclass(obj, Exception)]
 cinder_api_exceptions = [obj for name, obj in inspect.getmembers(c_api_exception) if inspect.isclass(obj) and issubclass(obj, Exception)]
 all_cinder_exceptions = cinder_exceptions + cinder_api_exceptions
-#-------------------------------------------#
+#-----------------------------------------------------------#
 
-#---------------Client----------------------#
+#----------------------------Client-------------------------#
 zk = KazooClient(hosts='127.0.0.1:2181')
 nova = nova_client.Client(2,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip,connection_pool=True)
-#-------------------------------------------#
+#-----------------------------------------------------------#
 
 
 #Retry Functions
@@ -654,6 +696,10 @@ def message_queue(dhost=None,task=None,time_suffix=None):
 #Json Dump
 def json_dump_creation(nova=None,instance_id=None,cinder=None,\
                        neutron=None,old_instance_id=None):
+    """Input - NovaClient , Current Instance ID , CInderClient , NeutronClient , Old Instance ID 
+    Output -  Data in json format , same json data encoded in ascii for zookeeper
+    Function - Collects Info about Current Instance formats in json.
+    """
     try:
             instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder) 
             tmp_host=""           
@@ -700,6 +746,10 @@ def json_dump_creation(nova=None,instance_id=None,cinder=None,\
             ha_agent.exception('')
             
 def json_dump_write(filename=None,data=None):
+    """Input - Filename , json data
+    Output - NaN
+    Function - Writes json dump to file
+    """
     file_path = dump_directory + filename
     with open(file_path, 'a+') as outfile:
                 outfile.write('\n')
@@ -707,6 +757,10 @@ def json_dump_write(filename=None,data=None):
                 outfile.write(',')
 
 def json_dump_edit(data=None,new_instance_id=None,new_host_name=None):
+    """Input - json data , New Instance ID , New_host_name
+    Output - Data in json format , same json data encoded in ascii for zookeeper
+    Function - Updates json Data with new_instance_id,new_host_name
+    """
     old_instance_id=data["instance_id"]  
     old_host_name=data["host_name"]
     data["instance_id"] =new_instance_id
@@ -720,6 +774,10 @@ def json_dump_edit(data=None,new_instance_id=None,new_host_name=None):
 
 #Notification
 def notification_mail(subj="",msg="",to_email=to_email,email=email,pwd=pwd):
+    """Input - Subject , Messages , To Email list , webmail Username, password
+    Output - NaN 
+    Function - Sends Mail to the list of recipients.
+    """
     server = smtplib.SMTP('smtp.webfaction.com',25)
     server.starttls()
     server.login(email,pwd)
