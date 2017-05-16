@@ -10,6 +10,10 @@ host_name=socket.gethostname()
 
 
 def ensureBasicStructure(zk=zk):
+    """Input - ZookeeperClient
+    Output - NaN
+    Function - Creates Basic Znodes common to all 
+    """
     zk.ensure_path("/openstack_ha")
     zk.ensure_path("/openstack_ha/hosts")
     zk.ensure_path("/openstack_ha/hosts/all")
@@ -27,6 +31,11 @@ def ensureBasicStructure(zk=zk):
 
 
 def createNodeinAll(zk=zk,host_name=host_name,scheduler_log=None):
+    """Input - ZookeeperClient 
+    Output - NaN
+    Function - Creates Znodes specitfic to host and deletes 
+    node from down Znode 
+    """
     try:
         zk.create("/openstack_ha/hosts/all/" + host_name)
     except kazoo.exceptions.NodeExistsError:
@@ -35,7 +44,7 @@ def createNodeinAll(zk=zk,host_name=host_name,scheduler_log=None):
     try:
         zk.create("/openstack_ha/hosts/alive/" + host_name, b"a value", None, True)
     except kazoo.exceptions.NodeExistsError:
-        #print("Node all ready created in alive")    
+        #print("Node all ready created in alive") 
         pass
 
     try:
@@ -63,14 +72,22 @@ def createNodeinAll(zk=zk,host_name=host_name,scheduler_log=None):
     except kazoo.exceptions.NoNodeException:
         scheduler_log.debug("Node not present in start_migration path")
 
-def imalive(zk=zk,host_name=host_name,scheduler_log=None):
+def imalive(zk=zk,host_name=host_name):
+    """Input - ZookeeperClient , hostname
+    Output - NaN
+    Function - Hostname is added to /openstack_ha/hosts/alive/ Znode 
+    """
     try:
         zk.create("/openstack_ha/hosts/alive/" + host_name, b"a value", None, True)
     except kazoo.exceptions.NodeExistsError:
         #print("Node all ready created in alive")    
         pass
 
-def election_node(zk=zk,host_name=host_name,scheduler_log=None):
+def election_node(zk=zk,host_name=host_name):
+    """Input - ZookeeperClient , hostname
+    Output - NaN
+    Function - Hostname is added to /openstack_ha/hosts/election/ Znode
+    """
     try:
         zk.create("/openstack_ha/hosts/election/" + host_name, b"a value", None, True, True)
     except kazoo.exceptions.NodeExistsError:
@@ -78,8 +95,12 @@ def election_node(zk=zk,host_name=host_name,scheduler_log=None):
 
 
 def leaderCheck(zk=zk):
+    """Input - ZookeeperClient
+    Output - Leader Host Name
+    Function - Gets all hosts from /openstack_ha/hosts/election/ Node
+    """
     leader_candi=zk.get_children("/openstack_ha/hosts/election")
-    print(leader_candi)
+    #print(leader_candi)
     leader_candidate=[]
     leader=''
     for candi in leader_candi:

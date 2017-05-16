@@ -10,7 +10,9 @@ scheduler_log=logging.getLogger('scheduler')
 
 
 def check_hosts(zk,host_name,task,scheduler_log):
-    """Checks Host status of all hosts using nova clients nova.services.list(binary="nova-compute")
+    """Input - ZookeeperClient , host_name , celert Task
+    Output - NaN
+    Function - Checks Host status of all hosts using nova clients nova.services.list(binary="nova-compute")
     If a host is down disables the host and puts instances on the migration queue
     """
     #Code other than nova_client should be moved to separate try block so that nova api related-
@@ -18,11 +20,17 @@ def check_hosts(zk,host_name,task,scheduler_log):
     scheduler_log.debug("scheduler before start...!!!")
     #log.info("Before Start")
     try:
+        #Leader Election
         leader = leaderCheck(zk=zk)
-        #create = createNodeinAll(zk=zk,host_name=host_name)
-        imalive(zk=zk)
+
+        #Update alive status to zookeeper - seems unnecessary
+        imalive(zk=zk) 
+
+        #If current Host is the Leader perform Scheduled Checks  
         if (leader == host_name):
             scheduler_log.debug("Leader Name.....!%s"%host_name)
+            
+            #Fetch List of Hosts - From API
             host_dict = list_hosts(nova)
             allhosts = host_dict['all_list']
             api_down_nodes = host_dict['down_list']
@@ -30,25 +38,29 @@ def check_hosts(zk,host_name,task,scheduler_log):
 
             zk_all = zk.get_children("/openstack_ha/hosts/all")
             zk_alive = zk.get_children("/openstack_ha/hosts/alive")
-            #handeled Down node from zookeeper
+            
+            #Fetch Down nodes that are already Handeled - From Zookeeper
             zk_down = zk.get_children("/openstack_ha/hosts/down")
 
-            # Finds nodes that are down and not handled from zookeeper
+            #Fetch nodes that are down and not already handled - From Zookeeper
             calculated_down_nodes =  list(set(zk_all) - set(zk_alive))
 
-            # Scheduler Only failure
+            #Find Nodes Where Scheduler Only failed
             scheduler_down = list(set(calculated_down_nodes).difference(set(api_down_nodes)))
             for node in scheduler_down:
                 scheduler_log.debug("HA Scheduler Failed on Node : %s "%node)
             
+            #Find Nodes Where API Only failed 
             api_down = list(set(api_down_nodes).difference(set(calculated_down_nodes)))
             for node in api_down:
                 scheduler_log.debug("API Failed on Node : %s "%node)
                 if node not in zk_all:
                     scheduler_log.debug("HA Scheduler not even initialized %s"%node)
+
+            #Find nodes where both API and Zookeeper are failed       
             api_scheduler_down = list(set(api_down_nodes).intersection(set(calculated_down_nodes)))
 
-            # Api only failure | Complete Host Failure ( Not yet Handled | Handling | Handled  )
+            # Possible Host states -  Api only failure | Complete Host Failure ( Not yet Handled | Handling | Handled  )
             if(len(api_scheduler_down))==0:
                     scheduler_log.debug("Hosts working Normally....!!!")
             else:
@@ -74,11 +86,13 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                 scheduler_log.debug(host+" is not disabled or reason is not maintenance")
                                 if(zk.exists("/openstack_ha/hosts/time_out/"+host)==None):
                                     scheduler_log.debug("Inside Time out Node Creation")
+                                    
                                     #adding host down time
                                     host_down_time = time.time()
                                     host_down_time = str.encode(str(host_down_time))
                                     scheduler_log.debug(host_down_time)
                                     zk.create("/openstack_ha/hosts/time_out/"+host, host_down_time)
+                                    
                                     #adding time_suffix for json_dump file name
                                     temp_time=time.localtime(time.time())                                       
                                     time_suffix=str(temp_time.tm_mday)+"_"+str(temp_time.tm_mon)+"_"+\

@@ -21,7 +21,6 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None):
             json_new_instance="remigration_new_instance_"+time_suffix+".json"
             json_error_instance="remigration_error_instance_"+time_suffix+".json"
         else:            
-            # Seperate Each unit of function and give retry for each one separately
             json_old_instance="migration_old_instance_"+time_suffix+".json"
             json_new_instance="migration_new_instance_"+time_suffix+".json"
             json_error_instance="migration_error_instance_"+time_suffix+".json"
@@ -55,12 +54,13 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None):
             ha_agent.debug("Old Instance deleted")
         except Exception as e:
             ha_agent.debug("Unable to delete Instance - Proceeding New Instance Creation")
+            
+
 #6
         error_step=6
+
         # Check Whether BDM is available
-        # Test 1 : Update Volumes set BDM as available and Create New Instance from it.
         
-        # Can add one more layer of retry for entire instance recreation process
         try:
             if(bool(bdm)):         
                 detached_volume_status(bdm['vda'], cinder=cinder)
