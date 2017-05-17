@@ -6,8 +6,6 @@ from ha_agent import migrate
 import time
 
 import logging.config
-logging.config.fileConfig("ha_agent.conf")
-scheduler_log=logging.getLogger('scheduler')
 
 
 def check_hosts(zk,host_name,task,scheduler_log):
@@ -17,18 +15,19 @@ def check_hosts(zk,host_name,task,scheduler_log):
     If a host is down disables the host and puts instances on the migration queue
     """
 
-    scheduler_log.debug("scheduler before start...!!!")
+    #scheduler_log.debug("Scheduler Working...!!!")
     try:
         #Leader Election
         leader = leaderCheck(zk=zk)
-
+        #scheduler_log.debug("Leader Election Over")
         #Update alive status to zookeeper - seems unnecessary
-        imalive(zk=zk) 
+        imalive(zk=zk)
+        #scheduler_log.debug("Alive Status Updated")
 
         #If current Host is the Leader perform Scheduled Checks  
         if (leader == host_name):
-            scheduler_log.debug("Leader Name.....!%s"%host_name)
-            
+            scheduler_log.debug("%s : I am the Leader"%host_name)
+
             #Fetch List of Hosts - From API
             host_dict = list_hosts(nova)
             allhosts = host_dict['all_list']
@@ -152,6 +151,8 @@ def check_hosts(zk,host_name,task,scheduler_log):
                         
                 else:
                     scheduler_log.warning("Un-Manageble Disaster Too many Nodes are down")
+        else:
+            scheduler_log.debug("%s : Leader is %s"%(host_name,leader))
 
     except Exception as e:
         if issubclass(e.__class__,kexception.NoNodeError):

@@ -130,7 +130,7 @@ all_cinder_exceptions = cinder_exceptions + cinder_api_exceptions
 #-----------------------------------------------------------#
 
 #----------------------------Client-------------------------#
-zk = KazooClient(hosts='127.0.0.1:2181')
+zk = KazooClient(hosts=kazoo_host_ipaddress)
 nova = nova_client.Client(2,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip,connection_pool=True)
 #-----------------------------------------------------------#
 
