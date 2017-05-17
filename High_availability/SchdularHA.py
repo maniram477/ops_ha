@@ -1,9 +1,10 @@
 #!/usr/bin/python
-#scheduler
+#Scheduler
 from StructureZoo import  *
 from common_functions import *
 from ha_agent import migrate
 import time
+
 import logging.config
 logging.config.fileConfig("ha_agent.conf")
 scheduler_log=logging.getLogger('scheduler')
@@ -15,10 +16,8 @@ def check_hosts(zk,host_name,task,scheduler_log):
     Function - Checks Host status of all hosts using nova clients nova.services.list(binary="nova-compute")
     If a host is down disables the host and puts instances on the migration queue
     """
-    #Code other than nova_client should be moved to separate try block so that nova api related-
-    # exceptions can be handled properly
+
     scheduler_log.debug("scheduler before start...!!!")
-    #log.info("Before Start")
     try:
         #Leader Election
         leader = leaderCheck(zk=zk)

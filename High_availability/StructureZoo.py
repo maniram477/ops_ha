@@ -83,7 +83,7 @@ def imalive(zk=zk,host_name=host_name):
         #print("Node all ready created in alive")    
         pass
 
-def election_node(zk=zk,host_name=host_name):
+def election_node(zk=zk,host_name=host_name,scheduler_log=None):
     """Input - ZookeeperClient , hostname
     Output - NaN
     Function - Hostname is added to /openstack_ha/hosts/election/ Znode

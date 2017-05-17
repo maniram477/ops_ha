@@ -47,7 +47,7 @@ CELERYD_CONCURRENCY = 20
 MANAGEMENT_IP = ''
 RABBIT_USER = ''
 RABBIT_PASSWORD = ''
-BROKER_URL = 'amqp://%s:%s@%s:5673//'%(RABBIT_USER,RABBIT_PASSWORD,ip_address)
+BROKER_URL = 'amqp://%s:%s@%s:5673//'%(RABBIT_USER,RABBIT_PASSWORD,MANAGEMENT_IP)
 
 #Eg: MANAGEMENT_IP = get_ip_address('br-mgmt')
 #Eg: RABBIT_USER = 'nova'
@@ -672,7 +672,7 @@ def message_queue(dhost=None,task=None,time_suffix=None):
     scheduler_log.debug("Instances yet to be added to Migration Queue: %d"%(len(instance_list)))
     scheduler_log.debug("Instances already on Migration Queue: %d"%(len(pending_instances_list)))
     if(len(instance_list)!=0):
-       scheduler_log.debug("Instances yet to be handled: %d Instances on Queue:  %d"%(len(instance_list),len(pending_instances_list)))
+        scheduler_log.debug("Instances yet to be handled: %d Instances on Queue:  %d"%(len(instance_list),len(pending_instances_list)))
 
         if(len(pending_instances_list)<num_instances_batch):
             add_pending_instance_list=num_instances_batch-len(pending_instances_list)
