@@ -12,7 +12,7 @@ celery.config_from_object('config')
 
 
 @celery.task(name='migrate.migrate')
-def migrate(instance_id,time_suffix,remigration=None,host_name=None):
+def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_agent):
     try:
         error_step=0
         new_host_name=""
@@ -32,7 +32,7 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None):
         error_step=2
         cinder,neutron,nova= client_init()
         
-        error_step=3  
+        error_step=3
         instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder) 
         old_json,old_json_encoded=json_dump_creation(nova,instance_id,cinder,neutron,None) 
         json_dump_write(filename=json_old_instance,data=old_json)
