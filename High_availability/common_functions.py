@@ -425,46 +425,47 @@ def detach_volume_db(cursor,vol_id):
 
         
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)
-def detach_volume(volume,cinder=None):
-    """Input - Volumes - Dictionary Containing volume details 
-    Eg: {'/dev/vdb':'16e5593c-15c7-48a6-b46f-2bda2951e3b0','/dev/vdc':'16e5593c-15c7-48a6-b46f-2bda2951esd0'}
+def detach_volume(vol_id,cinder=None,inst_id=None):
+    """Input - Volume ID
     Output - True | False
-    Function - Detach Volumes From Instance
+    Function - Detach Volume From Instance
     """
     try:
-        cinder.volumes.detach(volume)
+        cinder.volumes.detach(vol_id)
     except Exception as e:
-        ha_agent.warn("Soft Exception: During detach_volume")
+        ha_agent.warn("< %s > : Soft Exception: During detach_volume < %s >"%(inst_id,vol_id))
         ha_agent.exception('')
 
 @retry(retry_on_exception=poll_status,stop_max_attempt_number=10,wait_fixed=1000)      
-def detached_volume_status(volume,cinder=None):
-    """Input - Volume Object
+def detached_volume_status(vol_id,cinder=None,inst_id=None):
+    """Input - Volume ID
     Output - NaN
     Function - Polls Volumes status till it get's deleted
     """
     try:
         allow_retry = ['detaching','in-use'] 
-        tmp_vol = cinder.volumes.get(volume)
+        tmp_vol = cinder.volumes.get(vol_id)
         if tmp_vol.status in allow_retry:
             tmp_vol.detach()
             raise Exception("poll")
     except Exception as e:
-        ha_agent.warn("Exception Checking detached_volume_status")
+        ha_agent.warn("< %s > : Exception Checking detached_volume_status < %s > "%(inst_id,vol_id))
         ha_agent.exception('')        
         if e.message == 'poll':
             raise Exception("poll")         
         elif any(issubclass(e.__class__, lv) for lv in all_cinder_exceptions):
             ha_agent.info("MAYDAY - Looks Like cinderclient or API is not accessible")
-            ha_agent.info("PARACHUTE - Update MYSQL in-use to available ")
-            detach_volume_db(str(volume))
+            ha_agent.info("< %s > : PARACHUTE - Update < %s > in-use to available on DB"%(inst_id,vol_id))
+            detach_volume_db(str(vol_id))
         else:
-            raise Exception('Exception Checking detached_volume_status"')
+            raise Exception('< %s > :Exception Checking detached_volume_status < %s >'%(inst_id,vol_id))
 
 
 def cinder_volume_check(info,cinder=None):
     """ Input - info - instance._info - Information from instance Object, CinderClient
     Output - BDM and Extra Volumes
+    Eg : bdm = {'/dev/vda':'16e5593c-15c7-48a6-b46f-2bda2951e3b0'}
+         extra = {'/dev/vdb':'16e5593c-15c7-48a6-b46f-2bda2951e3b0','/dev/vdc':'16e5593c-15c7-48a6-b46f-2bda2951esd0'}
     """
     
     bdm = {}
@@ -750,6 +751,9 @@ def json_dump_write(filename=None,data=None):
     Output - NaN
     Function - Writes json dump to file
     """
+    if not dump_directory.endswith("/"):
+        dump_directory = dump_directory+"/"
+
     file_path = dump_directory + filename
     with open(file_path, 'a+') as outfile:
                 outfile.write('\n')
