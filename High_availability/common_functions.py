@@ -528,7 +528,9 @@ def floating_ip_check(info):
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)    
 def get_fixed_ip(info,neutron):
     """Input - Instance Info , NeutronClient Object
-    Output - List of IP addresses
+    Output - List of Dictionaries 
+             Eg: [{'net-id': u'28a043bf-6806-4806-9fa4-d05062ca20be', u'v4-fixed-ip': u'40.20.0.13'},
+                  {'net-id': u'88a033b2-3925-4915-9ad2-305066ca20be', u'v4-fixed-ip': u'40.30.0.12'}]
     Function - Parses IP addresses from Instance Info and converts it to required format
     """
     try:
@@ -567,6 +569,7 @@ def remove_fixed_ip(nova,inst_id,fixed_ip):
     Output - NaN
     Function - Removes Fixed Ip 
     """
+    ha_agent.debug("< %s >: Removing Floating IP < %s >"%(inst_id,fixed_ip))
     try:
         nova.servers.remove_fixed_ip(inst_id,fixed_ip)
     except Exception as e:
@@ -578,6 +581,7 @@ def remove_floating_ip(nova,inst_id,floating_ip):
     Output - NaN
     Function - Removes Floating Ip 
     """
+    ha_agent.debug("< %s >: Removing Floating IP < %s >"%(inst_id,floating_ip))
     try:
         nova.servers.remove_floating_ip(inst_id,floating_ip)
     except Exception as e:
@@ -696,7 +700,7 @@ def message_queue(dhost=None,task=None,time_suffix=None):
 
 #Json Dump
 def json_dump_creation(nova=None,instance_id=None,cinder=None,\
-                       neutron=None,old_instance_id=None):
+                       neutron=None,old_instance_id=None,step_count=None):
     """Input - NovaClient , Current Instance ID , CInderClient , NeutronClient , Old Instance ID 
     Output -  Data in json format , same json data encoded in ascii for zookeeper
     Function - Collects Info about Current Instance formats in json.
@@ -736,7 +740,7 @@ def json_dump_creation(nova=None,instance_id=None,cinder=None,\
             security_groups = [x['name'] for x in info.get('security_groups','')]            
             data={"instance_name":instance_name,"host_name":tmp_host,"instance_id":instance_id,\
                   "old_instance_id":old_instance_id,"flavor":flavor,"image":image,"security_groups":security_groups,\
-                  "folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume}            
+                  "folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume,"STEP_COUNT":step_count}            
             old_instance=json.dumps(data,ensure_ascii=True)
             old_instance_json=str.encode(old_instance)
             #write the instance details to json file           
@@ -760,7 +764,7 @@ def json_dump_write(filename=None,data=None):
                 json.dump(data, outfile, indent=4, sort_keys=True, separators=(',', ':'))
                 outfile.write(',')
 
-def json_dump_edit(data=None,new_instance_id=None,new_host_name=None):
+def json_dump_edit(data=None,new_instance_id=None,new_host_name=None,step_count=None):
     """Input - json data , New Instance ID , New_host_name
     Output - Data in json format , same json data encoded in ascii for zookeeper
     Function - Updates json Data with new_instance_id,new_host_name
@@ -771,9 +775,26 @@ def json_dump_edit(data=None,new_instance_id=None,new_host_name=None):
     data["host_name"]=new_host_name
     data["old_instance_id"] =old_instance_id
     data["old_host_name"]=old_host_name
+
+    if step_count:
+        data["STEP_COUNT"]=step_count
+
     old_instance=json.dumps(data,ensure_ascii=True)
     old_instance_json=str.encode(old_instance)
     return data,old_instance_json
+
+def update_step_count(data=None,step_count=None):
+    """Input - json data , error_step
+    Output - Data in json format , same json data encoded in ascii for zookeeper
+    Function - Updates json Data with error_step
+    """
+    if step_count:
+        data["STEP_COUNT"]=step_count
+
+    old_instance=json.dumps(data,ensure_ascii=True)
+    old_instance_json=str.encode(old_instance)
+    return data,old_instance_json
+
 
 
 #Notification
