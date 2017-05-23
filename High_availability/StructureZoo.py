@@ -1,11 +1,11 @@
 #!/usr/bin/python
 from kazoo.client import KazooClient
 from kazoo.exceptions import ConnectionLoss
+from common_functions import zk
 import kazoo
 import socket
 import time
-zk = KazooClient(hosts='127.0.0.1:2181')
-zk.start()
+
 host_name=socket.gethostname()
 
 

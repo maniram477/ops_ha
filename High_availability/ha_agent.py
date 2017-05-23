@@ -186,11 +186,10 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
         zk.start()
         if remigration and host_name:
             ha_agent.debug("Removing Instance from migrated after successfully remigrated instances")
-            #zk.delete("/openstack_ha/instances/migrated/"+tmp_host+"/"+instance_id)            
+            zk.delete("/openstack_ha/instances/migrated/"+tmp_host+"/"+instance_id)            
         else:
             ha_agent.debug("Removing Instance from pending")
-            #zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
-            #zk.delete("/openstack_ha/instances/pending/"+instance_id)
-           
+            zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
+            
         
 
