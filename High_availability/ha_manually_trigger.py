@@ -6,6 +6,7 @@ from ha_agent import migrate as task
 from common_functions import *
 host_name=None
 
+#
 
 
 def list_instances_2(nova,host_name=None):
