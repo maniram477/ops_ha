@@ -10,7 +10,7 @@ import json
 celery = Celery('migrate')
 celery.config_from_object('config')
 
-def create_dump_dirs(time_suffix,remigration=None):
+def create_dump_dirs(time_suffix,remigration=None,dump_directory=dump_directory):
     """Input - time suffix , remigration
     Output - NaN
     Function - Creates base directories for json_dump files
@@ -299,9 +299,12 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
         zk = KazooClient(hosts=kazoo_host_ipaddress)
         zk.start()
         if remigration and host_name:
-            ha_agent.debug("Removing Instance from migrated after successfully remigrated instances")
+            if(error_step>11):
+                ha_agent.debug("Removing Instance from migrated after successfully remigrated instances")
+                zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
         else:
-            ha_agent.debug("Removing Instance from pending")
-            zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
+            if(error_step>11):
+                ha_agent.debug("Removing Instance from pending /openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
+                zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
         
 
