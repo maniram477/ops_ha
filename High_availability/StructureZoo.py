@@ -21,7 +21,6 @@ def ensureBasicStructure(zk=zk):
     zk.ensure_path("/openstack_ha/hosts/down")
     zk.ensure_path("/openstack_ha/hosts/election")
     zk.ensure_path("/openstack_ha/hosts/start_migration")
-    zk.ensure_path("/openstack_ha/hosts/leader")
     zk.ensure_path("/openstack_ha/instances")
     zk.ensure_path("/openstack_ha/instances/down_instances")
     zk.ensure_path("/openstack_ha/instances/pending")

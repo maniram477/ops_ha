@@ -212,7 +212,7 @@ def list_hosts(nova):
                 'disabled_list': [host.host for host in nova.services.list(binary="nova-compute") if host.status.lower() == 'disabled' if host.disabled_reason in maintenance_state]\
                }
     except Exception as ee:
-        ha_agent.warning("Inside the list host Function..!")
+        ha_agent.warning("Exception Inside the list host Function..!")
         ha_agent.exception('')
         raise Exception('step0')
 
@@ -251,7 +251,7 @@ def client_init():
         nova = nova_client.Client(2,user,passwd,tenant,"http://%s:5000/v2.0"%controller_ip,connection_pool=True)
         return cinder,neutron,nova
     except Exception as ee:
-        ha_agent.warning("During neutron,cinder initialization")
+        ha_agent.warning("Exception During neutron,cinder initialization",ee)
         ha_agent.exception('')
         raise Exception('step1')
     
@@ -267,20 +267,21 @@ def info_collection(nova,instance_id,cinder):
     Extra Volumes 
     """
     try:
-        ha_agent.debug("Inside the info_collection...!")
+        #ha_agent.debug("Inside the info_collection of Instance < %s >"%(instance_id))
         instance = nova.servers.get(instance_id)
         info = instance._info
+        instance_name = info['name']
         ip_list = floating_ip_check(info)
         bdm,extra = cinder_volume_check(info,cinder=cinder)
-        return instance,info,ip_list,bdm,extra
+        return instance,info,ip_list,bdm,extra,instance_name
     except Exception as e:
-        ha_agent.warn("Collecting the Infromation about instances")
+        ha_agent.warn("Exception Collecting the Infromation about Instance < %s > [%s]"%(instance_id,instance_name))
         ha_agent.exception('')
         raise Exception('step2')
 
         
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)
-def delete_instance(nova,instance_object):
+def delete_instance(nova,instance_object,instance_id=None,instance_name=None):
     """Input - Instance Object
     Output - True | False
     Function - Deletes Instance
@@ -288,11 +289,11 @@ def delete_instance(nova,instance_object):
     try:
         nova.servers.delete(instance_object.id)
     except Exception as e:
-        ha_agent.warn("During the deletion of instance...!")
+        ha_agent.warn("Exception During the deletion of instance < %s > [%s]"%(instance_id,instance_name))
         ha_agent.exception('')
 
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=poll_status_count,wait_fixed=poll_status_interval)
-def delete_instance_status(nova,instance_object):
+def delete_instance_status(nova,instance_object,instance_id=None,instance_name=None):
     """Input - NovaClient Object , Instance Object
     Output - NaN
     Function - Polls Instance status till it get's deleted
@@ -306,10 +307,10 @@ def delete_instance_status(nova,instance_object):
         elif tmp_ins._info['OS-EXT-STS:task_state'] in allow_retry_task:
             raise Exception("poll")
     except Exception as e:
-        ha_agent.warn("Exception in deleting instance...!")
+        ha_agent.warn("Exception in deleting instance < %s > [%s]!"%(instance_id,instance_name))
         ha_agent.exception('')
         if isinstance(e,novaclient_exceptions.NotFound):
-            ha_agent.debug("Instance Not Found hence deleted")
+            ha_agent.debug("Instance < %s > [%s] Not Found hence deleted"%(instance_id,instance_name))
         else:
             raise Exception(e)
 
@@ -319,8 +320,12 @@ def list_instances(nova,host_name=None):
     Output - Instance List
     Function - List Instances (on specific Host if Host given as Input | on All Host ) 
     """
-    ins_list = nova.servers.list(search_opts={'host':host_name})
-    return ins_list
+    try:
+        ins_list = nova.servers.list(search_opts={'host':host_name})
+        return ins_list
+    except Exception as e:
+        ha_agent.warn("Exception occured duting list_instances")
+        ha_agent.exception('')
 
 @dbwrap
 def get_instance_uuid(cursor,name):
@@ -340,7 +345,7 @@ def get_instance(nova,name):
     try:
         instance = nova.servers.get(uuid)
     except Exception as e:
-        ha_agent.warn("Exception occured duting get uuid of instance..!")
+        ha_agent.warn("Exception occured duting get uuid of instance [%s]"%name)
         ha_agent.exception('')
         #log.error(e)
         return None
@@ -363,12 +368,12 @@ def create_instance(nova,name=None,image=None,bdm=None,\
                              disk_config=disk_config,security_groups=security_groups)
         return instance_object
     except Exception as e:
-        ha_agent.warning("Exception during instance creation...!")
+        ha_agent.warning("Exception during instance creation [%s]"%(name))
         ha_agent.exception('')
 
 @retry(retry_on_exception=poll_vm_status,stop_max_attempt_number=poll_status_count,wait_fixed=poll_status_interval)               
-def create_instance_status(nova,instance_object):
-    """Input - NovaClient Object , Instance Object
+def create_instance_status(nova,instance_object,instance_name=None):
+    """Input - NovaClient Object , Instance Object , Instance Name
     Output - NaN
     Function - Polls Instance status till it get's Created
     """
@@ -377,55 +382,65 @@ def create_instance_status(nova,instance_object):
         tmp_ins = nova.servers.get(instance_object.id)
         status = ( tmp_ins._info['OS-EXT-STS:vm_state'], tmp_ins._info['OS-EXT-STS:task_state'] )
         if status[0] == 'active':
-            ha_agent.debug("After creation:  Instance in active state")
+            ha_agent.debug("After creation:  Instance in active state [%s] with new ID < %s >"%(instance_name,instance_object.id))
         elif status[0] == 'error':
             raise Exception("error")
         elif status[1] in allow_retry:
             raise Exception("poll")
     except Exception as e:
-        ha_agent.warn("Exception: checking the instance status after creation...!")
+        ha_agent.warn("Exception: checking the instance < %s >  [%s] status after creation...!"%(instance_object.id,instance_name))
         ha_agent.exception('')
         if e.message == 'error':
-            ha_agent.error("Instance - %s went to ERROR state",(instance_object.id))
+            ha_agent.error("Instance - < %s > [%s] went to ERROR state"%(instance_object.id,instance_name))
         else:
             raise Exception(e)
     
 
 
 @dbwrap
-def Volume_delete_on_terminate(cursor,ins_id):
+def Volume_delete_on_terminate(cursor,ins_id,instance_name=None):
     """Input - DBcursor , Instance ID
     Output - Status of DoT(Delete on Terminate)
     Function - fetches Delete on Terminate Status of boot volume from DB using Instance id and updates DoT to False
     """
-    cursor.execute("select delete_on_termination from nova.block_device_mapping where instance_uuid='%s';"%ins_id)
-    dot_status = cursor.fetchone()
-    cursor.execute("update nova.block_device_mapping set delete_on_termination=False where instance_uuid='%s';"%ins_id)
-    return dot_status
+    try:
+        cursor.execute("select delete_on_termination from nova.block_device_mapping where instance_uuid='%s';"%ins_id)
+        dot_status = cursor.fetchone()
+        cursor.execute("update nova.block_device_mapping set delete_on_termination=False where instance_uuid='%s';"%ins_id)
+        return dot_status
+    except Exception as e:
+        ha_agent.warn("Soft Exception: Volume_delete_on_terminate status check < %s > [%s]"%(inst_id,instance_name))
+        ha_agent.exception('')
 
 @dbwrap
-def dot_status_update(cursor,ins_id,status):
+def dot_status_update(cursor,ins_id,status,instance_name=None):
     """Input - DBcursor , Instance ID , DoT status
     Output - NaN
     Function - Updates DoT status 
     """
-    cursor.execute("update nova.block_device_mapping set delete_on_termination=%s where instance_uuid='%s';"%(status,ins_id))
-    
+    try:
+        cursor.execute("update nova.block_device_mapping set delete_on_termination=%s where instance_uuid='%s';"%(status,ins_id))
+    except Exception as e:
+        ha_agent.warn("Soft Exception: During dot_status_update on < %s > [%s]"%(inst_id,instance_name))
+        ha_agent.exception('')
 
 # Volume Related Functions     
 @dbwrap
-def detach_volume_db(cursor,vol_id):
+def detach_volume_db(cursor,vol_id,instance_id=None,instance_name=None):
     """Input - DBcursor , Volume ID 
     Output - NaN
     Function - Updates volume status = available and attach_status = detached on volumes table and
     Updates volume attach_status = detached on volume_attachment table
     """
-    cursor.execute(" update cinder.volumes set status='available',attach_status='detached' where id='%s';"%vol_id)
-    cursor.execute(" update cinder.volume_attachment set attach_status='detached' where volume_id='%s';"%vol_id)
-
+    try:
+        cursor.execute(" update cinder.volumes set status='available',attach_status='detached' where id='%s';"%vol_id)
+        cursor.execute(" update cinder.volume_attachment set attach_status='detached' where volume_id='%s';"%vol_id)
+    except Exception as e:
+        ha_agent.warn("Soft Exception: During detach_volume_db < %s > on < %s > [%s]"%(vol_id,inst_id,instance_name))
+        ha_agent.exception('')
         
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)
-def detach_volume(vol_id,cinder=None,inst_id=None):
+def detach_volume(vol_id,cinder=None,inst_id=None,instance_name=None):
     """Input - Volume ID
     Output - True | False
     Function - Detach Volume From Instance
@@ -433,11 +448,11 @@ def detach_volume(vol_id,cinder=None,inst_id=None):
     try:
         cinder.volumes.detach(vol_id)
     except Exception as e:
-        ha_agent.warn("< %s > : Soft Exception: During detach_volume < %s >"%(inst_id,vol_id))
+        ha_agent.warn("Soft Exception: During detach_volume < %s > on < %s > [%s]"%(vol_id,inst_id,instance_name))
         ha_agent.exception('')
 
 @retry(retry_on_exception=poll_status,stop_max_attempt_number=10,wait_fixed=1000)      
-def detached_volume_status(vol_id,cinder=None,inst_id=None):
+def detached_volume_status(vol_id,cinder=None,inst_id=None,instance_name=None):
     """Input - Volume ID
     Output - NaN
     Function - Polls Volumes status till it get's deleted
@@ -449,19 +464,19 @@ def detached_volume_status(vol_id,cinder=None,inst_id=None):
             tmp_vol.detach()
             raise Exception("poll")
     except Exception as e:
-        ha_agent.warn("< %s > : Exception Checking detached_volume_status < %s > "%(inst_id,vol_id))
+        ha_agent.warn("Exception Checking detached_volume_status < %s > on < %s > [%s]"%(vol_id,inst_id,instance_name))
         ha_agent.exception('')        
         if e.message == 'poll':
             raise Exception("poll")         
         elif any(issubclass(e.__class__, lv) for lv in all_cinder_exceptions):
-            ha_agent.info("MAYDAY - Looks Like cinderclient or API is not accessible")
-            ha_agent.info("< %s > : PARACHUTE - Update < %s > in-use to available on DB"%(inst_id,vol_id))
+            ha_agent.info("< %s > : Looks Like cinderclient or API is not accessible"%(inst_id))
+            ha_agent.info(" Update status of < %s > from in-use to available on DB - < %s > [%s]"%(vol_id,inst_id,instance_name))
             detach_volume_db(str(vol_id))
         else:
-            raise Exception('< %s > :Exception Checking detached_volume_status < %s >'%(inst_id,vol_id))
+            raise Exception('Exception Checking detached_volume_status < %s > on < %s > [%s]'%(vol_id,inst_id,instance_name))
 
 
-def cinder_volume_check(info,cinder=None):
+def cinder_volume_check(info,cinder=None,instance_id=None,instance_name=None):
     """ Input - info - instance._info - Information from instance Object, CinderClient
     Output - BDM and Extra Volumes
     Eg : bdm = {'/dev/vda':'16e5593c-15c7-48a6-b46f-2bda2951e3b0'}
@@ -479,7 +494,7 @@ def cinder_volume_check(info,cinder=None):
             
     except Exception as e:
         #log.warning(e)
-        ha_agent.warning("Exception:cinder_volume_check")
+        ha_agent.warning("Exception:cinder_volume_check on < %s > [%s]"%(instance_id,instance_name))
         ha_agent.exception('')
         bdm = None
     else:
@@ -488,7 +503,7 @@ def cinder_volume_check(info,cinder=None):
 
         
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)                  
-def attach_volumes(nova,instance,volumes):
+def attach_volumes(nova,instance,volumes,instance_id=None,instance_name=None):
     """Input - Volumes - Dictionary Containing volume details 
     Eg: {'vdb':'16e5593c-15c7-48a6-b46f-2bda2951e3b0','vdc':'16e5593c-15c7-48a6-b46f-2bda2951esd0'}
         - Instance ID
@@ -499,34 +514,39 @@ def attach_volumes(nova,instance,volumes):
         for dev in volumes:
             nova.volumes.create_server_volume(instance,volumes[dev],dev)
     except Exception as e:
-        ha_agent.warning("Exception During Attach_volumes")
+        ha_agent.warning("Exception During attach_volumes %s to < %s > [%s]"%(dev,instance_id,instance_name))
         ha_agent.exception('')
 
     
 
 # IP Functions
-def floating_ip_check(info):
+def floating_ip_check(info,instance_id=instance_id,instance_name=instance_name):
     """Input - Instance Info
     Output - List of tuple (Floating_IP,Fixed_IP)
     Function - Parses Floating IP addresses from Instance Info and converts it to required format
     """
-    for net in info.get('addresses',''):
-        tmp_list = []
-        tmp_ip = []
-        fix_ip = ''
-            
-        for nic in info.get('addresses')[net]:
-            if nic['OS-EXT-IPS:type'] == 'fixed':
-                    fix_ip = nic['addr']
-            elif nic['OS-EXT-IPS:type'] == 'floating':
-                    tmp_ip.append(nic['addr'])
-            
-        tmp_list.extend([(flt_ip,fix_ip) for flt_ip in tmp_ip])
+    try:
+        for net in info.get('addresses',''):
+            tmp_list = []
+            tmp_ip = []
+            fix_ip = ''
                 
-        return tmp_list 
+            for nic in info.get('addresses')[net]:
+                if nic['OS-EXT-IPS:type'] == 'fixed':
+                        fix_ip = nic['addr']
+                elif nic['OS-EXT-IPS:type'] == 'floating':
+                        tmp_ip.append(nic['addr'])
+                
+            tmp_list.extend([(flt_ip,fix_ip) for flt_ip in tmp_ip])
+                    
+            return tmp_list
+    except Exception as e:
+        ha_agent.warning("Exception: floating_ip_check of Instance  < %s > [%s]"%(instance_id,instance_name))
+        ha_agent.exception('')
+        
          
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)    
-def get_fixed_ip(info,neutron):
+def get_fixed_ip(info,neutron,instance_id=None,instance_name=None):
     """Input - Instance Info , NeutronClient Object
     Output - List of Dictionaries 
              Eg: [{'net-id': u'28a043bf-6806-4806-9fa4-d05062ca20be', u'v4-fixed-ip': u'40.20.0.13'},
@@ -543,14 +563,14 @@ def get_fixed_ip(info,neutron):
                 for port in info.get('addresses')[net][0]:
                     tmp_dict['v%s-%s-ip'%(nic['version'],nic['OS-EXT-IPS:type'])]= nic['addr']
                     nics.append(tmp_dict)
-                    return nics
+        return nics
     except Exception as e:
-        ha_agent.warning("Exception: get_fixed_ip")
+        ha_agent.warning("Exception: get_fixed_ip of Instance  < %s > [%s]"%(instance_id,instance_name))
         ha_agent.exception('')
         
     
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)                  
-def attach_flt_ip(ip_list,instance_object):
+def attach_flt_ip(ip_list,instance_object,instance_id=None,instance_name=None):
     """Input - List of Tuples containing Floating IPs and Fixed IPs 
              - Instance Object
     Output - True | False
@@ -561,10 +581,10 @@ def attach_flt_ip(ip_list,instance_object):
         for flt_ip,fix_ip in ip_list:
             instance_object.add_floating_ip(flt_ip,fix_ip)
     except Exception as e:
-        ha_agent.warning("Exception: attach_flt_ip")
+        ha_agent.warning("Exception: attach_flt_ip - %s - to Instance < %s > [%s]"%(flt_ip,inst_id,instance_name))
         ha_agent.exception('')
 
-def remove_fixed_ip(nova,inst_id,fixed_ip):
+def remove_fixed_ip(nova,inst_id,fixed_ip,instance_name=None):
     """Input - NovaClient , Instance Id, Fixed IP
     Output - NaN
     Function - Removes Fixed Ip 
@@ -573,10 +593,10 @@ def remove_fixed_ip(nova,inst_id,fixed_ip):
     try:
         nova.servers.remove_fixed_ip(inst_id,fixed_ip)
     except Exception as e:
-        ha_agent.warning("Exception: remove_fixed_ip")
+        ha_agent.warning("Exception: remove_fixed_ip - %s - from Instance  < %s > [%s]"%(fixed_ip,inst_id,instance_name))
         ha_agent.exception('')
 
-def remove_floating_ip(nova,inst_id,floating_ip):
+def remove_floating_ip(nova,inst_id,floating_ip,instance_name=None):
     """Input - NovaClient , Instance Id, Floating IP
     Output - NaN
     Function - Removes Floating Ip 
@@ -585,7 +605,7 @@ def remove_floating_ip(nova,inst_id,floating_ip):
     try:
         nova.servers.remove_floating_ip(inst_id,floating_ip)
     except Exception as e:
-        ha_agent.warning("Exception: remove_floating_ip")
+        ha_agent.warning("Exception: remove_floating_ip - %s - from Instance  < %s > [%s]"%(floating_ip,inst_id,instance_name))
         ha_agent.exception('')
 
 
@@ -598,34 +618,38 @@ def recreate_instance(nova,instance_object,target_host=None,bdm=None,neutron=Non
     
     #volume_delete_on_terminate Flip if not
     
-    info = instance_object._info
-    host=info['OS-EXT-SRV-ATTR:host']
-    name= info['name']
-    inst_id = info['id']
-    flavor= info['flavor']['id']
-    availability_zone=info['OS-EXT-AZ:availability_zone']
-    if target_host:
-        availability_zone+=":%s"%target_host
-    disk_config='AUTO'
-    moved = info['metadata'].get('moved')
-    origin = info['metadata'].get('origin')
-    if origin == target_host:
-        moved = '0'
-    meta = {'moved':moved,'origin': host }
-    image = dict(info['image']).get('id','')
-    security_groups = [x['name'] for x in info.get('security_groups','')]
-    if len(security_groups) == 0:
-        security_groups = ['default']
-    
-    nics = get_fixed_ip(info,neutron)
-    
-    #time.sleep(15)
-    instance_object = create_instance(nova,name=name,image=image,bdm=bdm,\
-                    flavor=flavor,nics=nics,availability_zone=availability_zone,\
-                    disk_config=disk_config,meta=meta,security_groups=security_groups) 
-    #create_instance_status(instance_object)
-    return instance_object
- 
+    try:
+        info = instance_object._info
+        host=info['OS-EXT-SRV-ATTR:host']
+        name= info['name']
+        inst_id = info['id']
+        flavor= info['flavor']['id']
+        availability_zone=info['OS-EXT-AZ:availability_zone']
+        if target_host:
+            availability_zone+=":%s"%target_host
+        disk_config='AUTO'
+        moved = info['metadata'].get('moved')
+        origin = info['metadata'].get('origin')
+        if origin == target_host:
+            moved = '0'
+        meta = {'moved':moved,'origin': host }
+        image = dict(info['image']).get('id','')
+        security_groups = [x['name'] for x in info.get('security_groups','')]
+        if len(security_groups) == 0:
+            security_groups = ['default']
+        
+        nics = get_fixed_ip(info,neutron)
+        
+        #time.sleep(15)
+        instance_object = create_instance(nova,name=name,image=image,bdm=bdm,\
+                        flavor=flavor,nics=nics,availability_zone=availability_zone,\
+                        disk_config=disk_config,meta=meta,security_groups=security_groups) 
+        #create_instance_status(instance_object)
+        return instance_object
+    except Exception as e:
+        ha_agent.warn("Exception During Instance Recreation  < %s > [%s]"%(inst_id,name))
+        ha_agent.exception('')
+
 #HA-Agent Migration Functions
 def instance_migration(nova,dhosts,task,time_suffix):
     """Input - NovaClient , list of down Hosts , Task (passed to message_queue), Time string to track down time
@@ -706,7 +730,7 @@ def json_dump_creation(nova=None,instance_id=None,cinder=None,\
     Function - Collects Info about Current Instance formats in json.
     """
     try:
-            instance_object,info,ip_list,bdm,extra = info_collection(nova,instance_id,cinder) 
+            instance_object,info,ip_list,bdm,extra,instance_name = info_collection(nova,instance_id,cinder) 
             tmp_host=""           
             instance_name=""             
             flavor=""
@@ -722,8 +746,6 @@ def json_dump_creation(nova=None,instance_id=None,cinder=None,\
                 fixed_ip=None
             else:
                 fixed_ip=nics[0]
-            # Check Whether BDM is available
-            ha_agent.debug("Information Collected")
             if not ip_list:            
                 folating_ip=None
             else:
@@ -743,57 +765,71 @@ def json_dump_creation(nova=None,instance_id=None,cinder=None,\
                   "folating_ip":folating_ip,"fixed_ip":fixed_ip,"volume":volume,"STEP_COUNT":step_count}            
             old_instance=json.dumps(data,ensure_ascii=True)
             old_instance_json=str.encode(old_instance)
+
+            ha_agent.debug("Information Collected for Json Dump Write of Instance < %s > [%s]"%(instance_id,instance_name))
+
             #write the instance details to json file           
             return data,old_instance_json
     except Exception as e:
-            print(e)
-            ha_agent.debug('Json Dump Exception')
+            ha_agent.debug("Exception during Json Dump data collection of Instance < %s > [%s]"%(instance_id,instance_name),e)
             ha_agent.exception('')
             
-def json_dump_write(filename=None,data=None):
+def json_dump_write(filename=None,data=None,dump_directory=None,instance_id=None,instance_name=None):
     """Input - Filename , json data
     Output - NaN
     Function - Writes json dump to file
     """
-    if not dump_directory.endswith("/"):
-        dump_directory = dump_directory+"/"
+    try:
+        if not dump_directory.endswith("/"):
+            dump_directory = dump_directory+"/"
 
-    file_path = dump_directory + filename
-    with open(file_path, 'a+') as outfile:
-                outfile.write('\n')
-                json.dump(data, outfile, indent=4, sort_keys=True, separators=(',', ':'))
-                outfile.write(',')
+        file_path = dump_directory + filename
+        with open(file_path, 'a+') as outfile:
+                    outfile.write('\n')
+                    json.dump(data, outfile, indent=4, sort_keys=True, separators=(',', ':'))
+                    outfile.write(',')
+    except Exception as e:
+        ha_agent.debug("Exception during Json Dump write of Instance < %s > [%s]"%(instance_id,instance_name),e)
+        ha_agent.exception('')
 
-def json_dump_edit(data=None,new_instance_id=None,new_host_name=None,step_count=None):
+def json_dump_edit(data=None,new_instance_id=None,new_host_name=None,step_count=None,instance_name=None):
     """Input - json data , New Instance ID , New_host_name
     Output - Data in json format , same json data encoded in ascii for zookeeper
     Function - Updates json Data with new_instance_id,new_host_name
     """
-    old_instance_id=data["instance_id"]  
-    old_host_name=data["host_name"]
-    data["instance_id"] =new_instance_id
-    data["host_name"]=new_host_name
-    data["old_instance_id"] =old_instance_id
-    data["old_host_name"]=old_host_name
+    try:
+        old_instance_id=data["instance_id"]  
+        old_host_name=data["host_name"]
+        data["instance_id"] =new_instance_id
+        data["host_name"]=new_host_name
+        data["old_instance_id"] =old_instance_id
+        data["old_host_name"]=old_host_name
 
-    if step_count:
-        data["STEP_COUNT"]=step_count
+        if step_count:
+            data["STEP_COUNT"]=step_count
 
-    old_instance=json.dumps(data,ensure_ascii=True)
-    old_instance_json=str.encode(old_instance)
-    return data,old_instance_json
+        old_instance=json.dumps(data,ensure_ascii=True)
+        old_instance_json=str.encode(old_instance)
+        return data,old_instance_json
+    except Exception as e:
+        ha_agent.warning("Exception during Json Dump Edit of Instance < %s > [%s]"%(instance_id,instance_name),e)
+        ha_agent.exception('')
 
-def update_step_count(data=None,step_count=None):
+def update_step_count(data=None,step_count=None,instance_id=None,instance_name=None):
     """Input - json data , error_step
     Output - Data in json format , same json data encoded in ascii for zookeeper
     Function - Updates json Data with error_step
     """
-    if step_count:
-        data["STEP_COUNT"]=step_count
+    try:
+        if step_count:
+            data["STEP_COUNT"]=step_count
 
-    old_instance=json.dumps(data,ensure_ascii=True)
-    old_instance_json=str.encode(old_instance)
-    return data,old_instance_json
+        old_instance=json.dumps(data,ensure_ascii=True)
+        old_instance_json=str.encode(old_instance)
+        return data,old_instance_json
+    except Exception as e:
+        ha_agent.warning("Exception during update_step_count of Instance < %s > [%s]"%(instance_id,instance_name),e)
+        ha_agent.exception('')
 
 
 
