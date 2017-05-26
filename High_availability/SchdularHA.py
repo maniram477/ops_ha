@@ -124,7 +124,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                     if (zk.exists("/openstack_ha/hosts/start_migration/"+ host)): # it checks the permission from the dashborad
                                         scheduler_log.warning(" api down host :"+host+"present in zookeeper down_node:")
                                         scheduler_log.debug("Strart migration....!!!!!")
-                                        scheduler_log.debug("migratie instance from the "+host)
+                                        scheduler_log.debug("migrating instances from the "+host)
                                         tmp_time_suffix=zk.get("/openstack_ha/hosts/time_out/"+host+"/time_suffix")[0]
                                         zk_time_suffix = tmp_time_suffix.decode()                                        
                                         instance_migration(nova,api_down_nodes,task,zk_time_suffix)
