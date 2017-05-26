@@ -185,13 +185,13 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
         # New Instance Creation and polling till it gets created
         new_instance = recreate_instance(nova,instance_object=instance_object,bdm=bdm,target_host=host_name,neutron=neutron)
         create_instance_status(nova,new_instance,instance_name=instance_name)
+        new_instance_id = new_instance.id
     
         old_json,old_json_encoded = update_step_count(data=old_json,step_count=error_step,instance_id=instance_id,instance_name=instance_name)
         
 
         error_step=10
         # Info collection from New Instance 
-        new_instance_id = new_instance.id
         new_instance_object,new_info,new_ip_list,new_bdm,new_extra,instance_name = info_collection(nova,new_instance_id,cinder) 
         new_host_name= new_info['OS-EXT-SRV-ATTR:host']
 
@@ -251,7 +251,7 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
                 zk.ensure_path("/openstack_ha/instances/remigrated/failure/"+tmp_host)
                 #if loop if error step less than 9 old_instance details grater than add new_instance id,
                 #  host to old instance details
-                if(error_step<9):
+                if(error_step<10):
                     #Unmodified Old_instance_json
                     error_log(error_step,old_instance_id,e=e,ha_agent=ha_agent,instance_name=instance_name)
                 
@@ -285,7 +285,7 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
                 zk.ensure_path("/openstack_ha/instances/failure/"+tmp_host)
                 #if loop if error step less than 9 old_instance details grater than add new_instance id,
                 #  host to old instance details
-                if(error_step<9):
+                if(error_step<10):
                     #Unmodified Old_instance_json
                     error_log(error_step,old_instance_id,e=e,ha_agent=ha_agent,instance_name=instance_name)
 

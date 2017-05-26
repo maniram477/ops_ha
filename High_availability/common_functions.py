@@ -271,7 +271,7 @@ def info_collection(nova,instance_id,cinder):
         instance = nova.servers.get(instance_id)
         info = instance._info
         instance_name = info['name']
-        ip_list = floating_ip_check(info)
+        ip_list = floating_ip_check(info,instance_id=instance_id,instance_name=instance_name)
         bdm,extra = cinder_volume_check(info,cinder=cinder)
         return instance,info,ip_list,bdm,extra,instance_name
     except Exception as e:
@@ -388,10 +388,10 @@ def create_instance_status(nova,instance_object,instance_name=None):
         elif status[1] in allow_retry:
             raise Exception("poll")
     except Exception as e:
-        ha_agent.warn("Exception: checking the instance < %s >  [%s] status after creation...!"%(instance_object.id,instance_name))
+        ha_agent.warn("Exception: checking the instance  [%s] status after creation...!"%(instance_name))
         ha_agent.exception('')
         if e.message == 'error':
-            ha_agent.error("Instance - < %s > [%s] went to ERROR state"%(instance_object.id,instance_name))
+            ha_agent.error("Instance - [%s] went to ERROR state"%(instance_name))
         else:
             raise Exception(e)
     
@@ -520,7 +520,7 @@ def attach_volumes(nova,instance,volumes,instance_id=None,instance_name=None):
     
 
 # IP Functions
-def floating_ip_check(info,instance_id=instance_id,instance_name=instance_name):
+def floating_ip_check(info,instance_id=None,instance_name=None):
     """Input - Instance Info
     Output - List of tuple (Floating_IP,Fixed_IP)
     Function - Parses Floating IP addresses from Instance Info and converts it to required format
@@ -563,7 +563,8 @@ def get_fixed_ip(info,neutron,instance_id=None,instance_name=None):
                 for port in info.get('addresses')[net][0]:
                     tmp_dict['v%s-%s-ip'%(nic['version'],nic['OS-EXT-IPS:type'])]= nic['addr']
                     nics.append(tmp_dict)
-        return nics
+                    return nics
+        ha_agent.debug("Nics : ",nics)
     except Exception as e:
         ha_agent.warning("Exception: get_fixed_ip of Instance  < %s > [%s]"%(instance_id,instance_name))
         ha_agent.exception('')
