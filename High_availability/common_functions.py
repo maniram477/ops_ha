@@ -289,7 +289,7 @@ def delete_instance(nova,instance_object,instance_id=None,instance_name=None):
     try:
         nova.servers.delete(instance_object.id)
     except Exception as e:
-        ha_agent.warn("Exception During the deletion of instance < %s > [%s]"%(instance_id,instance_name))
+        ha_agent.warn("Exception During the deletion of instance < %s > [%s]"%(instance_id,instance_name),e)
         ha_agent.exception('')
 
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=poll_status_count,wait_fixed=poll_status_interval)
@@ -301,16 +301,18 @@ def delete_instance_status(nova,instance_object,instance_id=None,instance_name=N
     try:
         allow_retry_task = ['deleting',None]
         tmp_ins = nova.servers.get(instance_object.id)
+        tmp_ins_task_state = tmp_ins._info['OS-EXT-STS:task_state']
         if tmp_ins._info['OS-EXT-STS:vm_state'] == 'error':
+            ha_agent.warn("Instance [%s] went to error delete during deletion. Hence force deleting..."%(instance_name))
             tmp_ins.force_delete()
-            
-        elif tmp_ins._info['OS-EXT-STS:task_state'] in allow_retry_task:
+
+        elif tmp_ins_task_state in allow_retry_task:
             raise Exception("poll")
     except Exception as e:
-        ha_agent.warn("Exception in deleting instance < %s > [%s]!"%(instance_id,instance_name))
-        ha_agent.exception('')
         if isinstance(e,novaclient_exceptions.NotFound):
             ha_agent.debug("Instance < %s > [%s] Not Found hence deleted"%(instance_id,instance_name))
+        elif e.message == "poll":
+            ha_agent.debug("Polling Instance < %s > [%s] deletion status: Instance [%s] is in  !"%(instance_id,instance_name,instance_name,tmp_ins_task_state))
         else:
             raise Exception(e)
 
@@ -382,16 +384,17 @@ def create_instance_status(nova,instance_object,instance_name=None):
         tmp_ins = nova.servers.get(instance_object.id)
         status = ( tmp_ins._info['OS-EXT-STS:vm_state'], tmp_ins._info['OS-EXT-STS:task_state'] )
         if status[0] == 'active':
-            ha_agent.debug("After creation:  Instance in active state [%s] with new ID < %s >"%(instance_name,instance_object.id))
+            ha_agent.debug("After creation:  Instance is in active state [%s] with new ID < %s >"%(instance_name,instance_object.id))
         elif status[0] == 'error':
             raise Exception("error")
         elif status[1] in allow_retry:
             raise Exception("poll")
     except Exception as e:
-        ha_agent.warn("Exception: checking the instance  [%s] status after creation...!"%(instance_name))
-        ha_agent.exception('')
+        
         if e.message == 'error':
             ha_agent.error("Instance - [%s] went to ERROR state"%(instance_name))
+        elif e.message == 'poll':
+            ha_agent.debug("Polling Instance [%s] status: Instance [%s] is in %s state"%(instance_name,instance_name,status[1]))
         else:
             raise Exception(e)
     

@@ -141,7 +141,7 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
         # After this operation instance is either deleted or left orphaned
         delete_instance(nova,instance_object,instance_id=instance_id,instance_name=instance_name)
         try:
-            delete_instance_status(nova,instance_object)
+            delete_instance_status(nova,instance_object,instance_id=old_instance_id,instance_name=instance_name)
             ha_agent.debug("Old Instance < %s > [%s] deleted"%(old_instance_id,instance_name))
         except Exception as e:
             # Instance Left orphaned - Hene should remove other resources(BDM,Secondary Volumes,Floating IP, Fixed IP)
