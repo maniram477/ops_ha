@@ -429,7 +429,21 @@ def dot_status_update(cursor,ins_id,status,instance_name=None):
         ha_agent.warn("Soft Exception: During dot_status_update on < %s > [%s]"%(inst_id,instance_name))
         ha_agent.exception('')
 
-# Volume Related Functions     
+# Volume Related Functions
+
+def fetch_volume_status(vol_id,cinder=None,instance_id=None,instance_name=None):
+    """Input - DBcursor , Volume ID 
+    Output - NaN
+    Function - Updates volume status = available and attach_status = detached on volumes table and
+    Updates volume attach_status = detached on volume_attachment table
+    """
+    try:
+        tmp_vol = cinder.volumes.get(vol_id)
+        retrun tmp_vol.status
+    except Exception as e:
+        ha_agent.warn("Soft Exception: During fetch_volume_status < %s > on < %s > [%s]"%(vol_id,instance_id,instance_name))
+        #ha_agent.exception('')
+
 @dbwrap
 def detach_volume_db(cursor,vol_id,instance_id=None,instance_name=None):
     """Input - DBcursor , Volume ID 
@@ -508,21 +522,26 @@ def cinder_volume_check(info,cinder=None,instance_id=None,instance_name=None):
 
         
 @retry(retry_on_exception=api_failure,stop_max_attempt_number=api_retry_count,wait_fixed=api_retry_interval)                  
-def attach_volumes(nova,instance,volumes,instance_id=None,instance_name=None):
+def attach_volumes(nova,cinder,instance,volumes,instance_id=None,instance_name=None):
     """Input - Volumes - Dictionary Containing volume details 
     Eg: {'vdb':'16e5593c-15c7-48a6-b46f-2bda2951e3b0','vdc':'16e5593c-15c7-48a6-b46f-2bda2951esd0'}
         - Instance ID
     Output - NaN
     Function - Attach Volumes to Instances
     """
-    try:
-        for dev in volumes:
-            nova.volumes.create_server_volume(instance,volumes[dev],dev)
-    except Exception as e:
-        ha_agent.warning("Exception During attach_volumes %s to < %s > [%s]"%(dev,instance_id,instance_name))
-        ha_agent.exception('')
-
     
+    for dev in volumes:
+        try:
+            status = fetch_volume_status(vol_id,cinder=cinder,instance_id=instance_id,instance_name=instance_name)
+            
+            if status != 'available':
+                detach_volume_db(volumes[dev])
+
+            nova.volumes.create_server_volume(instance,volumes[dev],dev)
+        except Exception as e:
+            ha_agent.warning("Soft Exception During attach_volume %s to < %s > [%s]"%(volumes[dev],instance_id,instance_name))
+            ha_agent.exception('')
+
 
 # IP Functions
 def floating_ip_check(info,instance_id=None,instance_name=None):
@@ -587,7 +606,7 @@ def attach_flt_ip(ip_list,instance_object,instance_id=None,instance_name=None):
         for flt_ip,fix_ip in ip_list:
             instance_object.add_floating_ip(flt_ip,fix_ip)
     except Exception as e:
-        ha_agent.warning("Exception: attach_flt_ip - %s - to Instance < %s > [%s]"%(flt_ip,inst_id,instance_name))
+        ha_agent.warning("Soft Exception: attach_flt_ip - %s - to Instance < %s > [%s]"%(flt_ip,inst_id,instance_name))
         ha_agent.exception('')
 
 def remove_fixed_ip(nova,inst_id,fixed_ip,instance_name=None):

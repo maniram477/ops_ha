@@ -212,7 +212,7 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
 
         error_step=12
         # Attach Floating IP address
-        attach_flt_ip(ip_list,new_instance)
+        attach_flt_ip(ip_list,new_instance,instance_id=new_instance_id,instance_name=instance_name)
 
         old_json,old_json_encoded = update_step_count(data=old_json,step_count=error_step,instance_id=instance_id,instance_name=instance_name)
         ha_agent.debug("Floating IP(s) attached Successfully to Instance < %s > [%s]"%(new_instance_id,instance_name))
@@ -220,10 +220,10 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
 
         error_step=13
         # Attach Secondary Volumes
-        attach_volumes(nova,new_info['id'],extra)
+        attach_volumes(nova,cinder,new_info['id'],extra,instance_id=new_instance_id,instance_name=instance_name)
 
         old_json,old_json_encoded = update_step_count(data=old_json,step_count=error_step,instance_id=instance_id,instance_name=instance_name)
-        ha_agent.debug("Volume attached Successfully to Instance < %s > [%s]"%(new_instance_id,instance_name))
+        ha_agent.debug("Volumes attached Successfully to Instance < %s > [%s]"%(new_instance_id,instance_name))
 
         error_step=14
         # Create Json dump of New instance 
