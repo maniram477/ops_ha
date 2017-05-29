@@ -699,26 +699,36 @@ def message_queue(dhost=None,task=None,time_suffix=None):
     """
     instance_list=zk.get_children("/openstack_ha/instances/down_instances/" + dhost)
     pending_instances_list=zk.get_children("/openstack_ha/instances/pending/"+dhost)
-    scheduler_log.debug("Instances yet to be added to Migration Queue: %d"%(len(instance_list)))
-    scheduler_log.debug("Instances already on Migration Queue: %d"%(len(pending_instances_list)))
-    if(len(instance_list)!=0):
-        scheduler_log.debug("Instances yet to be handled: %d Instances on Queue:  %d"%(len(instance_list),len(pending_instances_list)))
 
-        if(len(pending_instances_list)<num_instances_batch):
-            add_pending_instance_list=num_instances_batch-len(pending_instances_list)
-            scheduler_log.debug("Adding %d more instances to Queue"%add_pending_instance_list)
-            for i in range(add_pending_instance_list):
+    instance_list_length = len(instance_list)
+    pending_instances_list_length = len(pending_instances_list)
+    scheduler_log.debug("Instances yet to be added to Migration Queue: %d"%(instance_list_length))
+    scheduler_log.debug("Instances already on Migration Queue: %d"%(pending_instances_list_length))
+    if(instance_list_length !=0):
+        scheduler_log.debug("Instances yet to be handled: %d Instances on Queue:  %d"%(instance_list_length,pending_instances_list_length))
+
+        available_space = num_instances_batch - pending_instances_list_length
+
+        if(available_space > 0):
+            if instance_list_length <= available_space:
+                loop_range = instance_list_length
+            else:
+                loop_range = available_space
+
+            scheduler_log.debug("Adding %d more instances to Queue"%loop_range)
+            for i in range(loop_range):
                 try:
                     zk.create("/openstack_ha/instances/pending/" + dhost+"/"+instance_list[i])
                     zk.delete("/openstack_ha/instances/down_instances/" + dhost + "/" + instance_list[i],recursive=True)
                     instance_string = str(instance_list[i])
                     task.apply_async((instance_string,time_suffix,), queue='mars', countdown=5)
                 except Exception as e:
-                    scheduler_log.warning("Exception: message_queue Function..!")
+                    scheduler_log.warning("Exception: message_queue Function..!",e)
         else:
             scheduler_log.debug("Waiting.. .. ..Migration Queue is Already Full...")
 
     else:
+        scheduler_log.debug("Every Instance on the host %s are handled hence adding %s to /openstack_ha/hosts/down ( which means Already Handled)"%(dhost,dhost))
         if (zk.exists("/openstack_ha/hosts/down/" + dhost) == None):
             zk.create("/openstack_ha/hosts/down/" + dhost)
 
