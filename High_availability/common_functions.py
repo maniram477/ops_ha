@@ -212,8 +212,8 @@ def list_hosts(nova):
                 'disabled_list': [host.host for host in nova.services.list(binary="nova-compute") if host.status.lower() == 'disabled' if host.disabled_reason in maintenance_state]\
                }
     except Exception as ee:
-        ha_agent.warning("Exception Inside the list host Function..!")
-        ha_agent.exception('')
+        scheduler_log.warning("Exception Inside the list host Function..!",ee)
+        scheduler_log.exception('')
         raise Exception('step0')
 
 def down_hosts(nova):
@@ -439,7 +439,7 @@ def fetch_volume_status(vol_id,cinder=None,instance_id=None,instance_name=None):
     """
     try:
         tmp_vol = cinder.volumes.get(vol_id)
-        retrun tmp_vol.status
+        return tmp_vol.status
     except Exception as e:
         ha_agent.warn("Soft Exception: During fetch_volume_status < %s > on < %s > [%s]"%(vol_id,instance_id,instance_name))
         #ha_agent.exception('')
@@ -532,14 +532,15 @@ def attach_volumes(nova,cinder,instance,volumes,instance_id=None,instance_name=N
     
     for dev in volumes:
         try:
+            vol_id = volumes[dev]
             status = fetch_volume_status(vol_id,cinder=cinder,instance_id=instance_id,instance_name=instance_name)
             
             if status != 'available':
-                detach_volume_db(volumes[dev])
+                detach_volume_db(vol_id)
 
-            nova.volumes.create_server_volume(instance,volumes[dev],dev)
+            nova.volumes.create_server_volume(instance,vol_id,dev)
         except Exception as e:
-            ha_agent.warning("Soft Exception During attach_volume %s to < %s > [%s]"%(volumes[dev],instance_id,instance_name))
+            ha_agent.warning("Soft Exception During attach_volume %s to < %s > [%s]"%(vol_id,instance_id,instance_name))
             ha_agent.exception('')
 
 

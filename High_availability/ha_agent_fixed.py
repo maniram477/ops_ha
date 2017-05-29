@@ -10,31 +10,33 @@ import json
 celery = Celery('migrate')
 celery.config_from_object('config')
 
-def create_dump_dirs(time_suffix,remigration=None,dump_directory=None):
+def create_dump_dirs(time_suffix,remigration=None,dump_directory=None,instance_id=None,instance_name=None):
     """Input - time suffix , remigration
     Output - NaN
     Function - Creates base directories for json_dump files
     """
-    
-    if not dump_directory.endswith("/"):
-        dump_directory = dump_directory+"/"
+    try:
+        if not dump_directory.endswith("/"):
+            dump_directory = dump_directory+"/"
 
-    directory = dump_directory + time_suffix
-    
-    if not os.path.exists(dump_directory):
-        os.makedirs(dump_directory)
+        directory = dump_directory + time_suffix
+        
+        if not os.path.exists(dump_directory):
+            os.makedirs(dump_directory)
 
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
 
-    if remigration:
-        subdir = directory+"/remigration"
-        if not os.path.exists(subdir):
-            os.makedirs(subdir)
-    else:
-        subdir = directory+"/migration"
-        if not os.path.exists(subdir):
-            os.makedirs(subdir)
+        if remigration:
+            subdir = directory+"/remigration"
+            if not os.path.exists(subdir):
+                os.makedirs(subdir)
+        else:
+            subdir = directory+"/migration"
+            if not os.path.exists(subdir):
+                os.makedirs(subdir)
+    except Exception as e:
+        ha_agent.debug("Soft Exception during create_dump_dirs for Instance <%s> [%s]"%(instance_id,instance_name))
 
 def generate_file_name(time_suffix,remigration=None):
     """Input - time suffix , remigration
@@ -97,7 +99,7 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
 
         error_step=2
         # Json Dump Directories and  Json File Names creation
-        create_dump_dirs(time_suffix,remigration,dump_directory=dump_directory)
+        create_dump_dirs(time_suffix,remigration,dump_directory=dump_directory,instance_id=old_instance_id,instance_name=instance_name)
         json_old_instance,json_new_instance,json_error_instance = generate_file_name(time_suffix,remigration=remigration)
         #ha_agent.debug("File names generated successfully for Instance < %s > [%s]"%(instance_id,instance_name))
 
