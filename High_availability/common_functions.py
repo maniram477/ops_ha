@@ -313,6 +313,7 @@ def delete_instance_status(nova,instance_object,instance_id=None,instance_name=N
             ha_agent.debug("Instance < %s > [%s] Not Found hence deleted"%(instance_id,instance_name))
         elif e.message == "poll":
             ha_agent.debug("Polling Instance < %s > [%s] deletion status: Instance [%s] is in  !"%(instance_id,instance_name,instance_name,tmp_ins_task_state))
+            raise Exception(e)
         else:
             raise Exception(e)
 
@@ -395,6 +396,7 @@ def create_instance_status(nova,instance_object,instance_name=None):
             ha_agent.error("Instance - [%s] went to ERROR state"%(instance_name))
         elif e.message == 'poll':
             ha_agent.debug("Polling Instance [%s] status: Instance [%s] is in %s state"%(instance_name,instance_name,status[1]))
+            raise Exception(e)
         else:
             raise Exception(e)
     
