@@ -2,7 +2,7 @@
 #Scheduler
 from StructureZoo import  *
 from common_functions import *
-from ha_agent import migrate
+from ha_agent_fixed import migrate
 import time
 
 import logging.config
