@@ -290,18 +290,18 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
                 if(error_step<10):
                     #Unmodified Old_instance_json
                     error_log(error_step,old_instance_id,e=e,ha_agent=ha_agent,instance_name=instance_name)
+                    json_dump_write(filename=json_error_instance,data=old_json,dump_directory=dump_directory,instance_id=old_instance_id,instance_name=instance_name)
 
                     if(error_step>6):
-                        json_dump_write(filename=json_error_instance,data=old_json,dump_directory=dump_directory,instance_id=old_instance_id,instance_name=instance_name)
                         zk.create("/openstack_ha/instances/failure/"+tmp_host+"/"+old_instance_id,old_json_encoded)
 
                 else:
                     error_log(error_step,new_instance_id,e=e,ha_agent=ha_agent,old_instance_id=old_instance_id,instance_name=instance_name)
+                    json_dump_write(filename=json_error_instance,data=data,dump_directory=dump_directory,instance_id=new_instance_id,instance_name=instance_name)
 
                     #Edited instance_json
                     if(error_step not in [11,14]):
                         data,encoded_json=json_dump_edit(data=old_json,new_instance_id=new_instance_id,new_host_name=new_host_name,step_count=error_step,instance_name=instance_name)
-                        json_dump_write(filename=json_error_instance,data=data,dump_directory=dump_directory,instance_id=new_instance_id,instance_name=instance_name)
                         #Create znode for partial Failure 
                         zk.create("/openstack_ha/instances/failure/"+tmp_host+"/"+new_instance_id,encoded_json)
     else:
@@ -319,11 +319,11 @@ def migrate(instance_id,time_suffix,remigration=None,host_name=None,ha_agent=ha_
         zk = KazooClient(hosts=kazoo_host_ipaddress)
         zk.start()
         if remigration and host_name:
-            if(error_step>11):
+            if(error_step>13):
                 ha_agent.debug("Removing Instance from migrated after successfully remigrated instances")
                 zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
         else:
-            if(error_step>11):
+            if(error_step>13):
                 ha_agent.debug("Removing Instance from pending /openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
                 zk.delete("/openstack_ha/instances/pending/"+tmp_host+"/"+instance_id)
         

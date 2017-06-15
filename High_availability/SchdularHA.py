@@ -142,6 +142,7 @@ def check_hosts(zk,host_name,task,scheduler_log):
                                                 tmp_time_suffix=zk.get("/openstack_ha/hosts/time_out/"+host+"/time_suffix")[0]
                                                 zk_time_suffix = tmp_time_suffix.decode()
                                                 instance_migration(nova,api_down_nodes,task,zk_time_suffix)
+                                                #Change above to this and Test:  instance_migration(nova,(host,),task,zk_time_suffix)
                                             else:
                                                 scheduler_log.debug("Will Wait for another %d"%(migrate_time-time_interval))
                                         else:
